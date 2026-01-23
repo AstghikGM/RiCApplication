@@ -1,0 +1,24 @@
+    # First step: Extract entities, attributes and relationships in JSON
+      prompt1 = f"""
+Act as a RiC-O (Records in Context Ontology) expert. 
+TASK: From the text, extract all RiC-O entities, their relevant attributes and the relationships between them. 
+
+
+—-- STRICT GUIDELINES —-- 
+- STRICT RiC-O entities (ONLY): Record Resource (with subentities Record Set, Record, Record Part), Agent (with subentities Person, Group, Family, Corporate Body, Position, Mechanism), Instantiation, Date, Place, Thing, Event (with subentity Activity) and Rule (with subentity Mandate).
+- LET ONLY ENTITIES THAT DESCRIBE THE MAIN ARCHIVE. For example, if a Record mentions multiple Dates but only one is crucial for understanding its context, let only that ONE Date entity.
+- For each entity, assign all FOUND attributes, remember that each entity has its specific attributes, for example: 
+     - Attributes for Record Resource: General Description, Identifier, Name, Authenticity Note, Classification, Conditions of Access, Conditions of Use, Content Type, History, Integrity Note, Language, Legal Status, Record Resource Extent, Scope and content, State, Structure 
+     - Attributes for Agent: General Description, Identifier, Name, History, Language, Legal Status
+     - Attributes for Date: General Description, Identifier, Name, Date Qualifier, Date Type, Expressed Date, Normalized Date
+- DO NOT output information not found in the text. 
+- Extract all significant relationships (e.g., hasCreator, isAssociatedWithDate) between entities and define them inline within the source entity object.
+
+—-- OUTPUT FORMAT —-- 
+- Return a single JSON-LD object. The top-level keys must be the MAIN RiC-O entity classes (e.g., "Agent": []). 
+- Each entity object must contain its attributes and relationships as key-value pairs, a numeric @id of three digits (001, 002...) and the  subentity type as @type. 
+- NO PRETEXT, NO POST-TEXT, NO MARKDOWN. 
+
+—-- TEXT TO PROCESS —--
+{text}
+"""

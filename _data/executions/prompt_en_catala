@@ -1,0 +1,146 @@
+{
+  "Recurs de Registre": [
+    {
+      "@id": "001",
+      "@type": "RecursDeRegistre",
+      "Descripcio general": "Presentation of the 2020 budget of Universitat de Lleida",
+      "Identificador": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "Nom": "Presentació del Pressupost 2020",
+      "Classificacio": "Document",
+      "Tipus de contingut": "Textual with budget tables",
+      "Idioma": "Catalan",
+      "Abast i contingut": "Includes budget details for fiscal years 2019 and 2020, tables, and analysis",
+      "Estructura": "Sections: summary, program tables, income and expense tables, explanatory notes",
+      "hasCreator": "002",
+      "hasAssociatedWithDate": ["003", "004"],
+      "hasLocation": "005"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Persona",
+      "Descripcio general": "Rector of Universitat de Lleida",
+      "Identificador": "Jaume Puy i Llorens",
+      "Nom": "Jaume Puy i Llorens",
+      "Idioma": "Catalan"
+    }
+  ],
+  "Data": [
+    {
+      "@id": "003",
+      "@type": "Data",
+      "Descripcio general": "Fiscal year 2019",
+      "Identificador": "2019",
+      "Nom": "2019",
+      "Qualificador de data": "fiscal year",
+      "Tipus de data": "Year",
+      "Data expressada": "2019",
+      "Data normalitzada": "2019-01-01"
+    },
+    {
+      "@id": "004",
+      "@type": "Data",
+      "Descripcio general": "Fiscal year 2020",
+      "Identificador": "2020",
+      "Nom": "2020",
+      "Qualificador de data": "fiscal year",
+      "Tipus de data": "Year",
+      "Data expressada": "2020",
+      "Data normalitzada": "2020-01-01"
+    }
+  ],
+  "Lloc": [
+    {
+      "@id": "005",
+      "@type": "Lloc",
+      "Descripcio general": "City where the presentation took place",
+      "Identificador": "Lleida",
+      "Nom": "Lleida"
+    }
+  ]
+}
+
+
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+
+# ====== Recurs de Registre
+<_001> a rico:RecursDeRegistre ;
+     rico:descripcioGeneral "Presentation of the 2020 budget of Universitat de Lleida" ;
+     rico:identificador "PRESENTACIÓ DEL PRESSUPOST 2020" ;
+     rico:nom "Presentació del Pressupost 2020" ;
+     rico:classificacio "Document" ;
+     rico:tipusDeContingut "Textual with budget tables" ;
+     rico:idioma "Catalan" ;
+     rico:abastIContingut "Includes budget details for fiscal years 2019 and 2020, tables, and analysis" ;
+     rico:estructura "Sections: summary, program tables, income and expense tables, explanatory notes" ;
+     rico:hasCreator <_002> ;
+     rico:hasAssociatedWithDate <_003> ;
+     rico:hasAssociatedWithDate <_004> ;
+     rico:hasLocation <_005> .
+
+# ====== Agent
+<_002> a rico:Persona ;
+     rico:descripcioGeneral "Rector of Universitat de Lleida" ;
+     rico:identificador "Jaume Puy i Llorens" ;
+     rico:nom "Jaume Puy i Llorens" ;
+     rico:idioma "Catalan" .
+
+# ====== Data
+<_003> a rico:Data ;
+     rico:descripcioGeneral "Fiscal year 2019" ;
+     rico:identificador <_2019> ;
+     rico:nom <_2019> ;
+     rico:qualificadorDeData "fiscal year" ;
+     rico:tipusDeData "Year" ;
+     rico:dataExpressada <_2019> ;
+     rico:dataNormalitzada "2019-01-01" .
+
+<_004> a rico:Data ;
+     rico:descripcioGeneral "Fiscal year 2020" ;
+     rico:identificador <_2020> ;
+     rico:nom <_2020> ;
+     rico:qualificadorDeData "fiscal year" ;
+     rico:tipusDeData "Year" ;
+     rico:dataExpressada <_2020> ;
+     rico:dataNormalitzada "2020-01-01" .
+
+# ====== Lloc
+<_005> a rico:Lloc ;
+     rico:descripcioGeneral "City where the presentation took place" ;
+     rico:identificador "Lleida" ;
+     rico:nom "Lleida" .
+
+
+
+
+
+--------------------- PROMPT ENDS ----------------------
+"""
+Actua com a expert en RiC-O (Ontologia de Registres en Contexte).
+
+TASCA: Del text, extreu totes les entitats RiC-O, els seus atributs rellevants i les relacions entre elles.
+
+—-- DIRECTIVES ESTRICTES —--
+- Entitats RiC-O ESTRICTES (NOMÉS): Recurs de Registre (amb subentitats Conjunt de Registres, Registre, Part del Registre), Agent (amb subentitats Persona, Grup, Família, Entitat Corporativa, Posició, Mecanisme), Instanciació, Data, Lloc, Cosa, Esdeveniment (amb subentitat Activitat) i Regla (amb subentitat Mandat).
+
+- NOMÉS LES ENTITATS QUE DESCRIGUIN L'ARXIU PRINCIPAL. Per exemple, si un Registre esmenta diverses Dates però només una és crucial per entendre el seu context, només s'ha d'utilitzar UNA entitat de Data.
+- Per a cada entitat, assigneu tots els atributs FOUND, recordeu que cada entitat té els seus atributs específics, per exemple:
+- Atributs per al Recurs de Registre: Descripció general, Identificador, Nom, Nota d'autenticitat, Classificació, Condicions d'accés, Condicions d'ús, Tipus de contingut, Historial, Nota d'integritat, Idioma, Estat legal, Extensió del Recurs de Registre, Abast i contingut, Estat, Estructura
+- Atributs per a l'Agent: Descripció general, Identificador, Nom, Historial, Idioma, Estat legal
+- Atributs per a la Data: Descripció general, Identificador, Nom, Qualificador de data, Tipus de data, Data expressada, Data normalitzada
+- NO genereu informació que no es trobi al text.
+- Extraieu totes les relacions significatives (per exemple, hasCreator, isAssociatedWithDate) entre entitats i definiu-les en línia dins de l'objecte d'entitat font.
+
+—-- FORMAT DE SORTIDA —--
+- Retorneu un únic objecte JSON-LD. Les claus de nivell superior han de ser les classes d'entitats MAIN RiC-O (per exemple, "Agent": []).
+- Cada objecte d'entitat ha de contenir els seus atributs i relacions com a parells clau-valor, un @id numèric de tres dígits (001, 002...) i el tipus de subentitat com a @type.
+
+- SENSE PRETEXT, SENSE POSTTEXT, SENSE MARKDOWN.
+
+—-- TEXT A PROCESSAR —--
+{text}
+""" 

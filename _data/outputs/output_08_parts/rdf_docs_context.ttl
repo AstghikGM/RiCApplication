@@ -1,0 +1,66 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+
+# ====== RecordResource
+<_001> a rico:RecordSet ;
+     rico:identifier "PresupostUdL2025.zip" ;
+     rico:name "Presupost UdL 2025" ;
+     rico:generalDescription "Zip archive containing budget documents for Universitat de Lleida 2025." ;
+     rico:contentType "application/zip" .
+
+<_002> a rico:Record ;
+     rico:identifier "PresupostUdL2025/01-Presentacio-Pressupost.pdf" ;
+     rico:name "PRESENTACIÓ DEL PRESSUPOST" ;
+     rico:generalDescription "PDF containing presentation of 2025 budget." ;
+     rico:contentType "application/pdf" ;
+     rico:hasCreator <_003> ;
+     rico:hasCreator <_004> ;
+     rico:isAssociatedWithDate <_006> ;
+     rico:hasLocation <_005> ;
+     rico:hasParent <_001> .
+
+# ====== Agent
+<_003> a rico:Person ;
+     rico:identifier "" ;
+     rico:name "Jaume Puy i Llorens" ;
+     rico:generalDescription "Rector of Universitat de Lleida" .
+
+<_004> a rico:CorporateBody ;
+     rico:identifier "" ;
+     rico:name "Universitat de Lleida" ;
+     rico:generalDescription "Public university in Lleida" .
+
+# ====== Date
+<_006> a rico:Date ;
+     rico:name "3 de desembre 2024" ;
+     rico:description "Date of presentation" ;
+     rico:expressedDate "3 de desembre de 2024" ;
+     rico:normalizedDate "2024-12-03" .
+
+<_007> a rico:Date ;
+     rico:name <_2025> ;
+     rico:description "Fiscal year 2025" ;
+     rico:expressedDate <_2025> ;
+     rico:normalizedDate <_2025> .
+
+# ====== Place
+<_005> a rico:Place ;
+     rico:name "Lleida" ;
+     rico:generalDescription "City in Catalonia" .
+
+# ====== Instantiation
+<_008> a rico:Instantiation ;
+     rico:generalDescription "PDF file of presentation budget" ;
+     rico:carrierType "application/pdf" ;
+     rico:hasParent <_002> .
+
+# ====== Event
+<_009> a rico:Event ;
+     rico:name "Presentation of Budget" ;
+     rico:generalDescription "Presentation of the 2025 budget" ;
+     rico:eventType "Activity" ;
+     rico:hasDate <_006> ;
+     rico:hasLocation <_005> ;
+     rico:hasAgent <_003> ;
+     rico:hasParticipant <_004> .

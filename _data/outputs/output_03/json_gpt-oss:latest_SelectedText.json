@@ -1,0 +1,63 @@
+{
+  "Agent": [
+    {
+      "@id": "005",
+      "@type": "Person",
+      "Identifier": "Jaume Puy i Llorens",
+      "Name": "Jaume Puy i Llorens",
+      "General Description": "Rector",
+      "hasPosition": "006",
+      "hasAffiliation": "007"
+    },
+    {
+      "@id": "006",
+      "@type": "Position",
+      "Identifier": "Rector",
+      "Name": "Rector"
+    },
+    {
+      "@id": "007",
+      "@type": "CorporateBody",
+      "Identifier": "Universitat de Lleida",
+      "Name": "Universitat de Lleida"
+    }
+  ],
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "RecordSet",
+      "Identifier": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Name": "Presupost/01-2020_Presentació - Pressupost.pdf"
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "Identifier": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "Name": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "Content Type": "text",
+      "Scope and content": "Budget of Universitat de Lleida for the 2020 exercise",
+      "hasCreator": "005",
+      "hasAssociatedDate": "003",
+      "hasLocation": "004"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "003",
+      "@type": "Date",
+      "Identifier": "2019-11-28",
+      "Name": "28 de novembre de 2019",
+      "Expressed Date": "28 de novembre de 2019",
+      "Normalized Date": "2019-11-28"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "004",
+      "@type": "Place",
+      "Identifier": "Lleida",
+      "Name": "Lleida",
+      "Place Type": "City"
+    }
+  ]
+}

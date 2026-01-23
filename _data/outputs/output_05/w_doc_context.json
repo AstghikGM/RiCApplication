@@ -1,0 +1,61 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record",
+      "Identifier": "PresupostUdL2025/01-Presentacio-Pressupost.pdf",
+      "Name": "Presentació del Pressupost 2025",
+      "General Description": "PDF file presenting the 2025 budget for the University of Lleida",
+      "Content Type": "application/pdf",
+      "hasCreator": "002",
+      "hasAssociatedDate": "004",
+      "hasAssociatedPlace": "005",
+      "instanceOf": "006",
+      "hasAssociatedAgent": "003"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "Identifier": "person-002",
+      "Name": "Jaume Puy i Llorens",
+      "General Description": "Rector of the University of Lleida"
+    },
+    {
+      "@id": "003",
+      "@type": "CorporateBody",
+      "Identifier": "corp-003",
+      "Name": "Universitat de Lleida"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "004",
+      "@type": "Date",
+      "Identifier": "date-004",
+      "Name": "3 de desembre de 2024",
+      "associatedWithRecord": "001"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "005",
+      "@type": "Place",
+      "Identifier": "place-005",
+      "Name": "Lleida",
+      "associatedWithRecord": "001"
+    }
+  ],
+  "Instantiation": [
+    {
+      "@id": "006",
+      "@type": "Instantiation",
+      "Identifier": "inst-006",
+      "Representation Type": "PDF",
+      "Carrier Type": "digital",
+      "instanceOf": "001",
+      "hasCreator": "002"
+    }
+  ]
+}

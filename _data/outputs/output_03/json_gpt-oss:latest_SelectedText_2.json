@@ -1,0 +1,61 @@
+{
+  "Record Resource": [
+    {
+      "@id": "001",
+      "@type": "Record",
+      "General Description": "Presentation of the budget 2020",
+      "Identifier": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Name": "PRESENTACIÓ DEL PRESSUPOST",
+      "Content Type": "pdf",
+      "Language": "Catalan",
+      "Scope and content": "Presentation of budget 2020",
+      "Structure": "pdf",
+      "Record Resource Extent": "single file",
+      "hasCreator": "002",
+      "hasDate": "003",
+      "hasPlace": "004",
+      "hasInstantiation": "005"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "General Description": "University Rector",
+      "Name": "Jaume Puy i Llorens",
+      "Language": "Catalan"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "003",
+      "@type": "Date",
+      "General Description": "Date of creation",
+      "Name": "28 de novembre de 2019",
+      "Date Qualifier": "creation",
+      "Date Type": "Calendar",
+      "Expressed Date": "2019-11-28",
+      "Normalized Date": "2019-11-28"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "004",
+      "@type": "Place",
+      "General Description": "Location of creation",
+      "Name": "Lleida",
+      "Place Type": "City"
+    }
+  ],
+  "Instantiation": [
+    {
+      "@id": "005",
+      "@type": "Instantiation",
+      "General Description": "Digital file representation",
+      "Name": "PDF File",
+      "Carrier Type": "Electronic",
+      "Representation Type": "Digital",
+      "Physical Characteristics Note": "PDF format"
+    }
+  ]
+}

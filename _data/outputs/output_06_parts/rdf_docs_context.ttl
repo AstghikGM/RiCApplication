@@ -1,0 +1,189 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+
+# ====== Agent
+<_001> a rico:Person ;
+     rico:name "Jaume Puy i Llorens" ;
+     rico:generalDescription "Rector de la Universitat de Lleida" ;
+     rico:hasPosition <_003> ;
+     rico:belongsTo <_002> ;
+     rico:authoredRecord <_004> .
+
+<_002> a rico:CorporateBody ;
+     rico:name "Universitat de Lleida" ;
+     rico:generalDescription "Universitat pública d'Europa" .
+
+<_003> a rico:Position ;
+     rico:name "Rector" ;
+     rico:generalDescription "Head of the university" ;
+     rico:positionOf <_002> .
+
+# ====== Record Resource
+<_004> a rico:Record ;
+     rico:name "PRESENTACIÓ DEL PRESSUPOST" ;
+     rico:identifier "PresupostUdL2025/01-Presentacio-Pressupost.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:language "Català" ;
+     rico:generalDescription "Presentació del pressupost de l'Universitat de Lleida per a l'exercici 2025." ;
+     rico:state "Published" ;
+     rico:structure "single page" ;
+     rico:hasCreator <_001> ;
+     rico:hasDate <_023> ;
+     rico:hasPlace <_025> ;
+     rico:isAssociatedWithRule <_026> ;
+     rico:isPartOf <_005> .
+
+<_005> a rico:RecordSet ;
+     rico:name "Presupost UdL 2025" ;
+     rico:identifier "PresupostUdL2025" ;
+     rico:generalDescription "Budget documents for the University of Lleida for the year 2025." ;
+     rico:containsRecord <_004> ;
+     rico:containsRecord <_006> ;
+     rico:containsRecord <_007> ;
+     rico:containsRecord <_008> ;
+     rico:containsRecord <_009> ;
+     rico:containsRecord <_010> ;
+     rico:containsRecord <_011> ;
+     rico:containsRecord <_012> ;
+     rico:containsRecord <_013> ;
+     rico:containsRecord <_014> ;
+     rico:containsRecord <_015> ;
+     rico:containsRecord <_016> ;
+     rico:containsRecord <_017> ;
+     rico:containsRecord <_018> ;
+     rico:containsRecord <_019> ;
+     rico:containsRecord <_020> ;
+     rico:containsRecord <_021> ;
+     rico:containsRecord <_022> ;
+     rico:isPartOf <_005> ;
+     rico:isAssociatedWithDate <_024> .
+
+<_006> a rico:Record ;
+     rico:name "Resum per capitols 2025" ;
+     rico:identifier "PresupostUdL2025/02-Resum-per-capitols_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_007> a rico:Record ;
+     rico:name "Estat ingressos 2025" ;
+     rico:identifier "PresupostUdL2025/03-Estat-ingressos_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_008> a rico:Record ;
+     rico:name "Estat despeses 2025" ;
+     rico:identifier "PresupostUdL2025/04-Estat-despeses_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_009> a rico:Record ;
+     rico:name "Resum per unitats 2025" ;
+     rico:identifier "PresupostUdL2025/05-Resum-per-unitats_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_010> a rico:Record ;
+     rico:name "Classificació organica de les despeses 2025" ;
+     rico:identifier "PresupostUdL2025/06-Classificacio-organica-de-les-despeses_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_011> a rico:Record ;
+     rico:name "Despeses i ingressos per Programa 2025" ;
+     rico:identifier "PresupostUdL2025/07-Despeses-i-ingressos-per-Programa_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_012> a rico:Record ;
+     rico:name "Accions i indicadors 2025" ;
+     rico:identifier "PresupostUdL2025/08-Accions-i-indicadors_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_013> a rico:Record ;
+     rico:name "Despeses de Personal" ;
+     rico:identifier "PresupostUdL2025/10-Despeses-de-Personal.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_014> a rico:Record ;
+     rico:name "BEP 2025" ;
+     rico:identifier "PresupostUdL2025/11-BEP-2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_015> a rico:Record ;
+     rico:name "Annex I BEP" ;
+     rico:identifier "PresupostUdL2025/12-Annex-I_BEP.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_016> a rico:Record ;
+     rico:name "Annex II BEP" ;
+     rico:identifier "PresupostUdL2025/13-Annex-II_BEP.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_017> a rico:Record ;
+     rico:name "Tarifes SCT 2025" ;
+     rico:identifier "PresupostUdL2025/14-Tarifes-SCT_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_018> a rico:Record ;
+     rico:name "Tarifes Altres serveis 2025 v2" ;
+     rico:identifier "PresupostUdL2025/15-Tarifes-Altres-serveis_2025_v2.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_019> a rico:Record ;
+     rico:name "Tarifes formacio reglada 2025" ;
+     rico:identifier "PresupostUdL2025/16-Tarifes-formacio-reglada_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_020> a rico:Record ;
+     rico:name "Tarifes formacio no reglada 2025" ;
+     rico:identifier "PresupostUdL2025/17-Tarifes-formacio-no-reglada_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+<_021> a rico:Record ;
+     rico:name "Altres tarifes 2025" ;
+     rico:identifier "PresupostUdL2025/18-Altres-tarifes_2025.pdf" ;
+     rico:contentType "application/pdf" ;
+     rico:isPartOf <_005> .
+
+# ====== Date
+<_023> a rico:Date ;
+     rico:name "Publication date" ;
+     rico:description "Date of publication of the presentation." ;
+     rico:expressedDate "2024-12-03" ;
+     rico:normalizedDate "2024-12-03" ;
+     rico:dateQualifier "Publication" ;
+     rico:dateType "Publication date" ;
+     rico:isDateOf <_004> .
+
+<_024> a rico:Date ;
+     rico:name "Exercici 2025" ;
+     rico:description "Budget year for the University of Lleida." ;
+     rico:expressedDate <_2025> ;
+     rico:normalizedDate <_2025> ;
+     rico:dateQualifier "Budget year" ;
+     rico:dateType "Year" ;
+     rico:isDateOf <_005> .
+
+# ====== Place
+<_025> a rico:Place ;
+     rico:name "Lleida" ;
+     rico:placeType "City" ;
+     rico:generalDescription "City in Catalonia, Spain." ;
+     rico:isPlaceOf <_004> .
+
+# ====== Rule
+<_026> a rico:Rule ;
+     rico:name "Llei Orgànica del Sistema Universitari (LOSU)" ;
+     rico:ruleType "Legislative" ;
+     rico:generalDescription "Law that regulates the status of universities in Spain." ;
+     rico:isRuleOf <_004> .

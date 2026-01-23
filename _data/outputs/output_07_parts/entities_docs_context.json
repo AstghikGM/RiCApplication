@@ -1,0 +1,240 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "RecordSet",
+      "Name": "PresupostUdL2025",
+      "Identifier": "PresupostUdL2025.zip",
+      "General Description": "Set of budget documents for the University of Lleida for 2025."
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "Name": "01-Presentacio-Pressupost.pdf",
+      "Identifier": "PresupostUdL2025/01-Presentacio-Pressupost.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Presentation of the 2025 budget.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "003",
+      "@type": "Record",
+      "Name": "02-Resum-per-capitols_2025.pdf",
+      "Identifier": "PresupostUdL2025/02-Resum-per-capitols_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "004",
+      "@type": "Record",
+      "Name": "03-Estat-ingressos_2025.pdf",
+      "Identifier": "PresupostUdL2025/03-Estat-ingressos_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "005",
+      "@type": "Record",
+      "Name": "04-Estat-despeses_2025.pdf",
+      "Identifier": "PresupostUdL2025/04-Estat-despeses_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "006",
+      "@type": "Record",
+      "Name": "05-Resum-per-unitats_2025.pdf",
+      "Identifier": "PresupostUdL2025/05-Resum-per-unitats_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "007",
+      "@type": "Record",
+      "Name": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "Identifier": "PresupostUdL2025/06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "008",
+      "@type": "Record",
+      "Name": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "Identifier": "PresupostUdL2025/07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "009",
+      "@type": "Record",
+      "Name": "08-Accions-i-indicadors_2025.pdf",
+      "Identifier": "PresupostUdL2025/08-Accions-i-indicadors_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "010",
+      "@type": "Record",
+      "Name": "10-Despeses-de-Personal.pdf",
+      "Identifier": "PresupostUdL2025/10-Despeses-de-Personal.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "Name": "11-BEP-2025.pdf",
+      "Identifier": "PresupostUdL2025/11-BEP-2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "Name": "12-Annex-I_BEP.pdf",
+      "Identifier": "PresupostUdL2025/12-Annex-I_BEP.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "21"
+    },
+    {
+      "@id": "013",
+      "@type": "Record",
+      "Name": "13-Annex-II_BEP.pdf",
+      "Identifier": "PresupostUdL2025/13-Annex-II_BEP.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "014",
+      "@type": "Record",
+      "Name": "14-Tarifes-SCT_2025.pdf",
+      "Identifier": "PresupostUdL2025/14-Tarifes-SCT_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "015",
+      "@type": "Record",
+      "Name": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "Identifier": "PresupostUdL2025/15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "016",
+      "@type": "Record",
+      "Name": "16-Tarifes-formacio-reglada_2025.pdf",
+      "Identifier": "PresupostUdL2025/16-Tarifes-formacio-reglada_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "017",
+      "@type": "Record",
+      "Name": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "Identifier": "PresupostUdL2025/17-Tarifes-formacio-no-reglada_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    },
+    {
+      "@id": "018",
+      "@type": "Record",
+      "Name": "18-Altres-tarifes_2025.pdf",
+      "Identifier": "PresupostUdL2025/18-Altres-tarifes_2025.pdf",
+      "Content Type": "application/pdf",
+      "General Description": "Title only stored.",
+      "belongsTo": "001",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "021"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "020",
+      "@type": "Person",
+      "Name": "Jaume Puy i Llorens",
+      "General Description": "Rector of the Universitat de Lleida"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "022",
+      "@type": "Date",
+      "Name": "3 de desembre de 2024",
+      "Expressed Date": "2024-12-03",
+      "Date Type": "Document publication date"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "021",
+      "@type": "Place",
+      "Name": "Lleida",
+      "General Description": "City of the University of Lleida"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+from pathlib import Path
+from typing import TypeVar
+import fitz  # PyMuPDF
+import json
+
+from ocean_runner import Algorithm, Config
+
+from .data import InputParameters
+from .OpenWebUI import OpenWebUI
+#from .FileReader import FileReader
+import zipfile
+
+# OpenWebUi
+OPENWEBUI_API_KEY = "sk-d2deb463434d4ff9abf0d024842f0284"
+openwebui = OpenWebUI(api_key=OPENWEBUI_API_KEY)
+
+
+# Change to real result type
+ResultsT = TypeVar("ResultsT")
+algorithm = Algorithm(config=Config(custom_input=InputParameters))
+
+"""
+@algorithm.validate
+def validate() -> None:
+    # Can remove this function to use the default behaviour. DEFAULT: Check DDOs and input files
+    raise NotImplementedError()
+"""
+
+@algorithm.run
+def run() -> ResultsT:
+      """ READ PLAIN TEXT - CLASS DELETED
+      files = algorithm.job_details.files
+      is_zipped = algorithm.job_details.input_parameters.is_zipped
+      result = FileReader.read_file(files, is_zipped, algorithm.logger)
+      """
+
+      """ Example of reading a zip file  
+      with zipfile.ZipFile(filename, "r") as zip_ref:
+          for member in zip_ref.namelist():
+              if member.endswith("/"):
+                  continue  
+              with zip_ref.open(member) as extracted_file:
+                  try:
+                      content = extracted_file.read().decode("utf-8")
+                  except UnicodeDecodeError:
+                      continue 
+      """ 
+
+      """ READ PDF FILES """
+      _, filename = next(algorithm.job_details.next_path()) 
+      pdf_document = fitz.open(filename)
+      # Metadata
+      #metadata = pdf_document.metadata
+
+      text = []
+      for page_num in range(pdf_document.page_count):
+           page = pdf_document.load_page(page_num)
+           text.append(page.get_text())
+
+
+      # First step: Extract entities, attributes and relationships in JSON
+      prompt1 = f"""
+You are an expert archivist working with the International Council on Archives (ICA) Records in Context Ontology (RiC-O).
+TASK: Extract all archival entities, their attributes and relationships according to Records in Context Ontology (RiC-O).
+
+
+
+
+—-- STRICT GUIDELINES —--
+- Only allowed RiC-O entities: Record Resource, Agent, Instantiation, Date, Activity, Rule, Place, Thing, Record Set, Record, Record Part, Person, Group, Family, Corporate Body, Position, Mechanism, Event and Mandate. 
+- For each entity, assign all possible attributes you find. You must remember that RiC-O defines specific attributes for each entity type. For example:
+     - Attributes for Record: General Description, Identifier, Name, Authenticity Note, Classification, Conditions of Access, Conditions of Use, Content Type, History, Integrity Note, Classification, Conditions of Access, Conditions of Use, Content Type, History, Integrity Note, Language, Legal Status, Record Resource Extent, Scope and content, State, Structure, Documentary Form Type
+     - Attributes for Agent: General Description, Identifier, Name, History, Language, Legal Status
+     - Date: General Description, Identifier, Name, Date QUalifier, Date Type, Expressed Date, Normalized Date
+- Omit all information not explicitly defined in the provided text.
+- Extract significant relationships between entities, for example hasCreator or isAssociatedWithDate. This is important to create a linked structure of the entities. 
+
+
+—-- OUTPUT FORMAT —--
+- Return a JSON object with the entities as main arrays, with their attributes and relationships as key-value pairs. Define the relations with his entity and not separately.  
+- Avoid any text before or after the JSON schema.
+- IMPORTANT: Don't write " ```json "  or any other marks, start and end with claudators.  
+
+
+
+
+—-- TEXT TO PROCESS —--
+{text}
+"""
+
+
+
+
+    
+      result1 = openwebui.chat_with_model(OPENWEBUI_API_KEY, "gemma3:27b", prompt1, stream=False)
+      json_output = result1['choices'][0]['message']['content']
+
+
+      # Second step: Convert JSON to RDF TTL  
+      prompt2 = f"""
+You are an expert in Records in Context Ontology (RiC-O) Turtle format. 
+Task: Convert the following JSON data into a valid Turtle file using Records in Context Ontology (RiC-O).
+
+
+
+
+—-- STRICT RDF CONVERSION INSTRUCTIONS —--
+- Define each entity as a separate RDF resource using numeric IDs.
+- Allowed types of entities (DELETE entities that are not in this list): Thing, Record Resource, Record Set, Record, Record Part, Instantiation, Agent, Person, Group, Family, Corporate Body, Position, Mechanism, Event, Activity, Rule, Mandate, Date and Place. 
+- To each entity, assign its attributes and relations.
+- Write the relations with their entity and not separately. 
+- Use strictly Records in Context Ontology terminology to assign these relations, attributes and entities. Don’t invent the information. 
+
+
+—-- OUTPUT REQUIREMENTS —--
+- Output must be a valid RDF Turtle (.ttl) file.
+- NO natural language explanations. No comments outside the Turtle scheme.
+- USE “rico:” prefix for the entities.
+- To structure the RDF, you must use the following template, adding entities, attributes and relations as needed:
+
+
+—-- TEMPLATE TO FOLLOW (STRICT) —--
+
+
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix evtype: <http://id.loc.gov/vocabulary/preservation/eventType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix relSubType:  <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+
+# ====== entityName
+<_001> a rico:entityName ;
+    # Attribute example:
+    rico:title "TITLE" ;
+    # Relations examples:
+    rico:isAssociatedWithDate [ a               rico:Date ;
+                                rico:normalizedDateValue   "YYYYMMDD" ;
+                                rico:type       "from" ;
+                                ] ;      
+    rico:hasOrHadDigitalInstantiation <_OtherNumericID> .
+
+
+# ====== entityName
+<_002> a rico:entityName ;
+    # Attribute example:
+    rico:title "TITLE" ;
+    # Relations examples:
+    rico:isAssociatedWithDate [ a               rico:Date ;
+                                rico:normalizedDateValue   "YYYYMMDD" ;
+                                rico:type       "from" ;
+                                ] ;      
+    rico:hasOrHadDigitalInstantiation <_OtherNumericID> .
+# ===== template end
+
+
+- Where there is entityName, replace it with the RiC-O class of the entity.
+- In the attributes and relations, use exactly the RiC-O defined properties. 
+—-- JSON TO PROCESS —--
+{json_output}
+"""  
+      # gemma3:27b qwen3-vl:8b 
+      result2 = openwebui.chat_with_model(OPENWEBUI_API_KEY, "gemma3:27b", prompt2, stream=False)
+      ttl_output = result2['choices'][0]['message']['content']
+      return {
+          "json_extraction": json_output,
+           "ttl_output": ttl_output
+      }
+
+
+@algorithm.save_results
+def save(
+    results: ResultsT,
+    base_path: Path,
+) -> None:
+    # TTL
+    result_path = base_path / "result.ttl"
+    with result_path.open("w", encoding="utf-8") as result_file:
+        result_file.write(results["ttl_output"])
+
+    # JSON 
+    json_path = base_path / "extraction.json" 
+    with json_path.open("w", encoding="utf-8") as first_step_file:
+        first_step_file.write(results["json_extraction"])
+   
+
+if __name__ == "__main__":
+    algorithm()
+
+
+
+
+```json
+{
+  "Record": [
+    {
+      "Identifier": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "Name": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "General Description": "Document presenting the budget of the University of Lleida for the year 2020.",
+      "Content Type": "Budgetary document",
+      "Language": "Catalan",
+      "Record Resource Extent": "Multiple pages",
+      "Scope and content": "Details the financial plan of the University of Lleida for the year 2020, including income, expenses, and program allocations.",
+      "State": "Published",
+      "Documentary Form Type": "Report"
+    }
+  ],
+  "Date": [
+    {
+      "Identifier": "2020",
+      "Name": "2020",
+      "Date": "2020",
+      "Date Type": "Financial Year"
+    },
+    {
+      "Identifier": "28 de novembre de 2019",
+      "Name": "28 de novembre de 2019",
+      "Date": "2019-11-28",
+      "Date Type": "Publication Date"
+    },
+    {
+      "Identifier": "2016",
+      "Name": "2016",
+      "Date": "2016",
+      "Date Type": "Reference Year"
+    },
+    {
+      "Identifier": "2017",
+      "Name": "2017",
+      "Date": "2017",
+      "Date Type": "Reference Year"
+    },
+    {
+      "Identifier": "2018",
+      "Name": "2018",
+      "Date": "2018",
+      "Date Type": "Reference Year"
+    },
+    {
+      "Identifier": "2019",
+      "Name": "2019",
+      "Date": "2019",
+      "Date Type": "Reference Year"
+    }
+  ],
+  "Organization": [
+    {
+      "Identifier": "Universitat de Lleida",
+      "Name": "Universitat de Lleida",
+      "Organization Type": "University"
+    },
+    {
+      "Identifier": "Generalitat de Catalunya",
+      "Name": "Generalitat de Catalunya",
+      "Organization Type": "Government"
+    },
+    {
+      "Identifier": "Estat",
+      "Name": "Estat",
+      "Organization Type": "Government"
+    }
+  ],
+  "Person": [
+    {
+      "Identifier": "Jaume Puy i Llorens",
+      "Name": "Jaume Puy i Llorens",
+      "Role": "Rector de la Universitat de Lleida"
+    }
+  ],
+  "Program": [
+    {
+      "Identifier": "Programes 3 i 4",
+      "Name": "Programes 3 i 4",
+      "Program Type": "University Programs"
+    }
+  ]
+}
+```
+
+
+
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix evtype: <http://id.loc.gov/vocabulary/preservation/eventType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix relSubType:  <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ====== Record
+<_001> a rico:Record ;
+    rico:title "PRESENTACIÓ DEL PRESSUPOST 2020" ;
+    rico:generalDescription "Document presenting the budget of the University of Lleida for the year 2020." ;
+    rico:contentType "Budgetary document" ;
+    rico:language "Catalan" ;
+    rico:recordResourceExtent "Multiple pages" ;
+    rico:scopeAndContent "Details the financial plan of the University of Lleida for the year 2020, including income, expenses, and program allocations." ;
+    rico:state "Published" ;
+    rico:documentaryFormType "Report" .
+
+# ====== Date
+<_002> a rico:Date ;
+    rico:title "2020" ;
+    rico:normalizedDateValue "2020" ;
+    rico:dateType "Financial Year" .
+
+# ====== Date
+<_003> a rico:Date ;
+    rico:title "28 de novembre de 2019" ;
+    rico:normalizedDateValue "2019-11-28" ;
+    rico:dateType "Publication Date" .
+
+# ====== Date
+<_004> a rico:Date ;
+    rico:title "2016" ;
+    rico:normalizedDateValue "2016" ;
+    rico:dateType "Reference Year" .
+
+# ====== Date
+<_005> a rico:Date ;
+    rico:title "2017" ;
+    rico:normalizedDateValue "2017" ;
+    rico:dateType "Reference Year" .
+
+# ====== Date
+<_006> a rico:Date ;
+    rico:title "2018" ;
+    rico:normalizedDateValue "2018" ;
+    rico:dateType "Reference Year" .
+
+# ====== Date
+<_007> a rico:Date ;
+    rico:title "2019" ;
+    rico:normalizedDateValue "2019" ;
+    rico:dateType "Reference Year" .
+
+# ====== Organization
+<_008> a rico:CorporateBody ;
+    rico:title "Universitat de Lleida" ;
+    rico:organizationType "University" .
+
+# ====== Organization
+<_009> a rico:CorporateBody ;
+    rico:title "Generalitat de Catalunya" ;
+    rico:organizationType "Government" .
+
+# ====== Organization
+<_010> a rico:CorporateBody ;
+    rico:title "Estat" ;
+    rico:organizationType "Government" .
+
+# ====== Person
+<_011> a rico:Person ;
+    rico:title "Jaume Puy i Llorens" ;
+    rico:role "Rector de la Universitat de Lleida" .
+
+# ====== Program
+<_012> a rico:Program ;
+    rico:title "Programes 3 i 4" ;
+    rico:programType "University Programs" .
+
+#Relations
+<_001> rico:isAssociatedWithDate <_002> .
+<_001> rico:isAssociatedWithDate <_003> .
+<_001> rico:isAssociatedWithDate <_004> .
+<_001> rico:isAssociatedWithDate <_005> .
+<_001> rico:isAssociatedWithDate <_006> .
+<_001> rico:isAssociatedWithDate <_007> .
+<_001> rico:isAssociatedWithCorporateBody <_008> .
+<_001> rico:isAssociatedWithCorporateBody <_009> .
+<_001> rico:isAssociatedWithCorporateBody <_010> .
+<_001> rico:isAssociatedWithPerson <_011> .
+<_001> rico:isAssociatedWithProgram <_012> .
+
+
+
+
+
+
+
+----
+
+—-- STRICT GUIDELINES —--
+- STRICT RiC-O entities (ONLY): Record Resource, Agent, Instantiation, Date, Activity, Rule, Place, Thing, Record Set, Record, Record Part, Person, Group, Family, Corporate Body, Position, Mechanism, Event and Mandate. 
+- For each entity, assign all FOUND attributes. Remember that RiC-O defines specific attributes for each entity type. For example:
+     - Attributes for Record: General Description, Identifier, Name, Authenticity Note, Classification, Conditions of Access, Conditions of Use, Content Type, History, Integrity Note, Classification, Conditions of Access, Conditions of Use, Content Type, History, Integrity Note, Language, Legal Status, Record Resource Extent, Scope and content, State, Structure, Documentary Form Type
+     - Attributes for Agent: General Description, Identifier, Name, History, Language, Legal Status
+     - Date: General Description, Identifier, Name, Date QUalifier, Date Type, Expressed Date, Normalized Date
+- DO NOT output information not found in the text. 
+- Extract all significant relationships (e.g., hasCreator, isAssociatedWithDate) between entities and define them inline within the source entity object.
+

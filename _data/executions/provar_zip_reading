@@ -1,0 +1,72 @@
+from pathlib import Path
+from typing import TypeVar
+import fitz  # PyMuPDF
+import json
+import pymupdf4llm
+
+from ocean_runner import Algorithm, Config
+
+from .data import InputParameters
+from .OpenWebUI import OpenWebUI
+#from .FileReader import FileReader
+import zipfile
+from .RDFconverter import RDFconverter 
+from .TextPrep import TextPrep
+
+# OpenWebUi
+OPENWEBUI_API_KEY = "sk-d2deb463434d4ff9abf0d024842f0284"
+openwebui = OpenWebUI(api_key=OPENWEBUI_API_KEY)
+
+
+# Change to real result type
+ResultsT = TypeVar("ResultsT")
+algorithm = Algorithm(config=Config(custom_input=InputParameters))
+
+"""
+@algorithm.validate
+def validate() -> None:
+    # Can remove this function to use the default behaviour. DEFAULT: Check DDOs and input files
+    raise NotImplementedError()
+"""
+
+@algorithm.run
+def run() -> ResultsT:
+      # Provar amb tots els documents d'un mateix any (2025) en versio individual i versió "procesar tot junt"
+      
+      all_documents = []
+      """ READ PDF FILES """
+     # _, filename = next(algorithm.job_details.next_path()) 
+      for _, filename in algorithm.job_details.next_path():
+          if filename.name.startswith("."):
+                 continue
+
+          if not filename.name.lower().endswith((".pdf", ".zip")):
+                 continue
+
+          algorithm.logger.info(f"Processing file: {filename.name}")
+          documents = TextPrep.read_file(filename, algorithm) 
+          
+          all_documents.extend(documents)
+    
+      return {
+          "pdf_markdown": all_documents,
+      } 
+
+
+@algorithm.save_results
+def save(
+    results: ResultsT,
+    base_path: Path,
+):
+    # markdown
+    result_path = base_path / "result.md"
+    with result_path.open("w", encoding="utf-8") as f:
+       for doc in results["pdf_markdown"]:
+            f.write(f"# {doc['metadata']['filename']}\n\n")
+            f.write(doc["content"])
+            f.write("\n\n---\n\n")
+
+    
+
+if __name__ == "__main__":
+    algorithm()

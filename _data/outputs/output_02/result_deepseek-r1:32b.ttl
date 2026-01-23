@@ -1,0 +1,53 @@
+```
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix evtype: <http://id.loc.gov/vocabulary/preservation/eventType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix relSubType:  <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ====== Record Resource
+<_001> a rico:RecordResource ;
+    rico:title "University of Lleida's 2020 Budget Overview" ;
+    rico:hasDescription "Comprehensive overview of the University of Lleida's budget for the year 2020." ;
+    rico:includesEntity <_002>, <_003>, <_004>, <_005>, <_006>, <_007> .
+
+# ====== Record Part - Chapter 1
+<_002> a rico:RecordPart ;
+    rico:title "Chapter 1 (Personal Expenses)" ;
+    rico:hasDescription "Increased by 4.93%, reaching €67,048 million in 2020." ;
+    rico:valueForProperty "4.93%" .
+
+# ====== Record Part - Chapter 2
+<_003> a rico:RecordPart ;
+    rico:title "Chapter 2 (Goods and Services)" ;
+    rico:hasDescription "Slight increase of 0.42%, totaling €15,689 million in 2020." ;
+    rico:valueForProperty "0.42%" .
+
+# ====== Record Part - Chapter 3
+<_004> a rico:RecordPart ;
+    rico:title "Chapter 3 (Financial Expenses)" ;
+    rico:hasDescription "Decreased by 45.95%, reflecting improved financial management." ;
+    rico:valueForProperty "45.95%" .
+
+# ====== Record Part - Chapter 4
+<_005> a rico:RecordPart ;
+    rico:title "Chapter 4 (Current Transfers)" ;
+    rico:hasDescription "Decrease of 5.87%, with adjustments in grants." ;
+    rico:valueForProperty "5.87%" .
+
+# ====== Record Part - Chapter 6
+<_006> a rico:RecordPart ;
+    rico:title "Chapter 6 (Real Investments)" ;
+    rico:hasDescription "Reduced by 3.79% due to funding shortages." ;
+    rico:valueForProperty "3.79%" .
+
+# ====== Record Part - Chapter 9
+<_007> a rico:RecordPart ;
+    rico:title "Chapter 9 (Financial Liabilities)" ;
+    rico:hasDescription "Minimal decrease of 0.09%, indicating stable management." ;
+    rico:valueForProperty "0.09%" .
+```

@@ -1,0 +1,48 @@
+```json
+{
+  "Record Resource": [
+    {
+      "@id": "001",
+      "@type": "RecordResource",
+      "General Description": "Presentació del pressupost de la Universitat de Lleida per a l'exercici 2020",
+      "Identifier": "Presupost/01-2020_Presentacio.pdf",
+      "Name": "Presentació del Pressupost 2020",
+      "Content Type": "Budget Document",
+      "hasCreator": ["002"],
+      "isAssociatedWithDate": ["003", "004"]
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "General Description": "Jaume Puy i Llorens, Rector de la Universitat de Lleida",
+      "Name": "Jaume Puy i Llorens"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "003",
+      "@type": "Date",
+      "Expressed Date": "28 novembre 2019",
+      "Normalized Date": "2019-11-28",
+      "Name": "Data de presentació"
+    },
+    {
+      "@id": "004",
+      "@type": "Date",
+      "General Description": "Pressupost per a l'exercici 2020",
+      "Name": "2020"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "005",
+      "@type": "Place",
+      "General Description": "Lleida, Catalunya",
+      "Name": "Lleida",
+      "Place Type": "City"
+    }
+  ]
+}
+```

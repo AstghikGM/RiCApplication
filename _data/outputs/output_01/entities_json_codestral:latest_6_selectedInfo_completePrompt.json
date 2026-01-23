@@ -1,0 +1,51 @@
+ {
+    "RecordResource": [
+        {
+            "@id": "001",
+            "@type": "Record Resource",
+            "Name": "Pressupost/01-2020_Presentació - Pressupost.pdf",
+            "Content Type": "Document",
+            "General Description": "University of Lleida's budget for the financial year 2020.",
+            "Record Resource Extent": "Not specified in text",
+            "Structure": "Single document"
+        }
+    ],
+    "Agent": [
+        {
+            "@id": "002",
+            "@type": "Person",
+            "Name": "Jaume Puy i Llorens",
+            "History": "Rector of the University of Lleida"
+        }
+    ],
+    "Date": [
+        {
+            "@id": "003",
+            "@type": "Date",
+            "Expressed Date": "28 de novembre de 2019",
+            "Normalized Date": "2019-11-28"
+        }
+    ],
+    "Place": [
+        {
+            "@id": "004",
+            "@type": "Place",
+            "Name": "Lleida"
+        }
+    ],
+    "Thing": [
+        {
+            "@id": "005",
+            "@type": "Thing",
+            "Name": "Universitat de Lleida's budget for 2020",
+            "General Description": "Total amount: €96,304,149.86, growth of €2.5M (2.7%)"
+        }
+    ],
+    "Event": [
+        {
+            "@id": "006",
+            "@type": "Activity",
+            "Name": "Presentation of Universitat de Lleida's budget for 2020"
+        }
+    ]
+   }

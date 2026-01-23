@@ -1,0 +1,62 @@
+{
+  "Record": [
+    {
+      "@id": "001",
+      "@type": "Record",
+      "General Description": "Presentation of the 2020 budget",
+      "Identifier": "Presupost/01-2020_Presentacio\u0301 - Pressupost.pdf",
+      "Name": "Presupost/01-2020_Presentacio\u0301 - Pressupost.pdf",
+      "Language": "Catalan",
+      "Content Type": "PDF",
+      "Scope and content": "El pressupost de la Universitat de Lleida per a l’exercici 2020",
+      "hasCreator": "002",
+      "isAssociatedWithDate": "003",
+      "isAssociatedWithPlace": "004",
+      "hasEvent": "005"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "Name": "Jaume Puy i Llorens",
+      "General Description": "Rector of the Universitat de Lleida",
+      "hasAuthored": "001"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "003",
+      "@type": "Date",
+      "Name": "28 de novembre de 2019",
+      "Date Type": "Calendar date",
+      "Expressed Date": "28 November 2019",
+      "Normalized Date": "2019-11-28",
+      "isDateOf": "001",
+      "occursIn": "004"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "004",
+      "@type": "Place",
+      "Name": "Lleida",
+      "Place Type": "City",
+      "isLocationOf": [
+        "001",
+        "005"
+      ]
+    }
+  ],
+  "Event": [
+    {
+      "@id": "005",
+      "@type": "Activity",
+      "Name": "Presentation of the 2020 budget",
+      "Event Type": "Activity",
+      "occursIn": "004",
+      "occursOn": "003",
+      "hasCreator": "002"
+    }
+  ]
+}

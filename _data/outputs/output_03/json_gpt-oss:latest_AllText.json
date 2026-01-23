@@ -1,0 +1,121 @@
+```json
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record",
+      "General Description": "Presupost 2020 de la Universitat de Lleida",
+      "Identifier": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Name": "Pressupost 2020",
+      "Language": "Catalan",
+      "Content Type": "PDF",
+      "History": "Created 28 Nov 2019",
+      "State": "Published",
+      "Structure": "document",
+      "hasInstantiation": [
+        {"@id": "002"}
+      ]
+    }
+  ],
+  "Instantiation": [
+    {
+      "@id": "002",
+      "@type": "Instantiation",
+      "General Description": "PDF file of Presupost 2020",
+      "Identifier": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Name": "01-2020_Presentació - Pressupost.pdf",
+      "Carrier Type": "PDF",
+      "Representation Type": "PDF",
+      "History": "Created 28 Nov 2019",
+      "hasCreator": [
+        {"@id": "003"},
+        {"@id": "004"}
+      ],
+      "isCreatedOn": {"@id": "008"}
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "003",
+      "@type": "Person",
+      "General Description": "Rector of Universitat de Lleida",
+      "Identifier": "Jaume Puy i Llorens",
+      "Name": "Jaume Puy i Llorens",
+      "History": "Rector",
+      "Language": "Catalan"
+    },
+    {
+      "@id": "004",
+      "@type": "Corporate Body",
+      "General Description": "University",
+      "Identifier": "Universitat de Lleida",
+      "Name": "Universitat de Lleida",
+      "History": "institution"
+    },
+    {
+      "@id": "005",
+      "@type": "Corporate Body",
+      "General Description": "Regional Government",
+      "Identifier": "Generalitat de Catalunya",
+      "Name": "Generalitat de Catalunya"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "008",
+      "@type": "Date",
+      "General Description": "Document creation date",
+      "Identifier": "28-11-2019",
+      "Name": "28 de novembre de 2019",
+      "Expressed Date": "28 November 2019"
+    },
+    {
+      "@id": "010",
+      "@type": "Date",
+      "General Description": "Budget year",
+      "Identifier": "2020",
+      "Name": "2020",
+      "Expressed Date": "2020"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "006",
+      "@type": "Place",
+      "General Description": "City",
+      "Identifier": "Lleida",
+      "Name": "Lleida",
+      "Place Type": "City"
+    },
+    {
+      "@id": "007",
+      "@type": "Place",
+      "General Description": "Town",
+      "Identifier": "Igualada",
+      "Name": "Igualada",
+      "Place Type": "Town"
+    }
+  ],
+  "Thing": [
+    {
+      "@id": "011",
+      "@type": "Thing",
+      "General Description": "Budget document",
+      "Identifier": "Pressupost 2020",
+      "Name": "Pressupost 2020"
+    }
+  ],
+  "Event": [
+    {
+      "@id": "012",
+      "@type": "Event",
+      "General Description": "Presentation of 2020 budget",
+      "Identifier": "Presentation 2020",
+      "Name": "Presentació del Pressupost 2020",
+      "Event Type": "Presentation",
+      "occursAt": {"@id": "006"},
+      "hasDate": {"@id": "008"}
+    }
+  ]
+}
+```

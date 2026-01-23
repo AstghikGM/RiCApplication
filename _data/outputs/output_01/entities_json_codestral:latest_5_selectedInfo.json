@@ -1,0 +1,53 @@
+ {
+     "RecordResource": [
+       {
+         "@id": "001",
+         "@type": "Record",
+         "General Description": "The budget of Universitat de Lleida for the exercise 2020 has a growth of €2.5 million (2.7%), and a total amount of €96,304,149.86.",
+         "Name": "Pressupost/01-2020_Presentacio - Pressupost.pdf",
+         "Record Resource Extent": "N/A",
+         "Scope and content": "Budget presentation for the exercise 2020 of Universitat de Lleida.",
+         "Structure": "PDF document"
+       }
+     ],
+     "Agent": [
+       {
+         "@id": "002",
+         "@type": "Person",
+         "Name": "Jaume Puy i Llorens",
+         "General Description": "Rector of the Universitat de Lleida"
+       }
+     ],
+     "Date": [
+       {
+         "@id": "003",
+         "@type": "Date",
+         "Expressed Date": "28 November 2019",
+         "Normalized Date": "2019-11-28"
+       }
+     ],
+     "Place": [
+       {
+         "@id": "004",
+         "@type": "Place",
+         "Name": "Lleida"
+       }
+     ],
+     "Relationships": [
+       {
+         "Entity 1 ID": "001",
+         "Relationship Type": "isAssociatedWithAgent",
+         "Entity 2 ID": "002"
+       },
+       {
+         "Entity 1 ID": "001",
+         "Relationship Type": "isAssociatedWithDate",
+         "Entity 2 ID": "003"
+       },
+       {
+         "Entity 1 ID": "001",
+         "Relationship Type": "isGeneratedAtPlace",
+         "Entity 2 ID": "004"
+       }
+     ]
+   }

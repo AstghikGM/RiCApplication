@@ -1,0 +1,235 @@
+
+      # First step: Extract entities, attributes and relationships in JSON
+      prompt1 = f"""
+Act as a RiC-O (Records in Context Ontology) expert. 
+TASK: From the text, extract all RiC-O entities, their relevant attributes and relationships. 
+
+
+
+—-- STRICT GUIDELINES —--
+- STRICT RiC-O entities (ONLY): Record Resource, Agent, Instantiation, Date, Activity, Rule, Place, Thing, Record Set, Record, Record Part, Person, Group, Family, Corporate Body, Position, Mechanism, Event and Mandate. 
+- For each entity, assign all FOUND attributes, prioritizing the most specific RiC-O properties (e.g., rico:name, rico:history, rico:conditionsOfAccess).
+- DO NOT output information not found in the text. 
+- Extract all significant relationships (e.g., hasCreator, isAssociatedWithDate) between entities and define them inline within the source entity object.
+
+
+—-- OUTPUT FORMAT —--
+- Return a single JSON object. The top-level keys must be the RiC-O entity classes (e.g., "Person": []). Each entity object must contain its attributes and relationships as key-value pairs.
+- NO PRETEXT, NO POST-TEXT, NO MARKDOWN.
+
+
+
+—-- TEXT TO PROCESS —--
+{text}
+"""
+
+
+
+
+    
+      result1 = openwebui.chat_with_model(OPENWEBUI_API_KEY, "qwen3-vl:8b", prompt1, stream=False)
+      json_output = result1['choices'][0]['message']['content']
+
+
+      # Second step: Convert JSON to RDF TTL  
+      prompt2 = f"""
+You are an expert in Records in Context Ontology (RiC-O) Turtle format. 
+Task: Convert the following JSON data into a valid Turtle file using Records in Context Ontology (RiC-O).
+
+
+
+
+—-- STRICT RDF CONVERSION INSTRUCTIONS —--
+- Define each entity as a separate RDF resource using numeric IDs.
+- Allowed types of entities (DELETE entities that are not in this list): Thing, Record Resource, Record Set, Record, Record Part, Instantiation, Agent, Person, Group, Family, Corporate Body, Position, Mechanism, Event, Activity, Rule, Mandate, Date and Place. 
+- To each entity, assign its attributes and relations.
+- Write the relations with their entity and not separately. 
+- Use strictly Records in Context Ontology terminology to assign these relations, attributes and entities. Don’t invent the information. 
+
+
+—-- OUTPUT REQUIREMENTS —--
+- Output must be a valid RDF Turtle (.ttl) file.
+- NO natural language explanations. No comments outside the Turtle scheme.
+- USE “rico:” prefix for the entities.
+- To structure the RDF, you must use the following template, adding entities, attributes and relations as needed:
+
+
+—-- TEMPLATE TO FOLLOW (STRICT) —--
+
+
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix evtype: <http://id.loc.gov/vocabulary/preservation/eventType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix relSubType:  <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+
+# ====== entityName
+<_001> a rico:entityName ;
+    # Attribute example:
+    rico:title "TITLE" ;
+    # Relations examples:
+    rico:isAssociatedWithDate [ a               rico:Date ;
+                                rico:normalizedDateValue   "YYYYMMDD" ;
+                                rico:type       "from" ;
+                                ] ;      
+    rico:hasOrHadDigitalInstantiation <_OtherNumericID> .
+
+
+# ====== entityName
+<_002> a rico:entityName ;
+    # Attribute example:
+    rico:title "TITLE" ;
+    # Relations examples:
+    rico:isAssociatedWithDate <_OtherNumericID> ;      
+    rico:hasOrHadDigitalInstantiation <_OtherNumericID> .
+# ===== template end
+
+
+- Where there is entityName, replace it with the RiC-O class of the entity.
+- In the attributes and relations, use exactly the RiC-O defined properties. 
+—-- JSON TO PROCESS —--
+{json_output}
+"""
+
+
+
+```json
+{
+  "Record": [
+    {
+      "rico:id": "record1",
+      "rico:title": "PRESENTACIÓ DEL PRESSUPOST 2020",
+      "rico:creationDate": "2019-11-28"
+    }
+  ],
+  "RecordSet": [],
+  "RecordPart": [],
+  "Person": [
+    {
+      "rico:id": "person1",
+      "rico:name": "Jaume Puy i Llorens",
+      "rico:position": "Rector de la Universitat de Lleida"
+    }
+  ],
+  "Group": [
+    {
+      "rico:id": "group1",
+      "rico:name": "Universitat de Lleida"
+    },
+    {
+      "rico:id": "group2",
+      "rico:name": "Generalitat de Catalunya"
+    }
+  ],
+  "Family": [],
+  "Corporate Body": [],
+  "Position": [],
+  "Mechanism": [],
+  "Event": [],
+  "Mandate": [],
+  "Place": [
+    {
+      "rico:id": "place1",
+      "rico:name": "Lleida"
+    },
+    {
+      "rico:id": "place2",
+      "rico:name": "Igualada"
+    },
+    {
+      "rico:id": "place3",
+      "rico:name": "Torrelameu"
+    }
+  ],
+  "Date": [
+    {
+      "rico:id": "date1",
+      "rico:date": "2016"
+    },
+    {
+      "rico:id": "date2",
+      "rico:date": "2017"
+    },
+    {
+      "rico:id": "date3",
+      "rico:date": "2018"
+    },
+    {
+      "rico:id": "date4",
+      "rico:date": "2019"
+    },
+    {
+      "rico:id": "date5",
+      "rico:date": "2020"
+    }
+  ]
+}
+```
+
+
+
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix evtype: <http://id.loc.gov/vocabulary/preservation/eventType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix relSubType:  <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ====== Record
+<_001> a rico:Record ;
+    rico:title "PRESENTACIÓ DEL PRESSUPOST 2020" ;
+    rico:creationDate "2019-11-28" .
+
+# ====== Person
+<_002> a rico:Person ;
+    rico:name "Jaume Puy i Llorens" ;
+    rico:position "Rector de la Universitat de Lleida" .
+
+# ====== Group
+<_003> a rico:Group ;
+    rico:name "Universitat de Lleida" .
+
+# ====== Group
+<_004> a rico:Group ;
+    rico:name "Generalitat de Catalunya" .
+
+# ====== Place
+<_005> a rico:Place ;
+    rico:name "Lleida" .
+
+# ====== Place
+<_006> a rico:Place ;
+    rico:name "Igualada" .
+
+# ====== Place
+<_007> a rico:Place ;
+    rico:name "Torrelameu" .
+
+# ====== Date
+<_008> a rico:Date ;
+    rico:date "2016" .
+
+# ====== Date
+<_009> a rico:Date ;
+    rico:date "2017" .
+
+# ====== Date
+<_010> a rico:Date ;
+    rico:date "2018" .
+
+# ====== Date
+<_011> a rico:Date ;
+    rico:date "2019" .
+
+# ====== Date
+<_012> a rico:Date ;
+    rico:date "2020" .

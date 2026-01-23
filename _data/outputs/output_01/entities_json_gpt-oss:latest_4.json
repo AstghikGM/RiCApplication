@@ -1,0 +1,59 @@
+{
+  "Record": [
+    {
+      "@id": "001",
+      "@type": ["Record Resource", "Record"],
+      "General Description": "Budget presentation document of Universitat de Lleida for 2020",
+      "Identifier": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Name": "Presupost/01-2020_Presentació - Pressupost.pdf",
+      "Language": "Catalan",
+      "Content Type": "PDF",
+      "hasCreator": ["002"],
+      "hasPlace": ["004"],
+      "hasDate": ["005"]
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": ["Agent", "Person"],
+      "General Description": "Rector",
+      "Identifier": "JAUME-PUY-LLORENS",
+      "Name": "Jaume Puy i Llorens",
+      "Language": "Catalan",
+      "hasAffiliation": ["003"]
+    },
+    {
+      "@id": "003",
+      "@type": ["Agent", "Corporate Body"],
+      "General Description": "University",
+      "Identifier": "UDL",
+      "Name": "Universitat de Lleida",
+      "Language": "Catalan"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "004",
+      "@type": ["Place"],
+      "General Description": "City",
+      "Identifier": "LLEIDA",
+      "Name": "Lleida",
+      "Language": "Catalan"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "005",
+      "@type": ["Date"],
+      "General Description": "Document publication date",
+      "Identifier": "DATE-2019-11-28",
+      "Name": "28 de novembre de 2019",
+      "Date Qualifier": "publication",
+      "Date Type": "document",
+      "Expressed Date": "28 November 2019",
+      "Normalized Date": "2019-11-28",
+      "hasLocation": ["004"]
+    }
+  ]
+}
