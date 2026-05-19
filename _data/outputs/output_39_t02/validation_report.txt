@@ -1,3 +1,0 @@
---- SHACL REPORT ---
-Validation Report
-Conforms: True

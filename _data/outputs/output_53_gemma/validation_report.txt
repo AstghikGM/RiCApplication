@@ -1,8 +1,0 @@
---- SHACL REPORT ---
-Validation Report
-Conforms: True
-
-
---- ONTOLOGY SUGGESTIONS (RiC-O 1.1) ---
-Property 'rico:isAssociatedWith' invalid.Try 'rico:isRuleAssociatedWith'
-Property 'rico:isAssociatedWithPosition' invalid.Try 'rico:isAssociatedWithDate'
