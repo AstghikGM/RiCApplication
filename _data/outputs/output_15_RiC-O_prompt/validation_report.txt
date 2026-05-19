@@ -1,0 +1,13 @@
+--- SHACL REPORT ---
+Validation Report
+Conforms: True
+
+
+--- ONTOLOGY SUGGESTIONS (RiC-O 1.1) ---
+Property 'rico:hasLanguage' invalid.Try 'rico:hasOrHadLanguage'
+Property 'rico:hasPlaceType' invalid.Try 'rico:hasOrHadPlaceType'
+Property 'rico:hasContentType' invalid.Try 'rico:hasContentOfType'
+Property 'rico:hasLanguage' invalid.Try 'rico:hasOrHadLanguage'
+Property 'rico:hasContentType' invalid.Try 'rico:hasContentOfType'
+Property 'rico:hasContentType' invalid.Try 'rico:hasContentOfType'
+Property 'rico:hasLanguage' invalid.Try 'rico:hasOrHadLanguage'

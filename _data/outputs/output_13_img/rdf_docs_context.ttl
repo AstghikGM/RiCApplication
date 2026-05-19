@@ -1,0 +1,67 @@
+@prefix ex: <http://example.org/archive/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+ex:001 a rico:RecordSet ;
+    rico:generalDescription "Archive containing the 2025 budget documents of the University of Lleida." ;
+    rico:hasPart ex:002 ;
+    rico:history "Compiled for the 2025 fiscal year." ;
+    rico:identifier "PresupostUdL2025.zip" ;
+    rico:name "PresupostUdL2025" .
+
+ex:004 a rico:CorporateBody ;
+    rico:generalDescription "Public university located in Lleida." ;
+    rico:identifier "Universitat de Lleida" ;
+    rico:name "Universitat de Lleida" .
+
+ex:005 a rico:CorporateBody ;
+    rico:generalDescription "Department promoting research and universities." ;
+    rico:identifier "Departament de Recerca i Universitats" ;
+    rico:name "Departament de Recerca i Universitats" .
+
+ex:008 a rico:Mandate ;
+    rico:generalDescription "Llei Orgànica del Sistema Universitari." ;
+    rico:identifier "LOSU" ;
+    rico:name "Llei Orgànica del Sistema Universitari" .
+
+ex:002 a rico:Record ;
+    rico:contentType "application/pdf" ;
+    rico:generalDescription "Presentation of the 2025 budget for the University of Lleida." ;
+    rico:hasCreator ex:003 ;
+    rico:hasDate ex:007 ;
+    rico:hasEvent ex:009 ;
+    rico:hasPlace ex:006 ;
+    rico:history "Budget presented by Rector Jaume Puy i Llorens on 3 December 2024." ;
+    rico:identifier "PresupostUdL2025/01-Presentacio-Pressupost.pdf" ;
+    rico:language "Catalan" ;
+    rico:name "01-Presentacio-Pressupost.pdf" .
+
+ex:009 a rico:Activity ;
+    rico:eventType "Activity" ;
+    rico:generalDescription "Presentation of the 2025 budget." ;
+    rico:hasAgent ex:003 ;
+    rico:hasDate ex:007 ;
+    rico:hasPlace ex:006 ;
+    rico:history "Held on 3 December 2024." ;
+    rico:identifier "Event2025BudgetPresentation" ;
+    rico:name "Presentation of the 2025 budget" .
+
+ex:003 a rico:Person ;
+    rico:generalDescription "Rector of the University of Lleida." ;
+    rico:identifier "Jaume Puy i Llorens" ;
+    rico:name "Jaume Puy i Llorens" .
+
+ex:006 a rico:Place ;
+    rico:generalDescription "City in Catalonia." ;
+    rico:identifier "Lleida" ;
+    rico:name "Lleida" ;
+    rico:placeType "City" .
+
+ex:007 a rico:Date ;
+    rico:dateQualifier "exact" ;
+    rico:dateType "Gregorian" ;
+    rico:description "Presentation date." ;
+    rico:expressedDate "2024-12-03" ;
+    rico:identifier "2024-12-03" ;
+    rico:name "3 December 2024" ;
+    rico:normalizedDate "2024-12-03" .
+

@@ -33,7 +33,8 @@ class OpenWebUI:
               "role": "user",
               "content": prompt
             }
-          ]
+          ],
+          "temperature": 0.7
         }
 
         

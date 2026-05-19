@@ -1,0 +1,175 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget documents for the 2025 academic year of Universitat de Lleida",
+      "hasOrHadLanguage": "Catalan",
+      "includesOrIncluded": ["002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018"],
+      "isAssociatedWithDate": "019",
+      "isAssociatedWithPlace": "020",
+      "hasCreator": "021"
+    },
+    {
+      "@id": "002",
+      "@type": "Record Part",
+      "identifier": "01-Presentacio-Pressupost.pdf",
+      "name": "Presentació del Pressupost",
+      "generalDescription": "PDF presentation of the 2025 budget",
+      "hasCreator": "021",
+      "isAssociatedWithDate": "019",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "003",
+      "@type": "Record Part",
+      "identifier": "02-Resum-per-capitols_2025.pdf",
+      "name": "Resum per capitols 2025",
+      "generalDescription": "PDF summary of budget by chapters"
+    },
+    {
+      "@id": "004",
+      "@type": "Record Part",
+      "identifier": "03-Estat-ingressos_2025.pdf",
+      "name": "Estat d'ingressos 2025",
+      "generalDescription": "PDF of income statement"
+    },
+    {
+      "@id": "005",
+      "@type": "Record Part",
+      "identifier": "04-Estat-despeses_2025.pdf",
+      "name": "Estat de despeses 2025",
+      "generalDescription": "PDF of expense statement"
+    },
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "identifier": "05-Resum-per-unitats_2025.pdf",
+      "name": "Resum per unitats 2025",
+      "generalDescription": "PDF summary by units"
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "identifier": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "Classificació orgànica de les despeses 2025",
+      "generalDescription": "PDF of organic classification of expenses"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "identifier": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "Despeses i ingressos per Programa 2025",
+      "generalDescription": "PDF of program-level financials"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "identifier": "08-Accions-i-indicadors_2025.pdf",
+      "name": "Accions i indicadors 2025",
+      "generalDescription": "PDF of actions and indicators"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "PDF of personnel expenses"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "identifier": "11-BEP-2025.pdf",
+      "name": "BEP 2025",
+      "generalDescription": "PDF of BEP document"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "identifier": "12-Annex-I_BEP.pdf",
+      "name": "Annex I BEP",
+      "generalDescription": "PDF annex I of BEP"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "identifier": "13-Annex-II_BEP.pdf",
+      "name": "Annex II BEP",
+      "generalDescription": "PDF annex II of BEP"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "identifier": "14-Tarifes-SCT_2025.pdf",
+      "name": "Tarifes SCT 2025",
+      "generalDescription": "PDF of SCT tariffs"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "identifier": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "Tarifes Altres serveis 2025 v2",
+      "generalDescription": "PDF of other services tariffs"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "identifier": "16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "Tarifes formació reglada 2025",
+      "generalDescription": "PDF of regulated training tariffs"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "identifier": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "Tarifes formació no reglada 2025",
+      "generalDescription": "PDF of non‑regulated training tariffs"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "identifier": "18-Altres-tarifes_2025.pdf",
+      "name": "Altres tarifess 2025",
+      "generalDescription": "PDF of other tariffs"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "021",
+      "@type": "Person",
+      "identifier": "JaumePuyLlorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of Universitat de Lleida",
+      "hasOrHadLegalStatus": "Public Official"
+    },
+    {
+      "@id": "022",
+      "@type": "Corporate Body",
+      "identifier": "UdL",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia, Spain"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "019",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03",
+      "hasDateType": "presentation date"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "020",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "hasOrHadPlaceType": "city",
+      "location": "Catalonia, Spain"
+    }
+  ]
+}

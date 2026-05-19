@@ -1,0 +1,159 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix udl: <http://udl.cat/archive/> .
+
+udl:001 a rico:RecordSet ;
+    rico:generalDescription "Budget for Universitat de Lleida 2025" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:hasOrHadRule udl:024 ;
+    rico:identifier "PresupostUdL2025" ;
+    rico:includesOrIncluded udl:002,
+        udl:003,
+        udl:004,
+        udl:005,
+        udl:006,
+        udl:007,
+        udl:008,
+        udl:009,
+        udl:010,
+        udl:011,
+        udl:012,
+        udl:013,
+        udl:014,
+        udl:015,
+        udl:016,
+        udl:017,
+        udl:018 ;
+    rico:isAssociatedWithDate udl:023 ;
+    rico:isAssociatedWithPlace udl:022 ;
+    rico:name "PresupostUdL2025" .
+
+udl:020 a rico:CorporateBody ;
+    rico:generalDescription "Public university in Lleida, Spain" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:hasOrHadLegalStatus "public institution" ;
+    rico:identifier "Universitat de Lleida" ;
+    rico:name "Universitat de Lleida" .
+
+udl:021 a rico:Group ;
+    rico:generalDescription "Department of Research and Universities" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "Departament de Recerca i Universitats" ;
+    rico:name "Departament de Recerca i Universitats" .
+
+udl:002 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:hasCreator udl:019 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "01-Presentacio-Pressupost" ;
+    rico:isAssociatedWithDate udl:023 ;
+    rico:isAssociatedWithPlace udl:022 ;
+    rico:name "Presentació del Pressupost" .
+
+udl:003 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "02-Resum-per-capitols_2025" ;
+    rico:name "Resum per capitols" .
+
+udl:004 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "03-Estat-ingressos_2025" ;
+    rico:name "Estat d'ingressos" .
+
+udl:005 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "04-Estat-despeses_2025" ;
+    rico:name "Estat de despeses" .
+
+udl:006 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "05-Resum-per-unitats_2025" ;
+    rico:name "Resum per unitats" .
+
+udl:007 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "06-Classificacio-organica-de-les-despeses_2025" ;
+    rico:name "Classificació orgànica de les despeses" .
+
+udl:008 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "07-Despeses-i-ingressos-per-Programa_2025" ;
+    rico:name "Despeses i ingressos per programa" .
+
+udl:009 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "08-Accions-i-indicadors_2025" ;
+    rico:name "Accions i indicadors" .
+
+udl:010 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "10-Despeses-de-Personal" ;
+    rico:name "Despeses de personal" .
+
+udl:011 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "11-BEP-2025" ;
+    rico:name "BEP 2025" .
+
+udl:012 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "12-Annex-I_BEP" ;
+    rico:name "Annex I BEP" .
+
+udl:013 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "13-Annex-II_BEP" ;
+    rico:name "Annex II BEP" .
+
+udl:014 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "14-Tarifes-SCT_2025" ;
+    rico:name "Tarifes SCT" .
+
+udl:015 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "15-Tarifes-Altres-serveis_2025_v2" ;
+    rico:name "Tarifes altres serveis" .
+
+udl:016 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "16-Tarifes-formacio-reglada_2025" ;
+    rico:name "Tarifes formació reglada" .
+
+udl:017 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "17-Tarifes-formacio-no-reglada_2025" ;
+    rico:name "Tarifes formació no reglada" .
+
+udl:018 a rico:RecordPart ;
+    rico:hasContentOfType "PDF" ;
+    rico:identifier "18-Altres-tarifes_2025" ;
+    rico:name "Altres tarifes" .
+
+udl:019 a rico:Person ;
+    rico:generalDescription "Rector of Universitat de Lleida" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:hasOrHadLegalStatus "public office" ;
+    rico:identifier "Jaume Puy i Llorens" ;
+    rico:name "Jaume Puy i Llorens" .
+
+udl:024 a rico:Rule ;
+    rico:classification "law" ;
+    rico:generalDescription "Organizational law governing universities in Spain" ;
+    rico:hasOrHadLegalStatus "public law" ;
+    rico:identifier "LOSU" ;
+    rico:name "Llei Orgànica del Sistema Universitari" .
+
+udl:022 a rico:Place ;
+    rico:generalDescription "City in Catalonia, Spain" ;
+    rico:hasOrHadPlaceType "city" ;
+    rico:identifier "Lleida" ;
+    rico:location "41.6167° N, 0.6222° E" ;
+    rico:name "Lleida" .
+
+udl:023 a rico:Date ;
+    rico:dateQualifier "signingDate" ;
+    rico:hasDateType "documentDate" ;
+    rico:identifier "2024-12-03" ;
+    rico:name "Lleida, 3 de desembre de 2024" ;
+    rico:normalizedDateValue "2024-12-03" .
+

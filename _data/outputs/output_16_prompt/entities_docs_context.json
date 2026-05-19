@@ -1,0 +1,338 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget document for the University of Lleida for the exercise year 2025.",
+      "authenticityNote": "Official university document.",
+      "legalStatus": "public",
+      "hasOrHadLanguage": "Catalan",
+      "structure": "PDF",
+      "scopeAndContent": "Budget details including incomes, expenses, programmes, personnel, tariffs, annexes.",
+      "includesOrIncluded": ["008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024"],
+      "hasCreator": ["002","003"],
+      "isAssociatedWithDate": "006",
+      "isAssociatedWithPlace": "005"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "identifier": "JaumePuyLlorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of the University of Lleida",
+      "legalStatus": "public office holder",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "003",
+      "@type": "CorporateBody",
+      "identifier": "UniversitatLleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Higher education institution in Lleida, Spain",
+      "legalStatus": "public",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "004",
+      "@type": "Position",
+      "identifier": "Rector",
+      "name": "Rector",
+      "generalDescription": "Chief executive officer of the university",
+      "hasOrHadLanguage": "Catalan"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "006",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "3 de desembre de 2024",
+      "expressedDate": "2024-12-03",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "005",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain"
+    }
+  ],
+  "Rule": [
+    {
+      "@id": "007",
+      "@type": "Mandate",
+      "identifier": "LOSU",
+      "name": "Llei Orgànica del Sistema Universitari (LOSU)",
+      "generalDescription": "Organic law governing the University System in Spain",
+      "legalStatus": "legislative"
+    }
+  ],
+  "RecordPart": [
+    {
+      "@id": "008",
+      "@type": "RecordPart",
+      "identifier": "part01",
+      "name": "01-Presentacio-Pressupost.pdf",
+      "generalDescription": "Presentation of the budget including total amount, increase, and context."
+    },
+    {
+      "@id": "009",
+      "@type": "RecordPart",
+      "identifier": "part02",
+      "name": "02-Resum-per-capitols_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "010",
+      "@type": "RecordPart",
+      "identifier": "part03",
+      "name": "03-Estat-ingressos_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "011",
+      "@type": "RecordPart",
+      "identifier": "part04",
+      "name": "04-Estat-despeses_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "012",
+      "@type": "RecordPart",
+      "identifier": "part05",
+      "name": "05-Resum-per-unitats_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "013",
+      "@type": "RecordPart",
+      "identifier": "part06",
+      "name": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "014",
+      "@type": "RecordPart",
+      "identifier": "part07",
+      "name": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "015",
+      "@type": "RecordPart",
+      "identifier": "part08",
+      "name": "08-Accions-i-indicadors_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "016",
+      "@type": "RecordPart",
+      "identifier": "part10",
+      "name": "10-Despeses-de-Personal.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "017",
+      "@type": "RecordPart",
+      "identifier": "part11",
+      "name": "11-BEP-2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "018",
+      "@type": "RecordPart",
+      "identifier": "part12",
+      "name": "12-Annex-I_BEP.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "019",
+      "@type": "RecordPart",
+      "identifier": "part13",
+      "name": "13-Annex-II_BEP.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "020",
+      "@type": "RecordPart",
+      "identifier": "part14",
+      "name": "14-Tarifes-SCT_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "021",
+      "@type": "RecordPart",
+      "identifier": "part15",
+      "name": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "022",
+      "@type": "RecordPart",
+      "identifier": "part16",
+      "name": "16-Tarifes-formacio-reglada_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "023",
+      "@type": "RecordPart",
+      "identifier": "part17",
+      "name": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "024",
+      "@type": "RecordPart",
+      "identifier": "part18",
+      "name": "18-Altres-tarifes_2025.pdf",
+      "generalDescription": "Only title stored."
+    }
+  ],
+  "Place": [
+    {
+      "@id": "005",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain"
+    }
+  ],
+  "Rule": [
+    {
+      "@id": "007",
+      "@type": "Mandate",
+      "identifier": "LOSU",
+      "name": "Llei Orgànica del Sistema Universitari (LOSU)",
+      "generalDescription": "Organic law governing the University System in Spain",
+      "legalStatus": "legislative"
+    }
+  ],
+  "RecordPart": [
+    {
+      "@id": "008",
+      "@type": "RecordPart",
+      "identifier": "part01",
+      "name": "01-Presentacio-Pressupost.pdf",
+      "generalDescription": "Presentation of the budget including total amount, increase, and context."
+    },
+    {
+      "@id": "009",
+      "@type": "RecordPart",
+      "identifier": "part02",
+      "name": "02-Resum-per-capitols_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "010",
+      "@type": "RecordPart",
+      "identifier": "part03",
+      "name": "03-Estat-ingressos_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "011",
+      "@type": "RecordPart",
+      "identifier": "part04",
+      "name": "04-Estat-despeses_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "012",
+      "@type": "RecordPart",
+      "identifier": "part05",
+      "name": "05-Resum-per-unitats_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "013",
+      "@type": "RecordPart",
+      "identifier": "part06",
+      "name": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "014",
+      "@type": "RecordPart",
+      "identifier": "part07",
+      "name": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "015",
+      "@type": "RecordPart",
+      "identifier": "part08",
+      "name": "08-Accions-i-indicadors_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "016",
+      "@type": "RecordPart",
+      "identifier": "part10",
+      "name": "10-Despeses-de-Personal.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "017",
+      "@type": "RecordPart",
+      "identifier": "part11",
+      "name": "11-BEP-2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "018",
+      "@type": "RecordPart",
+      "identifier": "part12",
+      "name": "12-Annex-I_BEP.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "019",
+      "@type": "RecordPart",
+      "identifier": "part13",
+      "name": "13-Annex-II_BEP.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "020",
+      "@type": "RecordPart",
+      "identifier": "part14",
+      "name": "14-Tarifes-SCT_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "021",
+      "@type": "RecordPart",
+      "identifier": "part15",
+      "name": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "022",
+      "@type": "RecordPart",
+      "identifier": "part16",
+      "name": "16-Tarifes-formacio-reglada_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "023",
+      "@type": "RecordPart",
+      "identifier": "part17",
+      "name": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "generalDescription": "Only title stored."
+    },
+    {
+      "@id": "024",
+      "@type": "RecordPart",
+      "identifier": "part18",
+      "name": "18-Altres-tarifes_2025.pdf",
+      "generalDescription": "Only title stored."
+    }
+  ]
+}

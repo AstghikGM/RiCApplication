@@ -1,0 +1,234 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025 Budget",
+      "generalDescription": "Budget document for the University of Lleida for the fiscal year 2025, including income, expenses, and programmatic details.",
+      "hasOrHadLanguage": "Catalan",
+      "recordResourceExtent": "18 parts",
+      "scopeAndContent": "Financial plan covering income, expenses, personnel, programs, tariffs.",
+      "classification": "Budget",
+      "includesOrIncluded": ["002","003","004","005","006","007","008","010","011","012","013","014","015","016","017","018"]
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/01-Presentacio-Pressupost.pdf",
+      "name": "01-Presentacio-Pressupost.pdf",
+      "generalDescription": "Presentation of the 2025 budget, including summary figures and contextual information.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "003",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/02-Resum-per-capitols_2025.pdf",
+      "name": "02-Resum-per-capitols_2025.pdf",
+      "generalDescription": "Summary per chapter.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "004",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/03-Estat-ingressos_2025.pdf",
+      "name": "03-Estat-ingressos_2025.pdf",
+      "generalDescription": "Income statement.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "005",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/04-Estat-despeses_2025.pdf",
+      "name": "04-Estat-despeses_2025.pdf",
+      "generalDescription": "Expenditure statement.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "006",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/05-Resum-per-unitats_2025.pdf",
+      "name": "05-Resum-per-unitats_2025.pdf",
+      "generalDescription": "Summary per units.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "007",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "generalDescription": "Organic classification of expenses.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "008",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "generalDescription": "Expenses and income per program.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "010",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/10-Despeses-de-Personal.pdf",
+      "name": "10-Despeses-de-Personal.pdf",
+      "generalDescription": "Personnel expenses.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/11-BEP-2025.pdf",
+      "name": "11-BEP-2025.pdf",
+      "generalDescription": "Budget execution plan 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/12-Annex-I_BEP.pdf",
+      "name": "12-Annex-I_BEP.pdf",
+      "generalDescription": "Annex I of B.E.P.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "013",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/13-Annex-II_BEP.pdf",
+      "name": "13-Annex-II_BEP.pdf",
+      "generalDescription": "Annex II of B.E.P.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "014",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/14-Tarifes-SCT_2025.pdf",
+      "name": "14-Tarifes-SCT_2025.pdf",
+      "generalDescription": "Tariffs for SCT 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "015",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "generalDescription": "Tariffs for other services 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "016",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "16-Tarifes-formacio-reglada_2025.pdf",
+      "generalDescription": "Regulated training tariffs 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "017",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "generalDescription": "Unregulated training tariffs 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    },
+    {
+      "@id": "018",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025/18-Altres-tarifes_2025.pdf",
+      "name": "18-Altres-tarifes_2025.pdf",
+      "generalDescription": "Other tariffs 2025.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": ["022"],
+      "hasCreator": ["020"],
+      "isAssociatedWithPlace": ["023"]
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "020",
+      "@type": "Person",
+      "identifier": "Jaume Puy i Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of the University of Lleida.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "021",
+      "@type": "Corporate Body",
+      "identifier": "Universitat de Lleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia, Spain.",
+      "hasOrHadLegalStatus": "Public higher education institution"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "022",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "December 3, 2024",
+      "generalDescription": "Date of the budget presentation.",
+      "dateQualifier": "Presentation",
+      "hasDateType": "calendar",
+      "expressedDate": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "023",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain.",
+      "location": "Catalonia, Spain",
+      "hasOrHadPlaceType": "city"
+    }
+  ]
+}

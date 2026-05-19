@@ -1,0 +1,135 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix udl: <http://udl.cat/archive/> .
+
+udl:001 a rico:RecordSet ;
+    rico:generalDescription "Budget of the Universitat de Lleida for the 2025 exercise" ;
+    rico:hasCreator udl:021 ;
+    rico:identifier "PresupostUdL2025" ;
+    rico:includesOrIncluded udl:002,
+        udl:003,
+        udl:004,
+        udl:005,
+        udl:006,
+        udl:007,
+        udl:008,
+        udl:009,
+        udl:010,
+        udl:011,
+        udl:012,
+        udl:013,
+        udl:014,
+        udl:015,
+        udl:016,
+        udl:017,
+        udl:018,
+        udl:019 ;
+    rico:isAssociatedWithDate udl:020 ;
+    rico:isAssociatedWithPlace udl:022 ;
+    rico:name "Presupost UdL 2025" ;
+    rico:structure "The record set consists of multiple PDF documents covering the budget presentation, summaries, statements, and annexes." .
+
+udl:002 a rico:RecordPart ;
+    rico:generalDescription "Presentation of the 2025 budget." ;
+    rico:identifier "Presentacio-Pressupost" ;
+    rico:name "Presentació del Pressupost" .
+
+udl:003 a rico:RecordPart ;
+    rico:generalDescription "Summary per chapter for 2025." ;
+    rico:identifier "Resum-per-capitols_2025" ;
+    rico:name "Resum per capitols 2025" .
+
+udl:004 a rico:RecordPart ;
+    rico:generalDescription "Statement of income for 2025." ;
+    rico:identifier "Estat-ingressos_2025" ;
+    rico:name "Estat d'ingressos 2025" .
+
+udl:005 a rico:RecordPart ;
+    rico:generalDescription "Statement of expenses for 2025." ;
+    rico:identifier "Estat-despeses_2025" ;
+    rico:name "Estat de despeses 2025" .
+
+udl:006 a rico:RecordPart ;
+    rico:generalDescription "Summary per units for 2025." ;
+    rico:identifier "Resum-per-unitats_2025" ;
+    rico:name "Resum per unitats 2025" .
+
+udl:007 a rico:RecordPart ;
+    rico:generalDescription "Organic classification of expenses for 2025." ;
+    rico:identifier "Classificacio-organica-de-les-despeses_2025" ;
+    rico:name "Classificació orgànica de les despeses 2025" .
+
+udl:008 a rico:RecordPart ;
+    rico:generalDescription "Expenses and income per program for 2025." ;
+    rico:identifier "Despeses-i-ingressos-per-Programa_2025" ;
+    rico:name "Despeses i ingressos per programa 2025" .
+
+udl:009 a rico:RecordPart ;
+    rico:generalDescription "Actions and indicators for 2025." ;
+    rico:identifier "Accions-i-indicadors_2025" ;
+    rico:name "Accions i indicadors 2025" .
+
+udl:010 a rico:RecordPart ;
+    rico:generalDescription "Personnel expenses." ;
+    rico:identifier "Despeses-de-Personal" ;
+    rico:name "Despeses de personal" .
+
+udl:011 a rico:RecordPart ;
+    rico:generalDescription "BEP for 2025." ;
+    rico:identifier "BEP-2025" ;
+    rico:name "BEP 2025" .
+
+udl:012 a rico:RecordPart ;
+    rico:generalDescription "Annex I of BEP." ;
+    rico:identifier "Annex-I_BEP" ;
+    rico:name "Annex I BEP" .
+
+udl:013 a rico:RecordPart ;
+    rico:generalDescription "Annex II of BEP." ;
+    rico:identifier "Annex-II_BEP" ;
+    rico:name "Annex II BEP" .
+
+udl:014 a rico:RecordPart ;
+    rico:generalDescription "Tariffs SCT for 2025." ;
+    rico:identifier "Tarifes-SCT_2025" ;
+    rico:name "Tarifes SCT 2025" .
+
+udl:015 a rico:RecordPart ;
+    rico:generalDescription "Other services tariffs for 2025." ;
+    rico:identifier "Tarifes-Altres-serveis_2025_v2" ;
+    rico:name "Tarifes Altres serveis 2025 v2" .
+
+udl:016 a rico:RecordPart ;
+    rico:generalDescription "Regulated training tariffs for 2025." ;
+    rico:identifier "Tarifes-formacio-reglada_2025" ;
+    rico:name "Tarifes formació reglada 2025" .
+
+udl:017 a rico:RecordPart ;
+    rico:generalDescription "Non‑regulated training tariffs for 2025." ;
+    rico:identifier "Tarifes-formacio-no-reglada_2025" ;
+    rico:name "Tarifes formació no reglada 2025" .
+
+udl:018 a rico:RecordPart ;
+    rico:generalDescription "Other tariffs for 2025." ;
+    rico:identifier "Altres-tarifes_2025" ;
+    rico:name "Altres tarifes 2025" .
+
+udl:019 a rico:RecordPart ;
+    rico:generalDescription "File with only title stored." ;
+    rico:identifier "Unlisted-File" ;
+    rico:name "Unlisted File" .
+
+udl:020 a rico:Date ;
+    rico:hasDateType "Publication" ;
+    rico:name "3 de desembre de 2024" ;
+    rico:normalizedDateValue "2024-12-03" .
+
+udl:021 a rico:Person ;
+    rico:generalDescription "Rector de la Universitat de Lleida" ;
+    rico:identifier "Jaume_Puy_i_Llorens" ;
+    rico:name "Jaume Puy i Llorens" .
+
+udl:022 a rico:Place ;
+    rico:generalDescription "City in Catalonia, Spain" ;
+    rico:identifier "Lleida" ;
+    rico:name "Lleida" .
+

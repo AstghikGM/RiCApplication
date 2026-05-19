@@ -1,0 +1,49 @@
+digraph {
+	rankdir=LR
+	"http://example.org/archive/007" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>007</B><BR/>(Place)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: Lleida</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadPlaceType: City</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Lleida</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: City in Catalonia, Spain</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/001" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>001</B><BR/>(RecordSet)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: PresupostUdL2025</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Presupost UdL 2025</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Budget document for Universitat de Lleida for the fiscal year 2025</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasContentOfType: financial document</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLanguage: Catalan</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/003" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>003</B><BR/>(RecordPart)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLanguage: Catalan</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: PresupostUdL2025/01-Presentacio-Pressupost.pdf</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Presentacio Pressupost</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Presentation of the 2025 budget</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/008" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>008</B><BR/>(Instantiation)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasCarrierType: PDF</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: Inst_003</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>physicalCharacteristicsNote: Document within zip archive</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: PDF file</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/010" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>010</B><BR/>(CorporateBody)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: UdL</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Public university located in Lleida, Spain</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLegalStatus: Public Institution</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Universitat de Lleida</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/005" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>005</B><BR/>(Person)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Jaume Puy i Llorens</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLegalStatus: Academic Position</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Rector of Universitat de Lleida</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: PuyLlorens_Jaume</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/012" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>012</B><BR/>(Thing)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Financial plan for an institution</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Budget</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/006" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>006</B><BR/>(Date)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasDateType: CalendarDate</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: 3 de desembre de 2024</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>expressedDate: 2024-12-03</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: 2024-12-03</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>dateQualifier: Creation</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/009" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>009</B><BR/>(Position)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Head of the University</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Rector</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLegalStatus: University Position</TD></TR>
+            </TABLE>> shape=none]
+	"http://example.org/archive/011" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR><TD BGCOLOR="#2C3E50"><FONT COLOR="white"><B>011</B><BR/>(Rule)</FONT></TD></TR>
+                <TR><TD ALIGN='LEFT' POINT-SIZE='10'>name: Llei Orgànica del Sistema Universitari</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>hasOrHadLegalStatus: Law</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>identifier: LOSU</TD></TR><TR><TD ALIGN='LEFT' POINT-SIZE='10'>generalDescription: Organic Law of the University System governing the university statutes</TD></TR>
+            </TABLE>> shape=none]
+	http:"//example.org/archive/001" -> http:"//example.org/archive/010" [label=hasCreator]
+	http:"//example.org/archive/001" -> http:"//example.org/archive/003" [label=includesOrIncluded]
+	http:"//example.org/archive/003" -> http:"//example.org/archive/006" [label=isAssociatedWithDate]
+	http:"//example.org/archive/003" -> http:"//example.org/archive/007" [label=isAssociatedWithPlace]
+	http:"//example.org/archive/003" -> http:"//example.org/archive/005" [label=hasCreator]
+	http:"//example.org/archive/003" -> http:"//example.org/archive/008" [label=isInstantiationOf]
+}

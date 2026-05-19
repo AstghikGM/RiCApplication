@@ -1,0 +1,220 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "name": "PresupostUdL2025",
+      "includesOrIncluded": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018"
+      ],
+      "hasCreator": [
+        "020",
+        "021"
+      ],
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català",
+      "generalDescription": "Presupost de la Universitat de Lleida per a l’exercici 2025."
+    },
+    {
+      "@id": "002",
+      "@type": "Record Part",
+      "name": "PRESENTACIÓ DEL PRESSUPOST",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català",
+      "generalDescription": "El pressupost de la Universitat de Lleida per a l’exercici 2025 és de 116.712.269,37 €, el que suposa un augment de 6,8 M€ (6,20%) respecte l’any anterior."
+    },
+    {
+      "@id": "003",
+      "@type": "Record Part",
+      "name": "Resum per capitols",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "004",
+      "@type": "Record Part",
+      "name": "Estat ingressos",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "005",
+      "@type": "Record Part",
+      "name": "Estat despeses",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "name": "Resum per unitats",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "name": "Classificació orgànica de les despeses",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "name": "Despeses i ingressos per Programa",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "name": "Accions i indicadors",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "name": "Despeses de Personal",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "name": "BEP 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "name": "Annex I BEP",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "name": "Annex II BEP",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "name": "Tarifes SCT 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "name": "Tarifes Altres serveis 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "name": "Tarifes formació reglada 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "name": "Tarifes formació no reglada 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "name": "Altres tarifes 2025",
+      "hasCreator": "020",
+      "isAssociatedWithDate": "022",
+      "isAssociatedWithPlace": "023",
+      "hasOrHadLanguage": "Català"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "020",
+      "@type": "Person",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector de la Universitat de Lleida"
+    },
+    {
+      "@id": "021",
+      "@type": "Corporate Body",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Universitat"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "022",
+      "@type": "Date",
+      "name": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "023",
+      "@type": "Place",
+      "name": "Lleida",
+      "generalDescription": "ciutat de Catalunya"
+    }
+  ]
+}

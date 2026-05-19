@@ -1,0 +1,8 @@
+--- SHACL REPORT ---
+Validation Report
+Conforms: True
+
+
+--- ONTOLOGY SUGGESTIONS (RiC-O 1.1) ---
+Property 'rico:hasInstantiation' invalid.Try 'rico:hasOrHadInstantiation'
+Property 'rico:role' invalid.

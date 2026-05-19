@@ -1,0 +1,310 @@
+@prefix ex: <http://example.org/archive/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+ex:001 a rico:RecordSet ;
+    rico:generalDescription "Archive containing the 2025 budget documents of Universitat de Lleida" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "PresupostUdL2025.zip" ;
+    rico:name "PresupostUdL2025.zip" ;
+    rico:recordResourceExtent "ZIP file" ;
+    rico:structure "Multiple PDF documents" .
+
+ex:002 a rico:Record ;
+    rico:authenticityNote "Official university publication" ;
+    rico:conditionsOfAccess "Open to public" ;
+    rico:generalDescription "Budget plan for the fiscal year 2025, including revenues and expenditures" ;
+    rico:hasCreator ex:003,
+        ex:004 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "Budget2025" ;
+    rico:includesOrIncluded ex:007,
+        ex:008,
+        ex:009,
+        ex:010,
+        ex:011,
+        ex:012,
+        ex:013,
+        ex:014,
+        ex:015,
+        ex:016,
+        ex:017,
+        ex:018,
+        ex:019,
+        ex:020,
+        ex:021,
+        ex:022,
+        ex:023,
+        ex:024 ;
+    rico:isAssociatedWithDate ex:005 ;
+    rico:isAssociatedWithPlace ex:006 ;
+    rico:name "Universitat de Lleida Budget 2025" .
+
+ex:003 a rico:Person ;
+    rico:generalDescription "Rector of the Universitat de Lleida" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:hasOrHadLegalStatus "Public office" ;
+    rico:history "Tenured since 2023" ;
+    rico:identifier "Jaume Puy i Llorens" ;
+    rico:name "Jaume Puy i Llorens" .
+
+ex:004 a rico:CorporateBody ;
+    rico:generalDescription "Public university located in Lleida, Catalonia, Spain" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:hasOrHadLegalStatus "Public institution" ;
+    rico:identifier "Universitat de Lleida" ;
+    rico:location "Lleida" ;
+    rico:name "Universitat de Lleida" .
+
+ex:005 a rico:Date ;
+    rico:dateQualifier "publication" ;
+    rico:expressedDate "3 de desembre de 2024" ;
+    rico:generalDescription "Date of publication of the 2025 budget document" ;
+    rico:hasDateType "Gregorian" ;
+    rico:identifier "2024-12-03" ;
+    rico:name "3 de desembre de 2024" ;
+    rico:normalizedDateValue "2024-12-03" .
+
+ex:006 a rico:Place ;
+    rico:generalDescription "City in Catalonia, Spain" ;
+    rico:hasOrHadPlaceType "City" ;
+    rico:identifier "Lleida" ;
+    rico:name "Lleida" .
+
+ex:007 a rico:RecordPart ;
+    rico:generalDescription "Presentation of the 2025 budget" ;
+    rico:hasInstantiation ex:025 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "01" ;
+    rico:name "01-Presentacio-Pressupost.pdf" .
+
+ex:008 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Resum per capitols" ;
+    rico:hasInstantiation ex:026 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "02" ;
+    rico:name "02-Resum-per-capitols_2025.pdf" .
+
+ex:009 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Estat ingressos" ;
+    rico:hasInstantiation ex:027 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "03" ;
+    rico:name "03-Estat-ingressos_2025.pdf" .
+
+ex:010 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Estat despeses" ;
+    rico:hasInstantiation ex:028 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "04" ;
+    rico:name "04-Estat-despeses_2025.pdf" .
+
+ex:011 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Resum per unitats" ;
+    rico:hasInstantiation ex:029 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "05" ;
+    rico:name "05-Resum-per-unitats_2025.pdf" .
+
+ex:012 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Classificacio organica de les despeses" ;
+    rico:hasInstantiation ex:030 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "06" ;
+    rico:name "06-Classificacio-organica-de-les-despeses_2025.pdf" .
+
+ex:013 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Despeses i ingressos per programa" ;
+    rico:hasInstantiation ex:031 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "07" ;
+    rico:name "07-Despeses-i-ingressos-per-Programa_2025.pdf" .
+
+ex:014 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Accions i indicadors" ;
+    rico:hasInstantiation ex:032 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "08" ;
+    rico:name "08-Accions-i-indicadors_2025.pdf" .
+
+ex:015 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Despeses de Personal" ;
+    rico:hasInstantiation ex:033 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "10" ;
+    rico:name "10-Despeses-de-Personal.pdf" .
+
+ex:016 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for BEP 2025" ;
+    rico:hasInstantiation ex:034 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "11" ;
+    rico:name "11-BEP-2025.pdf" .
+
+ex:017 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Annex I BEP" ;
+    rico:hasInstantiation ex:035 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "12" ;
+    rico:name "12-Annex-I_BEP.pdf" .
+
+ex:018 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Annex II BEP" ;
+    rico:hasInstantiation ex:036 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "13" ;
+    rico:name "13-Annex-II_BEP.pdf" .
+
+ex:019 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Tarifes SCT 2025" ;
+    rico:hasInstantiation ex:037 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "14" ;
+    rico:name "14-Tarifes-SCT_2025.pdf" .
+
+ex:020 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Tarifes Altres serveis v2 2025" ;
+    rico:hasInstantiation ex:038 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "15" ;
+    rico:name "15-Tarifes-Altres-serveis_2025_v2.pdf" .
+
+ex:021 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Tarifes formacio reglada 2025" ;
+    rico:hasInstantiation ex:039 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "16" ;
+    rico:name "16-Tarifes-formacio-reglada_2025.pdf" .
+
+ex:022 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Tarifes formacio no reglada 2025" ;
+    rico:hasInstantiation ex:040 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "17" ;
+    rico:name "17-Tarifes-formacio-no-reglada_2025.pdf" .
+
+ex:023 a rico:RecordPart ;
+    rico:generalDescription "Title placeholder for Altres tarifes 2025" ;
+    rico:hasInstantiation ex:041 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "18" ;
+    rico:name "18-Altres-tarifes_2025.pdf" .
+
+ex:025 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 01-Presentacio-Pressupost document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst01" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:026 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 02-Resum-per-capitols_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst02" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:027 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 03-Estat-ingressos_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst03" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:028 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 04-Estat-despeses_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst04" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:029 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 05-Resum-per-unitats_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst05" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:030 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 06-Classificacio-organica-de-les-despeses_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst06" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:031 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 07-Despeses-i-ingressos-per-Programa_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst07" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:032 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 08-Accions-i-indicadors_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst08" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:033 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 10-Despeses-de-Personal document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst10" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:034 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 11-BEP-2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst11" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:035 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 12-Annex-I_BEP document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst12" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:036 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 13-Annex-II_BEP document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst13" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:037 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 14-Tarifes-SCT_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst14" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:038 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 15-Tarifes-Altres-serveis_2025_v2 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst15" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:039 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 16-Tarifes-formacio-reglada_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst16" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:040 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 17-Tarifes-formacio-no-reglada_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst17" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+
+ex:041 a rico:Instantiation ;
+    rico:generalDescription "Digital PDF file of the 18-Altres-tarifes_2025 document" ;
+    rico:hasCarrierType "PDF" ;
+    rico:identifier "inst18" ;
+    rico:name "PDF file" ;
+    rico:productionTechnique "Electronic" .
+

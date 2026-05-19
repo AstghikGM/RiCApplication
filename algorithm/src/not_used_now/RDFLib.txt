@@ -1,0 +1,845 @@
+graph:
+
+
+    def visualize_graph_02(self, g, output_path):
+        """
+        Generates and saves a PNG visualization of the RDF graph.
+        """
+         
+        safe_ids = {}
+
+        def get_safe_id(uri):
+            if uri not in safe_ids:
+               safe_ids[uri] = "n_" + hashlib.md5(uri.encode()).hexdigest()
+            return safe_ids[uri] 
+    
+
+        # Ensure path is correct
+        path_str = str(output_path)
+        if path_str.endswith(".png"):
+            path_str = path_str[:-4]
+
+        dot = Digraph("RiC-O RDF Graph", format="png", engine="dot")
+
+        # Layout configuration
+        dot.attr(rankdir="LR")
+        dot.attr(overlap="false")
+        dot.attr(splines="true")
+        dot.attr(nodesep="0.6")
+        dot.attr(ranksep="1.0")
+        dot.attr(concentrate="true")
+
+        nodes_data = {}
+
+        # ---------------------------------
+        # GROUP RDF DATA BY SUBJECT
+        # ---------------------------------
+        for s, p, o in g:
+            s_uri = str(s)
+
+            if s_uri not in nodes_data:
+                nodes_data[s_uri] = {
+                    "id": s_uri.split("/")[-1],
+                    "type": "Resource",
+                    "attributes": [],
+                    "relations": []
+                }
+
+            predicate_name = str(p).split("#")[-1]
+
+            # TYPE
+            if p == RDF.type:
+                nodes_data[s_uri]["type"] = str(o).split("#")[-1]
+
+            # ATTRIBUTE (Literal)
+            elif isinstance(o, Literal):
+                value = str(o)
+                if len(value) > 60:
+                    value = value[:60] + "..."
+                nodes_data[s_uri]["attributes"].append(
+                    f"{predicate_name}: {value}"
+                )
+
+            # RELATION (URIRef)
+            else:
+                nodes_data[s_uri]["relations"].append(
+                    (predicate_name, str(o))
+                )
+
+        # ---------------------------------
+        # CREATE NODES
+        # ---------------------------------
+        for uri, data in nodes_data.items():
+
+            attr_rows = "".join(
+                f"<TR><TD ALIGN='LEFT'>{attr}</TD></TR>"
+                for attr in data["attributes"]
+            )
+
+            label_html = f"""<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR>
+                    <TD BGCOLOR="#2C3E50">
+                        <FONT COLOR="white">
+                            <B>{data['id']}</B><BR/>
+                            ({data['type']})
+                        </FONT>
+                    </TD>
+                </TR>
+                {attr_rows if data["attributes"] else "<TR><TD><I>No attributes</I></TD></TR>"}
+            </TABLE>
+            >"""
+
+            dot.node(get_safe_id(uri), label=label_html, shape="none")
+
+        # ---------------------------------
+        # CREATE EDGES
+        # ---------------------------------
+        for uri, data in nodes_data.items():
+            for relation_name, target_uri in data["relations"]:
+                if target_uri in nodes_data:
+                    dot.edge(get_safe_id(uri), get_safe_id(target_uri), label=relation_name)
+
+        # ---------------------------------
+        # EXPORT IMAGE
+        # ---------------------------------
+        dot.render(path_str, cleanup=True)
+
+
+
+    def visualize_graph(self, g, output_path):
+        """
+        Simple RDF to Graphviz visualization
+        """
+
+        safe_ids = {}
+
+        def sid(uri):
+            if uri not in safe_ids:
+                safe_ids[uri] = "n_" + hashlib.md5(uri.encode()).hexdigest()
+            return safe_ids[uri]
+
+        path_str = str(output_path)
+        if path_str.endswith(".png"):
+            path_str = path_str[:-4]
+
+        dot = Digraph(format="png", engine="dot")
+        dot.attr(rankdir="LR", overlap="false", splines="true")
+
+        nodes = {}
+
+        # Structure
+        for s, p, o in g:
+            s = str(s)
+            p_name = str(p).split("#")[-1]
+
+            if s not in nodes:
+                nodes[s] = {"type": "Resource", "attrs": [], "rels": []}
+
+            if p == RDF.type:
+                nodes[s]["type"] = str(o).split("#")[-1]
+
+            elif isinstance(o, Literal):
+                val = str(o)
+                if len(val) > 60:
+                    val = val[:60] + "..."
+                nodes[s]["attrs"].append(f"{p_name}: {val}")
+
+            else:
+                nodes[s]["rels"].append((p_name, str(o)))
+
+        # Nodes
+        for uri, data in nodes.items():
+
+            label = uri.split("/")[-1]
+
+            attrs_html = "".join(
+                f"<TR><TD ALIGN='LEFT'>{a}</TD></TR>"
+                for a in data["attrs"]
+            )
+
+            html = f"""<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+                <TR>
+                    <TD BGCOLOR="#2C3E50">
+                        <FONT COLOR="white">
+                            <B>{label}</B><BR/>({data['type']})
+                        </FONT>
+                    </TD>
+                </TR>
+                {attrs_html if data["attrs"] else "<TR><TD><I>No attributes</I></TD></TR>"}
+            </TABLE>
+            >"""
+
+            dot.node(sid(uri), label=html, shape="none")
+
+        # Edges
+        for uri, data in nodes.items():
+            for rel, target in data["rels"]:
+                if target in nodes:
+                    dot.edge(sid(uri), sid(target), label=rel)
+
+        dot.render(path_str, cleanup=True)
+
+----
+
+
+
+
+
+
+
+
+
+
+import os
+from rdflib import Graph, Literal, Namespace, RDF, URIRef
+from pyshacl import validate
+
+# 1. CONFIGURACIÓN DE NAMESPACES
+RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
+BASE = Namespace("http://ejemplo.org/archivo/")
+
+def crear_grafo_rico(json_data):
+    g = Graph()
+    g.bind("rico", RICO)
+    g.bind("ex", BASE)
+
+    for item in json_data:
+        sujeto = BASE[item["id"]]
+        clase_name = item["type"].capitalize()
+        g.add((sujeto, RDF.type, RICO[clase_name]))
+        
+        if "title" in item:
+            g.add((sujeto, RICO.hasTitle, Literal(item["title"])))
+        if "identifier" in item:
+            g.add((sujeto, RICO.identifier, Literal(item["identifier"])))
+        if "creator_id" in item:
+            g.add((sujeto, RICO.hasCreator, BASE[item["creator_id"]]))
+            
+    return g
+
+def validar_con_shacl(data_graph, ontologia_path):
+    # 2. CARGAR LA ONTOLOGÍA LOCAL
+    rico_ont_graph = Graph()
+    if os.path.exists(ontologia_path):
+        print(f"--- Cargando ontología local: {ontologia_path} ---")
+        # El formato puede ser 'xml' para .rdf o 'turtle' para .ttl
+        formato = "xml" if ontologia_path.endswith(".rdf") else "turtle"
+        rico_ont_graph.parse(ontologia_path, format=formato)
+    else:
+        print(f"⚠️ No se encontró {ontologia_path}. La validación será sin ontología.")
+        rico_ont_graph = None
+
+    # Definimos reglas SHACL
+    shapes_graph = f"""
+    @prefix sh: <http://www.w3.org/ns/shacl#> .
+    @prefix rico: <{RICO}> .
+    @prefix ex: <{BASE}> .
+
+    ex:RecordShape
+        a sh:NodeShape ;
+        sh:targetClass rico:Record ;
+        sh:property [
+            sh:path rico:identifier ;
+            sh:minCount 1 ;
+            sh:message "Error: El Record no tiene un identificador obligatorio." ;
+        ] ;
+        sh:property [
+            sh:path rico:hasCreator ;
+            sh:nodeKind sh:IRI ;
+            sh:message "Error: El creador debe ser una referencia (URI), no un texto." ;
+        ] .
+    """
+    
+    # 3. EJECUTAR VALIDACIÓN INTEGRADA
+    conforms, results_graph, results_text = validate(
+        data_graph,
+        shacl_graph=shapes_graph,
+        ont_graph=rico_ont_graph,  # Usamos la ontología cargada
+        inference='rdfs',          # Permite usar la jerarquía de RiC-O
+        abort_on_first=False,
+        debug=False
+    )
+    return conforms, results_text
+
+# --- EJECUCIÓN ---
+
+# Nombre de tu archivo local (CÁMBIALO si el tuyo se llama diferente)
+ARCHIVO_ONTOLOGIA = "RiC-O_v1-0.rdf" 
+
+mis_datos_json = [
+    {
+        "id": "001",
+        "type": "Record",
+        "title": "Expediente Escola Normal",
+        "identifier": "EXP-2024-01",
+        "creator_id": "002"
+    },
+    {
+        "id": "002",
+        "type": "Agent",
+        "title": "Dolors Piera"
+    }
+]
+
+# Paso 1: Crear Grafo de datos
+grafo_resultado = crear_grafo_rico(mis_datos_json)
+
+# Paso 2: Validar con SHACL + Ontología Local
+es_valido, reporte = validar_con_shacl(grafo_resultado, ARCHIVO_ONTOLOGIA)
+
+if es_valido:
+    print("\n✅ ¡Validación exitosa!")
+    # Serializamos con prefijos limpios
+    print(grafo_resultado.serialize(format="turtle"))
+else:
+    print("\n❌ Errores detectados:")
+    print(reporte)
+
+
+
+
+
+
+
+
+---------------
+---------------
+
+Esta es una arquitectura muy interesante. Al introducir un **LLM (GPT-OSS)** en el bucle, el riesgo de "alucinaciones" semánticas aumenta, lo que hace que el enfoque que hemos discutido (RDFLib + SHACL) sea **aún más necesario** que antes.
+
+Tu método actual es vulnerable porque confías en que el LLM devuelva claves de JSON que coincidan exactamente con la ontología RiC-O. Si el LLM escribe `rico:CreationDate` en lugar de `rico:isAssociatedWithDate`, tu clase `RDFconverter` actual lo dará por bueno, pero tu grafo será semánticamente inválido.
+
+Aquí tienes el análisis y los ajustes sugeridos para tu flujo:
+
+---
+
+### 1. El Riesgo: El "Gap" entre el LLM y RiC-O
+
+Los LLM tienden a simplificar. Aunque le pidas RiC-O estricto, a veces inventará atributos.
+
+* **Enfoque actual:** Tu `RDFconverter` simplemente traduce lo que el LLM escupe. Es un "mapeo ciego".
+* **Enfoque sugerido:** Usar **RDFLib** como un "filtro de integridad" después del LLM.
+
+### 2. Mejoras Sugeridas en el código principal
+
+#### A. Integrar la Validación en el `run()`
+
+No esperes al final para saber si el LLM falló. Valida el resultado del LLM antes de retornar el resultado del algoritmo.
+
+```python
+# ... dentro de tu función run() ...
+
+# 1. Obtener JSON del LLM
+json_output = result1['choices'][0]['message']['content']
+
+# 2. Convertir usando RDFLib (en lugar de tu antiguo conversor manual)
+# Esto asegura que si el LLM inventó una relación, podamos detectarla.
+try:
+    # Convertimos el string JSON del LLM a dict
+    json_dict = json.loads(json_output)
+    
+    # Usamos la lógica de RDFLib que preparamos antes
+    grafo_rdf = crear_grafo_rico_desde_llm(json_dict) 
+    
+    # 3. Validar con SHACL y la ontología local (RiC-O_v1-0.rdf)
+    conforms, report = validar_con_shacl(grafo_rdf, "RiC-O_v1-0.rdf")
+    
+    if not conforms:
+        algorithm.logger.warning(f"Validación SHACL fallida: {report}")
+    
+    ttl_final = grafo_rdf.serialize(format="turtle")
+
+except Exception as e:
+    algorithm.logger.error(f"Error procesando el JSON del LLM: {e}")
+    ttl_final = ""
+
+return {
+    "doc_context": doc_context_formatted,
+    "json_extraction": json_output,
+    "ttl_output": ttl_final,
+    "validation_report": report if not conforms else "Valid"
+}
+
+```
+
+#### B. Refinar el Prompt para RDFLib
+
+Para que `crear_grafo_rico` funcione bien con RDFLib, el LLM debe ser muy consistente con los `@id`. Tu prompt ya pide `@id: 001`, lo cual es perfecto para que RDFLib genere URIs consistentes.
+
+### 3. ¿Por qué cambiar el enfoque de `RDFconverter`?
+
+Tu clase `RDFconverter` actual hace limpieza de strings (`rdf_key_name`, `rdf_entity_name`). Esto es **peligroso** con LLMs porque:
+
+1. Si el LLM devuelve `rico:Has Creator` (con espacio), tu función `rdf_key_name` lo convertirá a `hasCreator`.
+2. Pero si el LLM devuelve algo totalmente erróneo como `rico:quienLoHizo`, tu función lo convertirá a `quienLoHizo`, y terminarás con un RDF que **no es RiC-O**.
+
+**El enfoque profesional con LLM es:**
+
+1. **Extraer** (LLM).
+2. **Validar y Mapear** (RDFLib + un diccionario de mapeo estricto).
+3. **Rechazar/Corregir** (SHACL).
+
+---
+
+### 4. Ajuste en tu `save()`
+
+Como estás usando `ocean-runner`, es vital que los errores de validación queden registrados. Sugiero guardar un archivo adicional `validation_log.txt`:
+
+```python
+# En save()
+result_path = base_path / "validation_report.txt"
+with result_path.open("w", encoding="utf-8") as f:
+    f.write(results.get("validation_report", "No report available"))
+
+```
+
+### Conclusión sobre tu enfoque:
+
+Tu arquitectura es sólida para un sistema de extracción automática de archivos. Sin embargo, para que sea **"Fiable" (como pides)**, debes sustituir la clase `RDFconverter` (que es una manipulación de texto) por un procesador basado en **RDFLib** que cargue la ontología real.
+
+De este modo, si el LLM "alucina" una propiedad, `rdflib` + `pyshacl` te avisarán de que ese triple no pertenece a la ontología de Records in Context.
+
+**¿Quieres que te ayude a reescribir la función `crear_grafo_rico` para que sea más flexible con la salida específica que da el `gpt-oss:latest`?**
+
+
+
+
+
+
+
+
+
+-------------------------
+-------------------------
+
+visualizacion: 
+
+import networkx as nx
+import matplotlib.pyplot as plt
+
+def visualizar_grafo(data_graph, output_file="grafo_resultado.png"):
+    # Convertimos el grafo de RDFLib a NetworkX (más fácil de dibujar)
+    ng = nx.DiGraph()
+    
+    for s, p, o in data_graph:
+        # Simplificamos las URIs para que se lean bien en el dibujo
+        s_label = str(s).split('/')[-1]
+        p_label = str(p).split('#')[-1]
+        o_label = str(o).split('/')[-1] if isinstance(o, URIRef) else str(o)
+        
+        ng.add_edge(s_label, o_label, label=p_label)
+
+    # Dibujar
+    plt.figure(figsize=(10, 8))
+    pos = nx.spring_layout(ng)
+    nx.draw(ng, pos, with_labels=True, node_color='lightblue', edge_color='gray', node_size=2000, font_size=10)
+    edge_labels = nx.get_edge_attributes(ng, 'label')
+    nx.draw_networkx_edge_labels(ng, pos, edge_labels=edge_labels)
+    
+    plt.savefig(output_file)
+    print(f"📊 Visualización guardada en: {output_file}")
+
+
+
+
+
+
+
+
+
+    ------------
+    ------------
+
+    last version: 
+
+    import os
+import json
+import difflib
+from rdflib import Graph, Literal, Namespace, RDF, URIRef
+from pyshacl import validate
+
+class RDFLibConverter:
+    # Namespaces oficiales
+    RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
+    BASE = Namespace("http://ejemplo.org/archivo/")
+
+    def __init__(self, ontologia_path="RiC-O_v1-0.rdf"):
+        self.ontologia_path = ontologia_path
+        self.ont_graph = self._cargar_ontologia()
+        self.propiedades_validas = self._extraer_propiedades_ontologia()
+
+    def _cargar_ontologia(self):
+        """Carga la ontología RiC-O local para habilitar inferencia y sugerencias."""
+        g = Graph()
+        if os.path.exists(self.ontologia_path):
+            # Detectar formato por extensión
+            formato = "xml" if self.ontologia_path.endswith(".rdf") else "turtle"
+            try:
+                g.parse(self.ontologia_path, format=formato)
+                return g
+            except Exception as e:
+                print(f"Error al parsear la ontología: {e}")
+        return None
+
+    def _extraer_propiedades_ontologia(self):
+        """Lista todas las propiedades de RiC-O para comparar con lo generado por el LLM."""
+        if not self.ont_graph: return []
+        # Extraer nombres locales de los predicados que pertenecen al namespace RICO
+        return [str(p).split("#")[-1] for p in self.ont_graph.predicates() if str(p).startswith(str(self.RICO))]
+
+    def json_to_rdflib_graph(self, json_input):
+        """
+        Convierte el JSON del LLM en un Grafo RDFLib.
+        Mantiene fielmente los nombres de atributos que el LLM ha generado.
+        """
+        g = Graph()
+        g.bind("rico", self.RICO)
+        g.bind("ex", self.BASE)
+
+        # Cargar JSON (maneja string del LLM o diccionario)
+        data = json.loads(json_input) if isinstance(json_input, str) else json_input
+
+        for clase_tipo, entidades in data.items():
+            for entidad in entidades:
+                # 1. Crear Sujeto (URI basada en @id)
+                sujeto = self.BASE[entidad["@id"]]
+                
+                # 2. Asignar Clase (@type)
+                # Nota: El prompt pide UpperCamelCase, RDFLib construye la URI
+                tipo_uri = self.RICO[entidad["@type"]]
+                g.add((sujeto, RDF.type, tipo_uri))
+
+                # 3. Procesar Atributos y Relaciones
+                for llave, valor in entidad.items():
+                    if llave in ["@id", "@type"]:
+                        continue
+                    
+                    # Limpiar el prefijo si el LLM lo incluyó en el nombre de la llave
+                    nombre_prop = llave.replace("rico:", "")
+                    predicado = self.RICO[nombre_prop]
+
+                    # Tratamiento de valores
+                    if isinstance(valor, str) and valor.isdigit() and len(valor) == 3:
+                        # Si es un ID de 3 dígitos, asumimos que es una relación (URI)
+                        g.add((sujeto, predicado, self.BASE[valor]))
+                    elif isinstance(valor, list):
+                        for item in valor:
+                            obj = self.BASE[item] if (isinstance(item, str) and item.isdigit()) else Literal(item)
+                            g.add((sujeto, predicado, obj))
+                    else:
+                        # Por defecto, tratar como Literal (texto/dato)
+                        g.add((sujeto, predicado, Literal(valor)))
+        return g
+
+    def validar_y_reportar(self, data_graph):
+        """
+        Valida el grafo contra SHACL e informa de propiedades que no existen en RiC-O.
+        """
+        # Reglas básicas de integridad para registros archivísticos
+        shapes_graph = f"""
+        @prefix sh: <http://www.w3.org/ns/shacl#> .
+        @prefix rico: <{self.RICO}> .
+        @prefix ex: <{BASE}> .
+
+        ex:RecordResourceShape
+            a sh:NodeShape ;
+            sh:targetClass rico:Record ;
+            sh:property [
+                sh:path rico:identifier ;
+                sh:minCount 1 ;
+                sh:message "Falta el identificador obligatorio en el Record." ;
+            ] .
+        """
+
+        conforms, _, results_text = validate(
+            data_graph,
+            shacl_graph=shapes_graph,
+            ont_graph=self.ont_graph,
+            inference='rdfs', # Usa la jerarquía de la ontología cargada
+            abort_on_first=False
+        )
+
+        # Generar sugerencias si se encuentran errores de nomenclatura
+        sugerencias = []
+        if not conforms:
+            for p in data_graph.predicates():
+                nombre_p = str(p).split("#")[-1]
+                # Si es una propiedad de RICO pero no está en la ontología oficial
+                if str(p).startswith(str(self.RICO)) and nombre_p not in self.propiedades_validas:
+                    coincidencia = difflib.get_close_matches(nombre_p, self.propiedades_validas, n=1, cutoff=0.5)
+                    if coincidencia:
+                        sugerencias.append(f"❓ Propiedad 'rico:{nombre_p}' no encontrada. ¿Quizás es 'rico:{coincidencia[0]}'?")
+
+        return conforms, results_text, sugerencias
+
+
+
+
+
+
+
+
+
+        ---------------------------------------------------------
+        --------- LAST VERSION RDFLIBCONVERTER CLASS ------------
+        ---------------------------------------------------------
+
+import os
+import json
+import difflib
+import re
+from rdflib import Graph, Literal, Namespace, RDF, URIRef
+from pyshacl import validate
+
+class RDFLibConverter:
+    """
+    Converts LLM-generated JSON-LD into a structured RDFLib Graph
+    and validates it against the RiC-O Ontology and SHACL shapes.
+    """
+    # Official Namespaces
+    RICO = Namespace("https://www.ica.org/standards/RiC/ontology#")
+    BASE = Namespace("http://example.org/archive/")
+
+    def __init__(self, ontology_path="RiC-O_v1-0.rdf"):
+        self.ontology_path = ontology_path
+        self.ont_graph = self._load_ontology()
+        self.valid_properties = self._extract_ontology_properties()
+
+        print(f"DEBUG: {len(self.valid_properties)} PROPERTIES LOADED FROM THE ONTOLOGY")
+        if len(self.valid_properties) > 0:
+           print(f"DEBUG: First 5 properties: {self.valid_properties[:5]}")
+
+
+
+    def _load_ontology(self):
+        """Loads the local RiC-O ontology to enable RDFS inference and suggestions."""
+        g = Graph()
+        if os.path.exists(self.ontology_path):
+            # Detect format by extension
+            rdf_format = "xml" if self.ontology_path.endswith(".rdf") else "turtle"
+            try:
+                g.parse(self.ontology_path, format=rdf_format)
+                return g
+            except Exception as e:
+                print(f"Error parsing ontology: {e}")
+        return None
+    """
+    def _extract_ontology_properties(self):
+        if not self.ont_graph:
+            return []
+        # Extract local names of predicates belonging to the RICO namespace
+        return [str(p).split("#")[-1] for p in self.ont_graph.predicates() 
+                if str(p).startswith(str(self.RICO))]
+    """
+    def _extract_ontology_properties(self):
+        if not self.ont_graph:
+            return []
+        
+        properties = set()
+        for s in self.ont_graph.subjects(RDF.type, None):
+            if str(s).startswith(str(self.RICO)):
+                name = str(s).split("#")[-1]
+                if name:
+                    properties.add(name)
+        
+        if not properties:
+            for p in self.ont_graph.predicates():
+                if str(p).startswith(str(self.RICO)):
+                    properties.add(str(p).split("#")[-1])
+                    
+        return sorted(list(properties))
+
+    def clean_json(self, raw_data):
+        """Cleans and standardizes the input JSON-LD structure."""
+        
+        if not isinstance(raw_data, str):
+            raise ValueError("Input JSON must be a string")
+
+        start = raw_data.find('{')
+        end = raw_data.rfind('}') 
+
+        if start == -1 or end == -1 or start >= end:
+            raise ValueError("Input string does not contain valid JSON object")
+        
+        cleaned_json = raw_data[start:end + 1]
+
+        return raw_data[start:end+1]
+    
+
+    def to_camel_case(self, text, upper=False):
+        words = re.findall(r'[a-zA-Z0-9]+', text)
+        if not words or len(words) == 1: return text
+
+        if upper: # UpperCamelCase
+           return "".join(word.capitalize() for word in words)
+        else: # lowerCamelCase
+           first_word = words[0].lower()
+           return first_word + "".join(word.capitalize() for word in words[1:])
+        
+        """ def to_camel_case(self, text, upper=False):
+        words = re.findall(r'[a-zA-Z0-9]+', text)
+        if not words: return text
+
+        if upper: # UpperCamelCase
+            if len(words) == 1: return text
+            else: 
+               return "".join(word.capitalize() for word in words)
+        else: # lowerCamelCase
+            if len(words) == 1 and words[0][0].islower(): return text
+            else: 
+               first_word = words[0].lower()
+               return first_word + "".join(word.capitalize() for word in words[1:])
+        """
+
+
+    def json_to_rdflib_graph(self, raw_llm_output):
+        """
+        Converts LLM JSON output into an RDFLib Graph.
+        Maintains the exact attribute names generated by the LLM.
+        """
+        # Clean json
+        json_str = self.clean_json(raw_llm_output)
+        data = json.loads(json_str)
+
+        g = Graph()
+        g.bind("rico", self.RICO)
+        g.bind("ex", self.BASE)
+
+        for entity_class, entities in data.items():
+            for entity in entities:
+                # 1. Create Subject (URI based on @id)
+                subject = self.BASE[entity["@id"]]
+                
+                # 2. Assign Class (@type)
+                # Note: Uses UpperCamelCase as requested in the LLM prompt
+                clean_class = self.to_camel_case(entity["@type"], upper=True)
+                g.add((subject, RDF.type, self.RICO[clean_class]))
+
+                # 3. Process Attributes and Relationships
+                for key, value in entity.items():
+                    if key in ["@id", "@type"]:
+                        continue
+                    
+                    # Clean prefix if the LLM included it in the key name
+                    prop_name = self.to_camel_case(key.replace("rico:", ""), upper=False)
+                    predicate = self.RICO[prop_name]
+
+                    # Value Treatment
+                    if isinstance(value, str) and value.isdigit() and len(value) == 3:
+                        # If it's a 3-digit ID, we treat it as an Object Relation (URI)
+                        g.add((subject, predicate, self.BASE[value]))
+                    elif isinstance(value, list):
+                        for item in value:
+                            obj = self.BASE[item] if (isinstance(item, str) and item.isdigit()) else Literal(item)
+                            g.add((subject, predicate, obj))
+                    else:
+                        # Default to Literal (text/data)
+                        g.add((subject, predicate, Literal(value)))
+        return g
+
+    def validate_and_report(self, data_graph):
+        """
+        Validates the graph against SHACL and flags properties 
+        that do not exist in the official RiC-O ontology.
+        """
+        # Basic integrity rules for archival records
+        shapes_graph = f"""
+        @prefix sh: <http://www.w3.org/ns/shacl#> .
+        @prefix rico: <{self.RICO}> .
+        @prefix ex: <{self.BASE}> .
+
+        ex:RecordResourceShape
+            a sh:NodeShape ;
+            sh:targetClass rico:Record ;
+            sh:property [
+                sh:path rico:identifier ;
+                sh:minCount 1 ;
+                sh:message "Missing mandatory identifier in Record." ;
+            ] .
+        """
+
+        conforms, _, results_text = validate(
+            data_graph,
+            shacl_graph=shapes_graph,
+            ont_graph=self.ont_graph,
+            inference='rdfs', # Uses the ontology hierarchy
+            abort_on_first=False
+        )
+
+        # Generate suggestions for nomenclature errors
+        suggestions = []
+        ontology_errors_found = False
+        
+        for p in data_graph.predicates():
+            name = str(p).split("#")[-1]
+            if str(p).startswith(str(self.RICO)) and name not in self.valid_properties:
+                ontology_errors_found = True
+                match = difflib.get_close_matches(name, self.valid_properties, n=1, cutoff=0.5)
+                if match:
+                    suggestions.append(f"Property 'rico:{name}' invalid. Try 'rico:{match[0]}'")
+                else:
+                    suggestions.append(f"Property 'rico:{name}' not in RiC-O 1.1.")
+        
+        
+        # We return the output even if it's not perfect
+        is_valid = conforms and not ontology_errors_found
+        
+        final_report = "--- SHACL REPORT ---\n" + results_text
+        if suggestions:
+            final_report += "\n\n--- ONTOLOGY SUGGESTIONS ---\n" + "\n".join(suggestions)
+        
+        return is_valid, final_report, suggestions
+    
+
+
+
+
+
+
+    def visualize_graph(self, data_graph, output_path="rdf_visualization.png"):
+        """
+        Generates a visual diagram of the RDF graph.
+        Entities are nodes and properties are labeled edges.
+        """
+        import networkx as nx
+        import matplotlib.pyplot as plt
+
+        # Create a directed graph
+        nx_graph = nx.MultiDiGraph()
+
+        for s, p, o in data_graph:
+            # Simplify labels for readability
+            # s_label: end of the URI (e.g., '001')
+            # p_label: the property name (e.g., 'hasCreator')
+            # o_label: the object URI or the literal string
+            s_label = str(s).split('/')[-1] if '/' in str(s) else str(s)
+            p_label = str(p).split('#')[-1] if '#' in str(p) else str(p)
+            
+            if isinstance(o, URIRef):
+                o_label = str(o).split('/')[-1] if '/' in str(o) else str(o)
+            else:
+                # For literals, we truncate to avoid huge nodes
+                o_label = (str(o)[:20] + '...') if len(str(o)) > 20 else str(o)
+
+            nx_graph.add_edge(s_label, o_label, label=p_label)
+
+        # Draw the graph
+        plt.figure(figsize=(12, 10))
+        # 'spring_layout' helps to separate nodes automatically
+        pos = nx.spring_layout(nx_graph, k=1.5, iterations=50)
+        
+        # Draw nodes and labels
+        nx.draw(nx_graph, pos, with_labels=True, node_color='skyblue', 
+                node_size=3000, font_size=8, font_weight='bold', 
+                arrows=True, connectionstyle='arc3, rad = 0.1')
+        
+        # Draw edge labels (properties)
+        edge_labels = {(u, v): d['label'] for u, v, d in nx_graph.edges(data=True)}
+        nx.draw_networkx_edge_labels(nx_graph, pos, edge_labels=edge_labels, font_size=7)
+
+        plt.title("RiC-O RDF Graph Extraction", fontsize=15)
+        plt.savefig(output_path, bbox_inches='tight')
+        plt.close()
+        print(f"✅ Graph visualization saved to: {output_path}")

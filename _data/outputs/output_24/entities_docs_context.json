@@ -1,0 +1,179 @@
+{
+  "Agent": [
+    {
+      "@id": "003",
+      "@type": "Person",
+      "identifier": "Jaume Puy i Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of the University of Lleida"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "004",
+      "@type": "Date",
+      "name": "3 December 2024",
+      "identifier": "2024-12-03",
+      "expressedDate": "2024-12-03",
+      "normalizedDateValue": "2024-12-03",
+      "generalDescription": "Date of presentation of the budget",
+      "dateQualifier": "presentation"
+    },
+    {
+      "@id": "005",
+      "@type": "Date",
+      "name": "2025",
+      "identifier": "2025",
+      "expressedDate": "2025",
+      "normalizedDateValue": "2025",
+      "generalDescription": "Budget exercise year",
+      "dateQualifier": "exercise"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "006",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain",
+      "location": "Lleida, Spain"
+    }
+  ],
+  "Record Resource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget document for the University of Lleida for the 2025 exercise, presented in 2024.",
+      "hasCreator": ["003"],
+      "isAssociatedWithDate": ["004"],
+      "isAssociatedWithPlace": ["006"],
+      "hasContentOfType": "PDF",
+      "includesOrIncluded": ["002"]
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "Presupost UdL 2025",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget document for the University of Lleida for the 2025 exercise, presenting a total budget of €116,712,269.37 and an increase of €6.8 million (€6.20%) over the previous year.",
+      "hasCreator": ["003"],
+      "isAssociatedWithDate": ["004", "005"],
+      "isAssociatedWithPlace": ["006"],
+      "hasContentOfType": "PDF",
+      "includesOrIncluded": [
+        "007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023"
+      ]
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/01-Presentacio-Pressupost.pdf",
+      "name": "Presentació del Pressupost",
+      "generalDescription": "Presentation of the budget, including summary of total budget, context of changes, and strategic goals.",
+      "hasCreator": ["003"],
+      "isAssociatedWithDate": ["004"],
+      "hasContentOfType": "PDF",
+      "structure": "PDF document",
+      "recordResourceExtent": "1 file"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/02-Resum-per-capitols_2025.pdf",
+      "name": "Resum per capitols 2025"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/03-Estat-ingressos_2025.pdf",
+      "name": "Estat ingressos 2025"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/04-Estat-despeses_2025.pdf",
+      "name": "Estat despeses 2025"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/05-Resum-per-unitats_2025.pdf",
+      "name": "Resum per unitats 2025"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "Classificació organitzativa de les despeses 2025"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "Despeses i ingressos per Programa 2025"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/08-Accions-i-indicadors_2025.pdf",
+      "name": "Accions i indicadors 2025"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/11-BEP-2025.pdf",
+      "name": "BEP 2025"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/12-Annex-I_BEP.pdf",
+      "name": "Annex I BEP"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/13-Annex-II_BEP.pdf",
+      "name": "Annex II BEP"
+    },
+    {
+      "@id": "019",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/14-Tarifes-SCT_2025.pdf",
+      "name": "Tarifes SCT 2025"
+    },
+    {
+      "@id": "020",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "Tarifes Altres serveis 2025 v2"
+    },
+    {
+      "@id": "021",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "Tarifes formació reglada 2025"
+    },
+    {
+      "@id": "022",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "Tarifes formació no reglada 2025"
+    },
+    {
+      "@id": "023",
+      "@type": "Record Part",
+      "identifier": "PresupostUdL2025/18-Altres-tarifes_2025.pdf",
+      "name": "Altres tarifes 2025"
+    }
+  ]
+}

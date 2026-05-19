@@ -1,0 +1,229 @@
+{
+  "RecordSet": [
+    {
+      "@id": "001",
+      "@type": "RecordSet",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025 archive",
+      "generalDescription": "Archive containing the 2025 budget documents for Universitat de Lleida.",
+      "hasOrHadLanguage": "Catalan",
+      "includesOrIncluded": [
+        "002"
+      ]
+    }
+  ],
+  "Record": [
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "PresupostUdL2025",
+      "name": "Budget 2025 for Universitat de Lleida",
+      "generalDescription": "Budget for the exercise year 2025.",
+      "scopeAndContent": "Financial plan including income, expenses, and strategic indicators.",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "003",
+      "isAssociatedWithDate": "004",
+      "isAssociatedWithPlace": "005",
+      "includesOrIncluded": [
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022"
+      ]
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "003",
+      "@type": "Agent",
+      "identifier": "JaumePuyLlorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of Universitat de Lleida",
+      "role": "Rector",
+      "hasOrHadLanguage": "Catalan"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "004",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "3 de desembre de 2024",
+      "hasDateType": "Creation date",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "005",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "hasOrHadPlaceType": "City"
+    }
+  ],
+  "RecordPart": [
+    {
+      "@id": "006",
+      "@type": "RecordPart",
+      "identifier": "PresentacioPressupost",
+      "name": "Presentació del Pressupost",
+      "generalDescription": "Presentation of the 2025 budget for Universitat de Lleida, includes budget amount 116,712,269.37 € and 6.8 M€ increase.",
+      "hasOrHadLanguage": "Catalan",
+      "isAssociatedWithDate": "004",
+      "isAssociatedWithPlace": "005",
+      "hasInstantiation": "023"
+    },
+    {
+      "@id": "007",
+      "@type": "RecordPart",
+      "identifier": "ResumPerCapitols",
+      "name": "Resum per capitols 2025",
+      "generalDescription": "PDF containing summary per chapter.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "008",
+      "@type": "RecordPart",
+      "identifier": "EstatIngressos",
+      "name": "Estat ingressos 2025",
+      "generalDescription": "PDF containing income statement.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "009",
+      "@type": "RecordPart",
+      "identifier": "EstatDespeses",
+      "name": "Estat despeses 2025",
+      "generalDescription": "PDF containing expenses statement.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "010",
+      "@type": "RecordPart",
+      "identifier": "ResumPerUnitats",
+      "name": "Resum per unitats 2025",
+      "generalDescription": "PDF containing summary per units.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "011",
+      "@type": "RecordPart",
+      "identifier": "ClassificacioOrganicaDespeses",
+      "name": "Classificació organica de les despeses 2025",
+      "generalDescription": "PDF containing organic classification of expenses.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "012",
+      "@type": "RecordPart",
+      "identifier": "DespesesIngressosPrograma",
+      "name": "Despeses i ingressos per Programa 2025",
+      "generalDescription": "PDF containing expenses and income per program.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "013",
+      "@type": "RecordPart",
+      "identifier": "AccionsIndicadors",
+      "name": "Accions i indicadors 2025",
+      "generalDescription": "PDF containing actions and indicators.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "014",
+      "@type": "RecordPart",
+      "identifier": "DespesesPersonal",
+      "name": "Despeses de Personal",
+      "generalDescription": "PDF containing personnel expenses.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "015",
+      "@type": "RecordPart",
+      "identifier": "BEP",
+      "name": "BEP 2025",
+      "generalDescription": "PDF containing BEP 2025.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "016",
+      "@type": "RecordPart",
+      "identifier": "AnnexI_BEP",
+      "name": "Annex-I_BEP",
+      "generalDescription": "PDF annex I of BEP.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "017",
+      "@type": "RecordPart",
+      "identifier": "AnnexII_BEP",
+      "name": "Annex-II_BEP",
+      "generalDescription": "PDF annex II of BEP.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "018",
+      "@type": "RecordPart",
+      "identifier": "TarifesSCT",
+      "name": "Tarifes SCT 2025",
+      "generalDescription": "PDF containing SCT tariffs.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "019",
+      "@type": "RecordPart",
+      "identifier": "TarifesAltresServeis",
+      "name": "Tarifes Altres serveis 2025_v2",
+      "generalDescription": "PDF containing other service tariffs.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "020",
+      "@type": "RecordPart",
+      "identifier": "TarifesFormacioReglada",
+      "name": "Tarifes formació reglada 2025",
+      "generalDescription": "PDF containing regulated training tariffs.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "021",
+      "@type": "RecordPart",
+      "identifier": "TarifesFormacioNoReglada",
+      "name": "Tarifes formació no reglada 2025",
+      "generalDescription": "PDF containing non‑regulated training tariffs.",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "022",
+      "@type": "RecordPart",
+      "identifier": "AltresTarifes",
+      "name": "Altres tarifes 2025",
+      "generalDescription": "PDF containing other tariffs.",
+      "hasOrHadLanguage": "Catalan"
+    }
+  ],
+  "Instantiation": [
+    {
+      "@id": "023",
+      "@type": "Instantiation",
+      "identifier": "pdf-01",
+      "name": "Presentació del Pressupost PDF",
+      "hasCarrierType": "PDF",
+      "physicalCharacteristicsNote": "Portable Document Format file"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "Agent": [
+    {
+      "@id": "002",
+      "@type": "Person",
+      "Name": "Jaume Puy i Llorens",
+      "General Description": "Rector of the Universitat de Lleida",
+      "Language": "Catalan"
+    }
+  ],
+  "Record Resource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "General Description": "Budget documents for the Universitat de Lleida for the fiscal year 2025, including financial projections and spending breakdowns.",
+      "Identifier": "PresupostUdL2025.zip",
+      "Name": "Presupost UdL 2025",
+      "Language": "Catalan",
+      "hasCreator": "002",
+      "hasLocation": "003",
+      "hasAssociatedDate": "004",
+      "hasEvent": "005",
+      "hasPart": "006"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "004",
+      "@type": "Date",
+      "Expressed Date": "2024-12-03",
+      "Date Qualifier": "Publication",
+      "Date Type": "Creation",
+      "Name": "Budget Presentation Date"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "003",
+      "@type": "Place",
+      "Name": "Lleida"
+    }
+  ],
+  "Event": [
+    {
+      "@id": "005",
+      "@type": "Event",
+      "Name": "Presentation of the Budget",
+      "General Description": "Presentation of the 2025 budget by the Rector of the Universitat de Lleida",
+      "Event Type": "Presentation",
+      "hasParticipant": "002",
+      "hasLocation": "003",
+      "hasDate": "004",
+      "isAssociatedWithRecord": "001"
+    }
+  ],
+  "Record Resource": [
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "General Description": "Budget documents for the Universitat de Lleida for the fiscal year 2025, including financial projections and spending breakdowns.",
+      "Identifier": "PresupostUdL2025/01-Presentacio-Pressupost.pdf",
+      "Name": "Presentation of the Budget",
+      "Language": "Catalan",
+      "Content Type": "PDF",
+      "partOf": "001"
+    }
+  ]
+}

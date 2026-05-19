@@ -1,0 +1,109 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix udl: <http://udl.cat/archive/> .
+
+udl:001 a rico:RecordSet ;
+    rico:generalDescription "Budget records for the University of Lleida for the 2025 fiscal year" ;
+    rico:hasCreator udl:019 ;
+    rico:includesOrIncluded udl:002,
+        udl:003,
+        udl:004,
+        udl:005,
+        udl:006,
+        udl:007,
+        udl:008,
+        udl:009,
+        udl:010,
+        udl:011,
+        udl:012,
+        udl:013,
+        udl:014,
+        udl:015,
+        udl:016,
+        udl:017,
+        udl:018 ;
+    rico:isAssociatedWithDate udl:023 ;
+    rico:name "PresupostUdL2025" .
+
+udl:022 a rico:CorporateBody ;
+    rico:generalDescription "Department promoting multi-annual shock plans for PDI and PTGAS" ;
+    rico:name "Departament de Recerca i Universitats" .
+
+udl:002 a rico:RecordPart ;
+    rico:generalDescription "Presentation of the 2025 budget amounting to 116,712,269.37 €, including strategic goals and regulatory changes" ;
+    rico:hasCreator udl:020 ;
+    rico:isAssociatedWithDate udl:023 ;
+    rico:isAssociatedWithPlace udl:024 ;
+    rico:isAssociatedWithRule udl:025 ;
+    rico:name "01-Presentacio-Pressupost.pdf" .
+
+udl:003 a rico:RecordPart ;
+    rico:name "02-Resum-per-capitols_2025.pdf" .
+
+udl:004 a rico:RecordPart ;
+    rico:name "03-Estat-ingressos_2025.pdf" .
+
+udl:005 a rico:RecordPart ;
+    rico:name "04-Estat-despeses_2025.pdf" .
+
+udl:006 a rico:RecordPart ;
+    rico:name "05-Resum-per-unitats_2025.pdf" .
+
+udl:007 a rico:RecordPart ;
+    rico:name "06-Classificacio-organica-de-les-despeses_2025.pdf" .
+
+udl:008 a rico:RecordPart ;
+    rico:name "07-Despeses-i-ingressos-per-Programa_2025.pdf" .
+
+udl:009 a rico:RecordPart ;
+    rico:name "08-Accions-i-indicadors_2025.pdf" .
+
+udl:010 a rico:RecordPart ;
+    rico:name "10-Despeses-de-Personal.pdf" .
+
+udl:011 a rico:RecordPart ;
+    rico:name "11-BEP-2025.pdf" .
+
+udl:012 a rico:RecordPart ;
+    rico:name "12-Annex-I_BEP.pdf" .
+
+udl:013 a rico:RecordPart ;
+    rico:name "13-Annex-II_BEP.pdf" .
+
+udl:014 a rico:RecordPart ;
+    rico:name "14-Tarifes-SCT_2025.pdf" .
+
+udl:015 a rico:RecordPart ;
+    rico:name "15-Tarifes-Altres-serveis_2025_v2.pdf" .
+
+udl:016 a rico:RecordPart ;
+    rico:name "16-Tarifes-formacio-reglada_2025.pdf" .
+
+udl:017 a rico:RecordPart ;
+    rico:name "17-Tarifes-formacio-no-reglada_2025.pdf" .
+
+udl:018 a rico:RecordPart ;
+    rico:name "18-Altres-tarifes_2025.pdf" .
+
+udl:020 a rico:Person ;
+    rico:isAssociatedWithPosition udl:021 ;
+    rico:name "Jaume Puy i Llorens" .
+
+udl:021 a rico:Position ;
+    rico:isAssociatedWith udl:019 ;
+    rico:name "Rector de la Universitat de Lleida" .
+
+udl:024 a rico:Place ;
+    rico:name "Lleida" .
+
+udl:025 a rico:Rule ;
+    rico:generalDescription "Organic Law governing the university system requiring new statutes" ;
+    rico:name "Llei Orgànica del Sistema Universitari (LOSU)" .
+
+udl:019 a rico:CorporateBody ;
+    rico:generalDescription "Public university in Lleida" ;
+    rico:name "Universitat de Lleida" .
+
+udl:023 a rico:Date ;
+    rico:generalDescription "Date of signature of the budget presentation" ;
+    rico:normalizedDateValue "2024-12-03" .
+

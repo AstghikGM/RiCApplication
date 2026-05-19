@@ -1,0 +1,172 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget presentation for the fiscal year 2025 of the University of Lleida",
+      "hasOrHadLanguage": "Català",
+      "includesOrIncluded": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018"
+      ],
+      "hasCreator": "022",
+      "isAssociatedWithDate": "021",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "002",
+      "@type": "Record Part",
+      "identifier": "01-Presentacio-Pressupost.pdf",
+      "name": "PRESENTACIÓ DEL PRESSUPOST"
+    },
+    {
+      "@id": "003",
+      "@type": "Record Part",
+      "identifier": "02-Resum-per-capitols_2025.pdf",
+      "name": "Resum per capitols 2025"
+    },
+    {
+      "@id": "004",
+      "@type": "Record Part",
+      "identifier": "03-Estat-ingressos_2025.pdf",
+      "name": "Estat ingressos 2025"
+    },
+    {
+      "@id": "005",
+      "@type": "Record Part",
+      "identifier": "04-Estat-despeses_2025.pdf",
+      "name": "Estat despeses 2025"
+    },
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "identifier": "05-Resum-per-unitats_2025.pdf",
+      "name": "Resum per unitats 2025"
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "identifier": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "Classificació organica de les despeses 2025"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "identifier": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "Despeses i ingressos per Programa 2025"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "identifier": "08-Accions-i-indicadors_2025.pdf",
+      "name": "Accions i indicadors 2025"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "identifier": "11-BEP-2025.pdf",
+      "name": "BEP 2025"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "identifier": "12-Annex-I_BEP.pdf",
+      "name": "Annex I BEP"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "identifier": "13-Annex-II_BEP.pdf",
+      "name": "Annex II BEP"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "identifier": "14-Tarifes-SCT_2025.pdf",
+      "name": "Tarifes SCT 2025"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "identifier": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "Tarifes Altres serveis 2025 v2"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "identifier": "16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "Tarifes formació reglada 2025"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "identifier": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "Tarifes formació no reglada 2025"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "identifier": "18-Altres-tarifes_2025.pdf",
+      "name": "Altres tarifes 2025"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "021",
+      "@type": "Date",
+      "name": "3 de desembre de 2024",
+      "dateQualifier": "creationDate",
+      "hasDateType": "creation",
+      "expressedDate": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "022",
+      "@type": "Person",
+      "identifier": "Jaume-Puy-i-Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector de la Universitat de Lleida"
+    },
+    {
+      "@id": "023",
+      "@type": "Corporate Body",
+      "identifier": "Universitat-de-Lleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "020",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain"
+    }
+  ]
+}

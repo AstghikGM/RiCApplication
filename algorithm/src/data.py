@@ -1,7 +1,8 @@
-from dataclasses import dataclass
+from typing import TypedDict
 
+class Result(TypedDict):
+    file_id: str
+    file_name: str
+    text: str
 
-@dataclass
-class InputParameters:
-    age: int
-    name: str
+Results = list[Result]

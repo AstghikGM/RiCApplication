@@ -1,0 +1,218 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025",
+      "name": "PresupostUdL2025",
+      "generalDescription": "Budget for Universitat de Lleida 2025",
+      "hasOrHadLanguage": "Catalan",
+      "includesOrIncluded": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018"
+      ],
+      "isAssociatedWithDate": "023",
+      "isAssociatedWithPlace": "022",
+      "hasOrHadRule": "024"
+    },
+    {
+      "@id": "002",
+      "@type": "Record Part",
+      "identifier": "01-Presentacio-Pressupost",
+      "name": "Presentació del Pressupost",
+      "hasCreator": ["019"],
+      "isAssociatedWithDate": "023",
+      "isAssociatedWithPlace": "022",
+      "hasOrHadLanguage": "Catalan",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "003",
+      "@type": "Record Part",
+      "identifier": "02-Resum-per-capitols_2025",
+      "name": "Resum per capitols",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "004",
+      "@type": "Record Part",
+      "identifier": "03-Estat-ingressos_2025",
+      "name": "Estat d'ingressos",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "005",
+      "@type": "Record Part",
+      "identifier": "04-Estat-despeses_2025",
+      "name": "Estat de despeses",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "identifier": "05-Resum-per-unitats_2025",
+      "name": "Resum per unitats",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "identifier": "06-Classificacio-organica-de-les-despeses_2025",
+      "name": "Classificació orgànica de les despeses",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "identifier": "07-Despeses-i-ingressos-per-Programa_2025",
+      "name": "Despeses i ingressos per programa",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "identifier": "08-Accions-i-indicadors_2025",
+      "name": "Accions i indicadors",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "identifier": "10-Despeses-de-Personal",
+      "name": "Despeses de personal",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "identifier": "11-BEP-2025",
+      "name": "BEP 2025",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "identifier": "12-Annex-I_BEP",
+      "name": "Annex I BEP",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "identifier": "13-Annex-II_BEP",
+      "name": "Annex II BEP",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "identifier": "14-Tarifes-SCT_2025",
+      "name": "Tarifes SCT",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "identifier": "15-Tarifes-Altres-serveis_2025_v2",
+      "name": "Tarifes altres serveis",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "identifier": "16-Tarifes-formacio-reglada_2025",
+      "name": "Tarifes formació reglada",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "identifier": "17-Tarifes-formacio-no-reglada_2025",
+      "name": "Tarifes formació no reglada",
+      "hasContentOfType": "PDF"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "identifier": "18-Altres-tarifes_2025",
+      "name": "Altres tarifes",
+      "hasContentOfType": "PDF"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "019",
+      "@type": "Person",
+      "identifier": "Jaume Puy i Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of Universitat de Lleida",
+      "hasOrHadLegalStatus": "public office",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "020",
+      "@type": "Corporate Body",
+      "identifier": "Universitat de Lleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university in Lleida, Spain",
+      "hasOrHadLanguage": "Catalan",
+      "hasOrHadLegalStatus": "public institution"
+    },
+    {
+      "@id": "021",
+      "@type": "Group",
+      "identifier": "Departament de Recerca i Universitats",
+      "name": "Departament de Recerca i Universitats",
+      "generalDescription": "Department of Research and Universities",
+      "hasOrHadLanguage": "Catalan"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "022",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain",
+      "location": "41.6167° N, 0.6222° E",
+      "hasOrHadPlaceType": "city"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "023",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "Lleida, 3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03",
+      "hasDateType": "documentDate",
+      "dateQualifier": "signingDate"
+    }
+  ],
+  "Rule": [
+    {
+      "@id": "024",
+      "@type": "Rule",
+      "identifier": "LOSU",
+      "name": "Llei Orgànica del Sistema Universitari",
+      "generalDescription": "Organizational law governing universities in Spain",
+      "classification": "law",
+      "hasOrHadLegalStatus": "public law"
+    }
+  ]
+}

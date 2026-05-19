@@ -1,0 +1,323 @@
+{
+  "Agent": [
+    {
+      "@id": "101",
+      "@type": "Person",
+      "identifier": "JAUME-PUY-LLORENTS",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of the Universitat de Lleida",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "102",
+      "@type": "Corporate Body",
+      "identifier": "UDL",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia",
+      "hasOrHadLanguage": "Català"
+    },
+    {
+      "@id": "103",
+      "@type": "Corporate Body",
+      "identifier": "DRU",
+      "name": "Departament de Recerca i Universitats",
+      "generalDescription": "Department promoting research and universities",
+      "hasOrHadLanguage": "Català"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "201",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "Publication date",
+      "expressedDate": "2024-12-03",
+      "dateQualifier": "publication",
+      "hasDateType": "calendar"
+    },
+    {
+      "@id": "202",
+      "@type": "Date",
+      "identifier": "2025",
+      "name": "Fiscal year",
+      "expressedDate": "2025",
+      "dateQualifier": "exercise year",
+      "hasDateType": "fiscal"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "301",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain"
+    }
+  ],
+  "RecordSet": [
+    {
+      "@id": "001",
+      "@type": "RecordSet",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "Presupost UdL 2025",
+      "generalDescription": "Budget for Universitat de Lleida for fiscal year 2025",
+      "hasOrHadLanguage": "Català",
+      "structure": "PDF files",
+      "hasCreator": "102",
+      "isAssociatedWithDate": "201",
+      "isAssociatedWithPlace": "301",
+      "includesOrIncluded": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019"
+      ]
+    }
+  ],
+  "Record": [
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "01-Presentacio-Pressupost.pdf",
+      "name": "Presentació del Pressupost",
+      "generalDescription": "Presentation of the budget",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "003",
+      "@type": "Record",
+      "identifier": "02-Resum-per-capitols_2025.pdf",
+      "name": "Resum per capitols 2025",
+      "generalDescription": "Summary per chapters",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "004",
+      "@type": "Record",
+      "identifier": "03-Estat-ingressos_2025.pdf",
+      "name": "Estat ingressos 2025",
+      "generalDescription": "Income statement for 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "005",
+      "@type": "Record",
+      "identifier": "04-Estat-despeses_2025.pdf",
+      "name": "Estat despeses 2025",
+      "generalDescription": "Expense statement for 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "006",
+      "@type": "Record",
+      "identifier": "05-Resum-per-unitats_2025.pdf",
+      "name": "Resum per unitats 2025",
+      "generalDescription": "Summary per units",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "007",
+      "@type": "Record",
+      "identifier": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "Classificació organica de les despeses 2025",
+      "generalDescription": "Organic classification of expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "008",
+      "@type": "Record",
+      "identifier": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "Despeses i ingressos per Programa 2025",
+      "generalDescription": "Expenses and income per program",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "010",
+      "@type": "Record",
+      "identifier": "08-Accions-i-indicadors_2025.pdf",
+      "name": "Accions i indicadors 2025",
+      "generalDescription": "Actions and indicators for 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "Personnel expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "Personnel expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "Personnel expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "Personnel expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal",
+      "generalDescription": "Personnel expenses",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "identifier": "11-BEP-2025.pdf",
+      "name": "BEP 2025",
+      "generalDescription": "Budget Execution Plan 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "013",
+      "@type": "Record",
+      "identifier": "12-Annex-I_BEP.pdf",
+      "name": "Annex I BEP",
+      "generalDescription": "Annex I of Budget Execution Plan",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "014",
+      "@type": "Record",
+      "identifier": "13-Annex-II_BEP.pdf",
+      "name": "Annex II BEP",
+      "generalDescription": "Annex II of Budget Execution Plan",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "015",
+      "@type": "Record",
+      "identifier": "14-Tarifes-SCT_2025.pdf",
+      "name": "Tarifes SCT 2025",
+      "generalDescription": "SCT tariffs 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "016",
+      "@type": "Record",
+      "identifier": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "Tarifes Altres serveis 2025 v2",
+      "generalDescription": "Other services tariffs 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "017",
+      "@type": "Record",
+      "identifier": "16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "Tarifes formació reglada 2025",
+      "generalDescription": "Regulated training tariffs 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "018",
+      "@type": "Record",
+      "identifier": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "Tarifes formació no reglada 2025",
+      "generalDescription": "Unregulated training tariffs 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    },
+    {
+      "@id": "019",
+      "@type": "Record",
+      "identifier": "18-Altres-tarifes_2025.pdf",
+      "name": "Altres tarifes 2025",
+      "generalDescription": "Other tariffs 2025",
+      "hasOrHadLanguage": "Català",
+      "hasCreator": "101",
+      "isAssociatedWithDate": "202",
+      "isAssociatedWithPlace": "301"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+@prefix ex: <http://example.org/archive/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+ex:005 a rico:Date ;
+    rico:Description "Fiscal year" ;
+    rico:Identifier "2025" ;
+    rico:Name "Fiscal year 2025" ;
+    rico:dateQualifier "Year" ;
+    rico:dateType "Fiscal" ;
+    rico:expressedDate "2025" ;
+    rico:normalizedDate "2025" .
+
+ex:007 a rico:Event ;
+    rico:Identifier "Event-Presupost-2024-12-03" ;
+    rico:Name "Budget presentation" ;
+    rico:eventType "Presentation" ;
+    rico:generalDescription "Presentation of the 2025 budget of the Universitat de Lleida" ;
+    rico:hasActor ex:003 ;
+    rico:isAssociatedWithRecordResource ex:001 ;
+    rico:occursAt ex:004 ;
+    rico:onDate ex:006 .
+
+ex:001 a rico:RecordResource ;
+    rico:Identifier "PresupostUdL2025.zip" ;
+    rico:Language "Catalan" ;
+    rico:Name "Presupost UdL 2025" ;
+    rico:contentType "Collection of PDF files" ;
+    rico:generalDescription "Collection of budget documents for the Universitat de Lleida for the fiscal year 2025." ;
+    rico:hasAssociatedAgent ex:002 ;
+    rico:hasCreator ex:003 ;
+    rico:hasDate ex:006 ;
+    rico:hasPart ex:008,
+        ex:009,
+        ex:010,
+        ex:011,
+        ex:012,
+        ex:013,
+        ex:014,
+        ex:015,
+        ex:016,
+        ex:017,
+        ex:018,
+        ex:019,
+        ex:020,
+        ex:021,
+        ex:022,
+        ex:023,
+        ex:024,
+        ex:025 .
+
+ex:002 a rico:CorporateBody ;
+    rico:Identifier "Universitat-de-Lleida" ;
+    rico:Name "Universitat de Lleida" ;
+    rico:generalDescription "Higher education institution in Lleida" .
+
+ex:004 a rico:Place ;
+    rico:Identifier "Place-Lleida" ;
+    rico:Name "Lleida" ;
+    rico:generalDescription "City where the budget presentation took place" ;
+    rico:placeType "City" .
+
+ex:008 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/01-Presentacio-Pressupost.pdf" ;
+    rico:Name "Presentació del Pressupost" ;
+    rico:contentType "PDF" ;
+    rico:generalDescription "PDF document presenting the 2025 budget of Universitat de Lleida." .
+
+ex:009 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/02-Resum-per-capitols_2025.pdf" ;
+    rico:Name "Resum per capitols 2025" ;
+    rico:contentType "PDF" .
+
+ex:010 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/03-Estat-ingressos_2025.pdf" ;
+    rico:Name "Estat ingressos 2025" ;
+    rico:contentType "PDF" .
+
+ex:011 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/04-Estat-despeses_2025.pdf" ;
+    rico:Name "Estat despeses 2025" ;
+    rico:contentType "PDF" .
+
+ex:012 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/05-Resum-per-unitats_2025.pdf" ;
+    rico:Name "Resum per unitats 2025" ;
+    rico:contentType "PDF" .
+
+ex:013 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/06-Classificacio-organica-de-les-despeses_2025.pdf" ;
+    rico:Name "Classificació organica de les despeses 2025" ;
+    rico:contentType "PDF" .
+
+ex:014 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/07-Despeses-i-ingressos-per-Programa_2025.pdf" ;
+    rico:Name "Despeses i ingressos per Programa 2025" ;
+    rico:contentType "PDF" .
+
+ex:015 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/08-Accions-i-indicadors_2025.pdf" ;
+    rico:Name "Accions i indicadors 2025" ;
+    rico:contentType "PDF" .
+
+ex:016 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/10-Despeses-de-Personal.pdf" ;
+    rico:Name "Despeses de Personal" ;
+    rico:contentType "PDF" .
+
+ex:017 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/11-BEP-2025.pdf" ;
+    rico:Name "BEP 2025" ;
+    rico:contentType "PDF" .
+
+ex:018 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/12-Annex-I_BEP.pdf" ;
+    rico:Name "Annex I BEP" ;
+    rico:contentType "PDF" .
+
+ex:019 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/13-Annex-II_BEP.pdf" ;
+    rico:Name "Annex II BEP" ;
+    rico:contentType "PDF" .
+
+ex:020 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/14-Tarifes-SCT_2025.pdf" ;
+    rico:Name "Tarifes SCT 2025" ;
+    rico:contentType "PDF" .
+
+ex:021 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/15-Tarifes-Altres-serveis_2025_v2.pdf" ;
+    rico:Name "Tarifes Altres serveis 2025 v2" ;
+    rico:contentType "PDF" .
+
+ex:022 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/16-Tarifes-formacio-reglada_2025.pdf" ;
+    rico:Name "Tarifes formació reglada 2025" ;
+    rico:contentType "PDF" .
+
+ex:023 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/17-Tarifes-formacio-no-reglada_2025.pdf" ;
+    rico:Name "Tarifes formació no reglada 2025" ;
+    rico:contentType "PDF" .
+
+ex:024 a rico:RecordPart ;
+    rico:Identifier "PresupostUdL2025/18-Altres-tarifes_2025.pdf" ;
+    rico:Name "Altres tarifes 2025" ;
+    rico:contentType "PDF" .
+
+ex:003 a rico:Person ;
+    rico:Identifier "Jaume-Puy-i-Llorens" ;
+    rico:Name "Jaume Puy i Llorens" ;
+    rico:generalDescription "Rector of the Universitat de Lleida" .
+
+ex:006 a rico:Date ;
+    rico:Description "Date of presentation" ;
+    rico:Identifier "2024-12-03" ;
+    rico:Name "December 3, 2024" ;
+    rico:dateQualifier "Specific" ;
+    rico:dateType "Calendar" ;
+    rico:expressedDate "3 de desembre de 2024" ;
+    rico:normalizedDate "2024-12-03" .
+

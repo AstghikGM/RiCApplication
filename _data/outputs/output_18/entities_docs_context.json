@@ -1,0 +1,385 @@
+{
+  "Agent": [
+    {
+      "@id": "003",
+      "@type": "Person",
+      "identifier": "Jaume Puy i Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of the Universitat de Lleida",
+      "hasOrHadLanguage": "Catalan",
+      "hasOrHadLegalStatus": "Public office",
+      "history": "Tenured since 2023"
+    },
+    {
+      "@id": "004",
+      "@type": "Corporate Body",
+      "identifier": "Universitat de Lleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia, Spain",
+      "hasOrHadLegalStatus": "Public institution",
+      "hasOrHadLanguage": "Catalan",
+      "location": "Lleida"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "005",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "3 de desembre de 2024",
+      "generalDescription": "Date of publication of the 2025 budget document",
+      "dateQualifier": "publication",
+      "hasDateType": "Gregorian",
+      "expressedDate": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "006",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain",
+      "hasOrHadPlaceType": "City"
+    }
+  ],
+  "Record Set": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "PresupostUdL2025.zip",
+      "generalDescription": "Archive containing the 2025 budget documents of Universitat de Lleida",
+      "hasOrHadLanguage": "Catalan",
+      "recordResourceExtent": "ZIP file",
+      "structure": "Multiple PDF documents"
+    }
+  ],
+  "Record": [
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "Budget2025",
+      "name": "Universitat de Lleida Budget 2025",
+      "generalDescription": "Budget plan for the fiscal year 2025, including revenues and expenditures",
+      "hasOrHadLanguage": "Catalan",
+      "authenticityNote": "Official university publication",
+      "conditionsOfAccess": "Open to public",
+      "hasCreator": ["003", "004"],
+      "isAssociatedWithDate": ["005"],
+      "isAssociatedWithPlace": ["006"],
+      "includesOrIncluded": ["007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018", "019", "020", "021", "022", "023", "024"]
+    }
+  ],
+  "Record Part": [
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "identifier": "01",
+      "name": "01-Presentacio-Pressupost.pdf",
+      "generalDescription": "Presentation of the 2025 budget",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["025"]
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "identifier": "02",
+      "name": "02-Resum-per-capitols_2025.pdf",
+      "generalDescription": "Title placeholder for Resum per capitols",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["026"]
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "identifier": "03",
+      "name": "03-Estat-ingressos_2025.pdf",
+      "generalDescription": "Title placeholder for Estat ingressos",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["027"]
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "identifier": "04",
+      "name": "04-Estat-despeses_2025.pdf",
+      "generalDescription": "Title placeholder for Estat despeses",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["028"]
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "identifier": "05",
+      "name": "05-Resum-per-unitats_2025.pdf",
+      "generalDescription": "Title placeholder for Resum per unitats",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["029"]
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "identifier": "06",
+      "name": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "generalDescription": "Title placeholder for Classificacio organica de les despeses",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["030"]
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "identifier": "07",
+      "name": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "generalDescription": "Title placeholder for Despeses i ingressos per programa",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["031"]
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "identifier": "08",
+      "name": "08-Accions-i-indicadors_2025.pdf",
+      "generalDescription": "Title placeholder for Accions i indicadors",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["032"]
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "identifier": "10",
+      "name": "10-Despeses-de-Personal.pdf",
+      "generalDescription": "Title placeholder for Despeses de Personal",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["033"]
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "identifier": "11",
+      "name": "11-BEP-2025.pdf",
+      "generalDescription": "Title placeholder for BEP 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["034"]
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "identifier": "12",
+      "name": "12-Annex-I_BEP.pdf",
+      "generalDescription": "Title placeholder for Annex I BEP",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["035"]
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "identifier": "13",
+      "name": "13-Annex-II_BEP.pdf",
+      "generalDescription": "Title placeholder for Annex II BEP",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["036"]
+    },
+    {
+      "@id": "019",
+      "@type": "Record Part",
+      "identifier": "14",
+      "name": "14-Tarifes-SCT_2025.pdf",
+      "generalDescription": "Title placeholder for Tarifes SCT 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["037"]
+    },
+    {
+      "@id": "020",
+      "@type": "Record Part",
+      "identifier": "15",
+      "name": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "generalDescription": "Title placeholder for Tarifes Altres serveis v2 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["038"]
+    },
+    {
+      "@id": "021",
+      "@type": "Record Part",
+      "identifier": "16",
+      "name": "16-Tarifes-formacio-reglada_2025.pdf",
+      "generalDescription": "Title placeholder for Tarifes formacio reglada 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["039"]
+    },
+    {
+      "@id": "022",
+      "@type": "Record Part",
+      "identifier": "17",
+      "name": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "generalDescription": "Title placeholder for Tarifes formacio no reglada 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["040"]
+    },
+    {
+      "@id": "023",
+      "@type": "Record Part",
+      "identifier": "18",
+      "name": "18-Altres-tarifes_2025.pdf",
+      "generalDescription": "Title placeholder for Altres tarifes 2025",
+      "hasOrHadLanguage": "Catalan",
+      "hasInstantiation": ["041"]
+    }
+  ],
+  "Instantiation": [
+    {
+      "@id": "025",
+      "@type": "Instantiation",
+      "identifier": "inst01",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 01-Presentacio-Pressupost document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "026",
+      "@type": "Instantiation",
+      "identifier": "inst02",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 02-Resum-per-capitols_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "027",
+      "@type": "Instantiation",
+      "identifier": "inst03",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 03-Estat-ingressos_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "028",
+      "@type": "Instantiation",
+      "identifier": "inst04",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 04-Estat-despeses_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "029",
+      "@type": "Instantiation",
+      "identifier": "inst05",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 05-Resum-per-unitats_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "030",
+      "@type": "Instantiation",
+      "identifier": "inst06",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 06-Classificacio-organica-de-les-despeses_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "031",
+      "@type": "Instantiation",
+      "identifier": "inst07",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 07-Despeses-i-ingressos-per-Programa_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "032",
+      "@type": "Instantiation",
+      "identifier": "inst08",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 08-Accions-i-indicadors_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "033",
+      "@type": "Instantiation",
+      "identifier": "inst10",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 10-Despeses-de-Personal document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "034",
+      "@type": "Instantiation",
+      "identifier": "inst11",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 11-BEP-2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "035",
+      "@type": "Instantiation",
+      "identifier": "inst12",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 12-Annex-I_BEP document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "036",
+      "@type": "Instantiation",
+      "identifier": "inst13",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 13-Annex-II_BEP document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "037",
+      "@type": "Instantiation",
+      "identifier": "inst14",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 14-Tarifes-SCT_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "038",
+      "@type": "Instantiation",
+      "identifier": "inst15",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 15-Tarifes-Altres-serveis_2025_v2 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "039",
+      "@type": "Instantiation",
+      "identifier": "inst16",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 16-Tarifes-formacio-reglada_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "040",
+      "@type": "Instantiation",
+      "identifier": "inst17",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 17-Tarifes-formacio-no-reglada_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    },
+    {
+      "@id": "041",
+      "@type": "Instantiation",
+      "identifier": "inst18",
+      "name": "PDF file",
+      "generalDescription": "Digital PDF file of the 18-Altres-tarifes_2025 document",
+      "hasCarrierType": "PDF",
+      "productionTechnique": "Electronic"
+    }
+  ]
+}

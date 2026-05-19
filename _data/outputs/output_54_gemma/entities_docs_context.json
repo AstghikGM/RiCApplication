@@ -1,0 +1,142 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "name": "PresupostUdL2025",
+      "generalDescription": "Documents related to the 2025 budget of the University of Lleida",
+      "includesOrIncluded": ["002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012", "013", "014", "015", "016", "017", "018"],
+      "hasCreator": "019",
+      "isAssociatedWithPlace": "022",
+      "isAssociatedWithDate": "023"
+    },
+    {
+      "@id": "002",
+      "@type": "Record Part",
+      "name": "01-Presentacio-Pressupost.pdf",
+      "generalDescription": "Presentation of the 2025 budget detailing an amount of 116,712,269.37 €",
+      "hasCreator": "020",
+      "isAssociatedWithRule": "024"
+    },
+    {
+      "@id": "003",
+      "@type": "Record Part",
+      "name": "02-Resum-per-capitols_2025.pdf"
+    },
+    {
+      "@id": "004",
+      "@type": "Record Part",
+      "name": "03-Estat-ingressos_2025.pdf"
+    },
+    {
+      "@id": "005",
+      "@type": "Record Part",
+      "name": "04-Estat-despeses_2025.pdf"
+    },
+    {
+      "@id": "006",
+      "@type": "Record Part",
+      "name": "05-Resum-per-unitats_2025.pdf"
+    },
+    {
+      "@id": "007",
+      "@type": "Record Part",
+      "name": "06-Classificacio-organica-de-les-despeses_2025.pdf"
+    },
+    {
+      "@id": "008",
+      "@type": "Record Part",
+      "name": "07-Despeses-i-ingressos-per-Programa_2025.pdf"
+    },
+    {
+      "@id": "009",
+      "@type": "Record Part",
+      "name": "08-Accions-i-indicadors_2025.pdf"
+    },
+    {
+      "@id": "010",
+      "@type": "Record Part",
+      "name": "10-Despeses-de-Personal.pdf"
+    },
+    {
+      "@id": "011",
+      "@type": "Record Part",
+      "name": "11-BEP-2025.pdf"
+    },
+    {
+      "@id": "012",
+      "@type": "Record Part",
+      "name": "12-Annex-I_BEP.pdf"
+    },
+    {
+      "@id": "013",
+      "@type": "Record Part",
+      "name": "13-Annex-II_BEP.pdf"
+    },
+    {
+      "@id": "014",
+      "@type": "Record Part",
+      "name": "14-Tarifes-SCT_2025.pdf"
+    },
+    {
+      "@id": "015",
+      "@type": "Record Part",
+      "name": "15-Tarifes-Altres-serveis_2025_v2.pdf"
+    },
+    {
+      "@id": "016",
+      "@type": "Record Part",
+      "name": "16-Tarifes-formacio-reglada_2025.pdf"
+    },
+    {
+      "@id": "017",
+      "@type": "Record Part",
+      "name": "17-Tarifes-formacio-no-reglada_2025.pdf"
+    },
+    {
+      "@id": "018",
+      "@type": "Record Part",
+      "name": "18-Altres-tarifes_2025.pdf"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "019",
+      "@type": "Corporate Body",
+      "name": "Universitat de Lleida"
+    },
+    {
+      "@id": "020",
+      "@type": "Person",
+      "name": "Jaume Puy i Llorens",
+      "isAssociatedWithPosition": "021"
+    },
+    {
+      "@id": "021",
+      "@type": "Position",
+      "name": "Rector de la Universitat de Lleida"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "023",
+      "@type": "Date",
+      "normalizedDateValue": "2024-12-03",
+      "generalDescription": "Date of budget presentation"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "022",
+      "@type": "Place",
+      "name": "Lleida"
+    }
+  ],
+  "Rule": [
+    {
+      "@id": "024",
+      "@type": "Rule",
+      "name": "Llei Orgànica del Sistema Universitari (LOSU)"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025",
+      "name": "PresupostUdL2025",
+      "generalDescription": "Budget for the academic year 2025 for Universitat de Lleida",
+      "recordResourceExtent": "Multiple PDF documents",
+      "structure": "PDF files",
+      "scopeAndContent": "Budget documents for academic year 2025",
+      "includesOrIncluded": ["002"],
+      "isAssociatedWithDate": "003",
+      "isAssociatedWithPlace": "004",
+      "hasCreator": ["005", "006"]
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "01-Presentacio-Pressupost.pdf",
+      "name": "Presentació del Pressupost",
+      "generalDescription": "Presentation of the budget for 2025",
+      "hasCreator": ["005"],
+      "isAssociatedWithDate": "003",
+      "isAssociatedWithPlace": "004",
+      "hasContentOfType": "Budget Document",
+      "isContainedIn": "001"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "003",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "Signing Date",
+      "expressedDate": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03",
+      "dateQualifier": "date of signing",
+      "hasDateType": "Creation"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "004",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain",
+      "hasOrHadPlaceType": "City"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "005",
+      "@type": "Person",
+      "identifier": "JaumePuyLlorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector of Universitat de Lleida",
+      "hasOrHadLegalStatus": "Public office",
+      "hasOrHadLanguage": "Catalan"
+    },
+    {
+      "@id": "006",
+      "@type": "Corporate Body",
+      "identifier": "UniversitatLleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia, Spain",
+      "hasOrHadLegalStatus": "Public institution"
+    }
+  ]
+}

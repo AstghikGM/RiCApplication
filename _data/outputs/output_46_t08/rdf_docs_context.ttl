@@ -1,0 +1,165 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix udl: <http://udl.cat/archive/> .
+
+udl:001 a rico:RecordSet ;
+    rico:generalDescription "Presupost de la Universitat de Lleida per a l’exercici 2025." ;
+    rico:hasCreator udl:020,
+        udl:021 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:includesOrIncluded udl:002,
+        udl:003,
+        udl:004,
+        udl:005,
+        udl:006,
+        udl:007,
+        udl:008,
+        udl:009,
+        udl:010,
+        udl:011,
+        udl:012,
+        udl:013,
+        udl:014,
+        udl:015,
+        udl:016,
+        udl:017,
+        udl:018 ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "PresupostUdL2025" .
+
+udl:002 a rico:RecordPart ;
+    rico:generalDescription "El pressupost de la Universitat de Lleida per a l’exercici 2025 és de 116.712.269,37 €, el que suposa un augment de 6,8 M€ (6,20%) respecte l’any anterior." ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "PRESENTACIÓ DEL PRESSUPOST" .
+
+udl:003 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Resum per capitols" .
+
+udl:004 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Estat ingressos" .
+
+udl:005 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Estat despeses" .
+
+udl:006 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Resum per unitats" .
+
+udl:007 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Classificació orgànica de les despeses" .
+
+udl:008 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Despeses i ingressos per Programa" .
+
+udl:009 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Accions i indicadors" .
+
+udl:010 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Despeses de Personal" .
+
+udl:011 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "BEP 2025" .
+
+udl:012 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Annex I BEP" .
+
+udl:013 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Annex II BEP" .
+
+udl:014 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Tarifes SCT 2025" .
+
+udl:015 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Tarifes Altres serveis 2025" .
+
+udl:016 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Tarifes formació reglada 2025" .
+
+udl:017 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Tarifes formació no reglada 2025" .
+
+udl:018 a rico:RecordPart ;
+    rico:hasCreator udl:020 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:isAssociatedWithDate udl:022 ;
+    rico:isAssociatedWithPlace udl:023 ;
+    rico:name "Altres tarifes 2025" .
+
+udl:021 a rico:CorporateBody ;
+    rico:generalDescription "Universitat" ;
+    rico:name "Universitat de Lleida" .
+
+udl:020 a rico:Person ;
+    rico:generalDescription "Rector de la Universitat de Lleida" ;
+    rico:name "Jaume Puy i Llorens" .
+
+udl:022 a rico:Date ;
+    rico:name "3 de desembre de 2024" ;
+    rico:normalizedDateValue "2024-12-03" .
+
+udl:023 a rico:Place ;
+    rico:generalDescription "ciutat de Catalunya" ;
+    rico:name "Lleida" .
+

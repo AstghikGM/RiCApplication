@@ -1,0 +1,277 @@
+{
+  "RecordResource": [
+    {
+      "@id": "001",
+      "@type": "Record Set",
+      "identifier": "PresupostUdL2025.zip",
+      "name": "PresupostUdL2025",
+      "includesOrIncluded": [
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019"
+      ],
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020",
+      "hasCreator": "030",
+      "hasOwner": "031"
+    },
+    {
+      "@id": "002",
+      "@type": "Record",
+      "identifier": "01-Presentacio-Pressupost.pdf",
+      "name": "Presentació del Pressupost",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "generalDescription": "## **PRESENTACIÓ DEL PRESSUPOST**\n\nEl pressupost de la Universitat de Lleida per a l’exercici 2025 és de 116.712.269,37 €, el que suposa un augment de 6,8 M€ (6,20%) respecte l’any anterior.\n\nEl 2025 consolida un període de canvis a la UdL. En primer lloc, perquè durant l’exercici que contempla aquest pressupost, s’han d’aprovar els nous estatuts de la universitat, atenent al que disposa la Llei Orgànica del Sistema Universitari (LOSU). El canvi d’estatus de la universitat és tot una fita però, a la vegada, també l’inici d’un important desplegament reglamentari que haurà de produir-se en els propers anys.\n\nEn segon lloc, perquè el 2025 consolida el tercer i darrer any dels plans de xoc plurianuals de PDI i de PTGAS promoguts pel Departament de Recerca i Universitats, que han permès donar algunes passes per incrementar el personal i tecnificar la plantilla.\n\nSerà també l’exercici amb la incorporació més massiva de nou professorat dels darrers anys, amb el programa d’incorporació de t\n\nJaume Puy i Llorens\nRector de la Universitat de Lleida\n\nLleida, 3 de desembre de 2024",
+      "scopeAndContent": "Budget presentation for the academic year 2025 of the Universitat de Lleida",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "003",
+      "@type": "Record",
+      "identifier": "02-Resum-per-capitols_2025.pdf",
+      "name": "Resum per capitols 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "004",
+      "@type": "Record",
+      "identifier": "03-Estat-ingressos_2025.pdf",
+      "name": "Estat ingressos 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "005",
+      "@type": "Record",
+      "identifier": "04-Estat-despeses_2025.pdf",
+      "name": "Estat despeses 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "006",
+      "@type": "Record",
+      "identifier": "05-Resum-per-unitats_2025.pdf",
+      "name": "Resum per unitats 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "007",
+      "@type": "Record",
+      "identifier": "06-Classificacio-organica-de-les-despeses_2025.pdf",
+      "name": "Classificació organica de les despeses 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "008",
+      "@type": "Record",
+      "identifier": "07-Despeses-i-ingressos-per-Programa_2025.pdf",
+      "name": "Despeses i ingressos per Programa 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "009",
+      "@type": "Record",
+      "identifier": "08-Accions-i-indicadors_2025.pdf",
+      "name": "Accions i indicadors 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "010",
+      "@type": "Record",
+      "identifier": "10-Despeses-de-Personal.pdf",
+      "name": "Despeses de Personal 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "011",
+      "@type": "Record",
+      "identifier": "11-BEP-2025.pdf",
+      "name": "BEP 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "012",
+      "@type": "Record",
+      "identifier": "12-Annex-I_BEP.pdf",
+      "name": "Annex I BEP",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "31",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "013",
+      "@type": "Record",
+      "identifier": "13-Annex-II_BEP.pdf",
+      "name": "Annex II BEP",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "014",
+      "@type": "Record",
+      "identifier": "14-Tarifes-SCT_2025.pdf",
+      "name": "Tarifes SCT 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "015",
+      "@type": "Record",
+      "identifier": "15-Tarifes-Altres-serveis_2025_v2.pdf",
+      "name": "Tarifes Altres serveis 2025 v2",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "016",
+      "@type": "Record",
+      "identifier": "16-Tarifes-formacio-reglada_2025.pdf",
+      "name": "Tarifes formació reglada 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "017",
+      "@type": "Record",
+      "identifier": "17-Tarifes-formacio-no-reglada_2025.pdf",
+      "name": "Tarifes formació no reglada 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    },
+    {
+      "@id": "018",
+      "@type": "Record",
+      "identifier": "18-Altres-tarifes_2025.pdf",
+      "name": "Altres tarifes 2025",
+      "hasContentOfType": "PDF",
+      "hasOrHadLanguage": "Catalan",
+      "hasCreator": "030",
+      "hasOwner": "031",
+      "isAssociatedWithDate": "010",
+      "isAssociatedWithPlace": "020"
+    }
+  ],
+  "Agent": [
+    {
+      "@id": "030",
+      "@type": "Person",
+      "identifier": "Jaume Puy i Llorens",
+      "name": "Jaume Puy i Llorens",
+      "generalDescription": "Rector de la Universitat de Lleida"
+    },
+    {
+      "@id": "031",
+      "@type": "Corporate Body",
+      "identifier": "Universitat de Lleida",
+      "name": "Universitat de Lleida",
+      "generalDescription": "Public university located in Lleida, Catalonia"
+    }
+  ],
+  "Date": [
+    {
+      "@id": "010",
+      "@type": "Date",
+      "identifier": "2024-12-03",
+      "name": "3 de desembre de 2024",
+      "normalizedDateValue": "2024-12-03",
+      "hasDateType": "publicationDate",
+      "dateQualifier": "signed"
+    }
+  ],
+  "Place": [
+    {
+      "@id": "020",
+      "@type": "Place",
+      "identifier": "Lleida",
+      "name": "Lleida",
+      "generalDescription": "City in Catalonia, Spain",
+      "hasOrHadPlaceType": "city"
+    }
+  ]
+}

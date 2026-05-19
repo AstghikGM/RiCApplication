@@ -1,0 +1,223 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix udl: <http://udl.cat/archive/> .
+
+udl:001 a rico:RecordSet ;
+    rico:generalDescription "Budget for Universitat de Lleida for fiscal year 2025" ;
+    rico:hasCreator udl:102 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "PresupostUdL2025.zip" ;
+    rico:includesOrIncluded udl:002,
+        udl:003,
+        udl:004,
+        udl:005,
+        udl:006,
+        udl:007,
+        udl:008,
+        udl:010,
+        udl:011,
+        udl:012,
+        udl:013,
+        udl:014,
+        udl:015,
+        udl:016,
+        udl:017,
+        udl:018,
+        udl:019 ;
+    rico:isAssociatedWithDate udl:201 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Presupost UdL 2025" ;
+    rico:structure "PDF files" .
+
+udl:103 a rico:CorporateBody ;
+    rico:generalDescription "Department promoting research and universities" ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "DRU" ;
+    rico:name "Departament de Recerca i Universitats" .
+
+udl:002 a rico:Record ;
+    rico:generalDescription "Presentation of the budget" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "01-Presentacio-Pressupost.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Presentació del Pressupost" .
+
+udl:003 a rico:Record ;
+    rico:generalDescription "Summary per chapters" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "02-Resum-per-capitols_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Resum per capitols 2025" .
+
+udl:004 a rico:Record ;
+    rico:generalDescription "Income statement for 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "03-Estat-ingressos_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Estat ingressos 2025" .
+
+udl:005 a rico:Record ;
+    rico:generalDescription "Expense statement for 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "04-Estat-despeses_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Estat despeses 2025" .
+
+udl:006 a rico:Record ;
+    rico:generalDescription "Summary per units" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "05-Resum-per-unitats_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Resum per unitats 2025" .
+
+udl:007 a rico:Record ;
+    rico:generalDescription "Organic classification of expenses" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "06-Classificacio-organica-de-les-despeses_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Classificació organica de les despeses 2025" .
+
+udl:008 a rico:Record ;
+    rico:generalDescription "Expenses and income per program" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "07-Despeses-i-ingressos-per-Programa_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Despeses i ingressos per Programa 2025" .
+
+udl:010 a rico:Record ;
+    rico:generalDescription "Actions and indicators for 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "08-Accions-i-indicadors_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Accions i indicadors 2025" .
+
+udl:011 a rico:Record ;
+    rico:generalDescription "Personnel expenses" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "10-Despeses-de-Personal.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Despeses de Personal" .
+
+udl:012 a rico:Record ;
+    rico:generalDescription "Budget Execution Plan 2025",
+        "Personnel expenses" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "10-Despeses-de-Personal.pdf",
+        "11-BEP-2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "BEP 2025",
+        "Despeses de Personal" .
+
+udl:013 a rico:Record ;
+    rico:generalDescription "Annex I of Budget Execution Plan" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "12-Annex-I_BEP.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Annex I BEP" .
+
+udl:014 a rico:Record ;
+    rico:generalDescription "Annex II of Budget Execution Plan" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "13-Annex-II_BEP.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Annex II BEP" .
+
+udl:015 a rico:Record ;
+    rico:generalDescription "SCT tariffs 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "14-Tarifes-SCT_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Tarifes SCT 2025" .
+
+udl:016 a rico:Record ;
+    rico:generalDescription "Other services tariffs 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "15-Tarifes-Altres-serveis_2025_v2.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Tarifes Altres serveis 2025 v2" .
+
+udl:017 a rico:Record ;
+    rico:generalDescription "Regulated training tariffs 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "16-Tarifes-formacio-reglada_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Tarifes formació reglada 2025" .
+
+udl:018 a rico:Record ;
+    rico:generalDescription "Unregulated training tariffs 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "17-Tarifes-formacio-no-reglada_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Tarifes formació no reglada 2025" .
+
+udl:019 a rico:Record ;
+    rico:generalDescription "Other tariffs 2025" ;
+    rico:hasCreator udl:101 ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "18-Altres-tarifes_2025.pdf" ;
+    rico:isAssociatedWithDate udl:202 ;
+    rico:isAssociatedWithPlace udl:301 ;
+    rico:name "Altres tarifes 2025" .
+
+udl:102 a rico:CorporateBody ;
+    rico:generalDescription "Public university located in Lleida, Catalonia" ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "UDL" ;
+    rico:name "Universitat de Lleida" .
+
+udl:201 a rico:Date ;
+    rico:dateQualifier "publication" ;
+    rico:expressedDate "2024-12-03" ;
+    rico:hasDateType "calendar" ;
+    rico:identifier "2024-12-03" ;
+    rico:name "Publication date" .
+
+udl:101 a rico:Person ;
+    rico:generalDescription "Rector of the Universitat de Lleida" ;
+    rico:hasOrHadLanguage "Català" ;
+    rico:identifier "JAUME-PUY-LLORENTS" ;
+    rico:name "Jaume Puy i Llorens" .
+
+udl:202 a rico:Date ;
+    rico:dateQualifier "exercise year" ;
+    rico:expressedDate "2025" ;
+    rico:hasDateType "fiscal" ;
+    rico:identifier "2025" ;
+    rico:name "Fiscal year" .
+
+udl:301 a rico:Place ;
+    rico:generalDescription "City in Catalonia, Spain" ;
+    rico:identifier "Lleida" ;
+    rico:name "Lleida" .
+

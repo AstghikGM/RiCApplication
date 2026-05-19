@@ -1,0 +1,156 @@
+@prefix ex: <http://example.org/archive/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+
+ex:001 a rico:Record ;
+    rico:authenticityNote "Official university document." ;
+    rico:generalDescription "Budget document for the University of Lleida for the exercise year 2025." ;
+    rico:hasCreator ex:002,
+        ex:003 ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "PresupostUdL2025.zip" ;
+    rico:includesOrIncluded ex:008,
+        ex:009,
+        ex:010,
+        ex:011,
+        ex:012,
+        ex:013,
+        ex:014,
+        ex:015,
+        ex:016,
+        ex:017,
+        ex:018,
+        ex:019,
+        ex:020,
+        ex:021,
+        ex:022,
+        ex:023,
+        ex:024 ;
+    rico:isAssociatedWithDate ex:006 ;
+    rico:isAssociatedWithPlace ex:005 ;
+    rico:legalStatus "public" ;
+    rico:name "Presupost UdL 2025" ;
+    rico:scopeAndContent "Budget details including incomes, expenses, programmes, personnel, tariffs, annexes." ;
+    rico:structure "PDF" .
+
+ex:004 a rico:Position ;
+    rico:generalDescription "Chief executive officer of the university" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "Rector" ;
+    rico:name "Rector" .
+
+ex:007 a rico:Mandate ;
+    rico:generalDescription "Organic law governing the University System in Spain" ;
+    rico:identifier "LOSU" ;
+    rico:legalStatus "legislative" ;
+    rico:name "Llei Orgànica del Sistema Universitari (LOSU)" .
+
+ex:002 a rico:Person ;
+    rico:generalDescription "Rector of the University of Lleida" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "JaumePuyLlorens" ;
+    rico:legalStatus "public office holder" ;
+    rico:name "Jaume Puy i Llorens" .
+
+ex:003 a rico:CorporateBody ;
+    rico:generalDescription "Higher education institution in Lleida, Spain" ;
+    rico:hasOrHadLanguage "Catalan" ;
+    rico:identifier "UniversitatLleida" ;
+    rico:legalStatus "public" ;
+    rico:name "Universitat de Lleida" .
+
+ex:005 a rico:Place ;
+    rico:generalDescription "City in Catalonia, Spain" ;
+    rico:identifier "Lleida" ;
+    rico:name "Lleida" .
+
+ex:006 a rico:Date ;
+    rico:expressedDate "2024-12-03" ;
+    rico:identifier "2024-12-03" ;
+    rico:name "3 de desembre de 2024" ;
+    rico:normalizedDateValue "2024-12-03" .
+
+ex:008 a rico:RecordPart ;
+    rico:generalDescription "Presentation of the budget including total amount, increase, and context." ;
+    rico:identifier "part01" ;
+    rico:name "01-Presentacio-Pressupost.pdf" .
+
+ex:009 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part02" ;
+    rico:name "02-Resum-per-capitols_2025.pdf" .
+
+ex:010 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part03" ;
+    rico:name "03-Estat-ingressos_2025.pdf" .
+
+ex:011 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part04" ;
+    rico:name "04-Estat-despeses_2025.pdf" .
+
+ex:012 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part05" ;
+    rico:name "05-Resum-per-unitats_2025.pdf" .
+
+ex:013 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part06" ;
+    rico:name "06-Classificacio-organica-de-les-despeses_2025.pdf" .
+
+ex:014 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part07" ;
+    rico:name "07-Despeses-i-ingressos-per-Programa_2025.pdf" .
+
+ex:015 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part08" ;
+    rico:name "08-Accions-i-indicadors_2025.pdf" .
+
+ex:016 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part10" ;
+    rico:name "10-Despeses-de-Personal.pdf" .
+
+ex:017 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part11" ;
+    rico:name "11-BEP-2025.pdf" .
+
+ex:018 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part12" ;
+    rico:name "12-Annex-I_BEP.pdf" .
+
+ex:019 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part13" ;
+    rico:name "13-Annex-II_BEP.pdf" .
+
+ex:020 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part14" ;
+    rico:name "14-Tarifes-SCT_2025.pdf" .
+
+ex:021 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part15" ;
+    rico:name "15-Tarifes-Altres-serveis_2025_v2.pdf" .
+
+ex:022 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part16" ;
+    rico:name "16-Tarifes-formacio-reglada_2025.pdf" .
+
+ex:023 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part17" ;
+    rico:name "17-Tarifes-formacio-no-reglada_2025.pdf" .
+
+ex:024 a rico:RecordPart ;
+    rico:generalDescription "Only title stored." ;
+    rico:identifier "part18" ;
+    rico:name "18-Altres-tarifes_2025.pdf" .
+
