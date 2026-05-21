@@ -218,15 +218,13 @@ OUTPUT:
 
       try: 
           graph = converter.json_to_rdflib_graph(content)
-          is_valid, validation_report= converter.validate_and_report(graph)
+          validation_report= converter.validate_and_report(graph)
           ttl_output = graph.serialize(format="turtle")
       except Exception as e:
           algorithm.logger.error(f"Error during RDFLib conversion or SHACL validation: {e}")
           raise
 
       return {
-          "doc_context": doc_context_json,
-          "json_extraction": content,
           "ttl_output": ttl_output,
           "validation_report": validation_report,
           "graph_obj": graph,  
@@ -239,32 +237,13 @@ def save(
     results: Results,
     base_path: Path,
 ):
-    # Markdown
-    result_path = base_path / "docs_context.md"
-    with result_path.open("w", encoding="utf-8") as f:
-        f.write(results["doc_context"])
 
-    """
-    # Markdown for separated files 
-    result_path = base_path / "doc_context_result.md"
-    with result_path.open("w", encoding="utf-8") as f:
-       for doc in results["doc_context"]:
-            f.write(f"# {doc['metadata']['filename']}\n\n")
-            f.write(doc["content"])
-            f.write("\n\n---\n\n")
-    """
-
-    # JSON 
-    json_path = base_path / "entities_docs_context.json" 
-    with json_path.open("w", encoding="utf-8") as first_step_file:
-        first_step_file.write(results["json_extraction"])
-   
     # TTL
     result_path = base_path / "rdf_docs_context.ttl"
     with result_path.open("w", encoding="utf-8") as result_file:
         result_file.write(f"{results["ttl_output"]}")
 
-    # SHACL
+    # VALIDATION REPORT
     validation_path = base_path / "validation_report.txt"
     with validation_path.open("w", encoding="utf-8") as val_file:
         val_file.write(f"{results["validation_report"]}")

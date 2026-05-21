@@ -177,13 +177,11 @@ class RDFLibConverter:
                 suggestions.append(msg)
         
         # We return the output even if it's not perfect
-        is_valid = conforms and not suggestions
-        
         final_report = "--- SHACL REPORT ---\n" + results_text
         if suggestions:
             final_report += "\n\n--- ONTOLOGY SUGGESTIONS (RiC-O 1.1) ---\n" + "\n".join(suggestions)
         
-        return is_valid, final_report
+        return final_report
     
 
     def visualize_graph(self, g, output_path):
