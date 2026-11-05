@@ -7,16 +7,17 @@ requires-python = ">=3.10,<3.13"
 readme = "README.md"
 license = { file = "LICENSE" }
 dependencies = [
-    "ocean-runner>=0.2.16",
+    "ocean-runner>=0.3.16",
     "pytest>=8.3.4,<9",
     "requests==2.32.5",
     "pymupdf4llm>=0.0.17",
-    "pymupdf>=1.24.0", 
+    "pymupdf>=1.24.0",
     "rdflib>=7.0.0",
     "pyshacl>=0.25.0",
     "networkx>=3.0",
     "matplotlib>=3.7.0",
     "graphviz",
+    "pydantic",
 ]
 
 [tool.uv]

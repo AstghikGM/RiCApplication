@@ -29,7 +29,7 @@ class RDFLibConverter:
                 self.valid_classes = set(ontology_data.get('classes', []))
                 self.valid_properties = set(ontology_data.get('properties', []))
         else:
-            raise FileNotFoundError(f"Ontology data not found: {self.ontology_data_path}")
+            raise FileNotFoundError(f"Ontology data not found: {self.ontology_data_path.absolute()}")
        
        
     def clean_json(self, raw_data):
@@ -75,6 +75,7 @@ class RDFLibConverter:
         # Get cleaned json
         data = self.clean_json(raw_llm_output)
 
+        
         g = Graph()
         g.bind("rico", self.RICO)
         g.bind("udl", self.BASE)

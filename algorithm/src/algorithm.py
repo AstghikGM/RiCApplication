@@ -1,89 +1,170 @@
-from pathlib import Path
 import os
 import json
-import requests
+from dotenv import get_key
+from pathlib import Path
 
+import requests
+import time
+from typing import Any
+
+from pydantic import BaseModel, Field
 from ocean_runner import Algorithm, Config
 
 from .TextPrep import TextPrep
 from .RDFLibConverter import RDFLibConverter
 
-from src.data import Results
-import time
+
 
 # OpenWebUi Configuration
-OPENWEBUI_API_KEY = os.getenv("OPENWEBUI_API_KEY")
 OPENWEBUI_URL = "https://chat.agrospai.udl.cat"
 CHAT_COMPLETIONS_URL = f"{OPENWEBUI_URL}/api/chat/completions"
-MODEL_ID = "gpt-oss:latest"
-
 MAX_RETRIES = 3
+MAX_JSON_RETRIES = 3
 PAUSE_BETWEEN_RETRIES = 60 #seconds
 
-algorithm = Algorithm()
 
 
-def check_server_health(session):
-    """Quick check on the Openwebui server by sending a test request."""
+# Inputs definition
+class InputParameters(BaseModel):
+    model_id: str = Field(
+        default="gpt-oss:latest",
+        title="AI Model ID",
+        description="The AI model to be used for the RiC-O extraction task."
+    )
+
+# Output Type Definition
+type ResultsT = dict[str, Any]
+
+# Algorithm Instance
+algorithm = Algorithm[InputParameters, ResultsT].create(
+    Config(custom_input=InputParameters)
+)
+
+
+# Helper functions
+def get_api_key() -> str:
+    if algorithm.job_details.paths.algorithm.exists():
+        api_key = get_key(str(algorithm.job_details.paths.algorithm), "OPENWEBUI_API_KEY")
+    else:
+        api_key = os.environ.get("OPENWEBUI_API_KEY")
+ 
+    assert api_key is not None, (
+        f"API key not populated from environment file {algorithm.job_details.paths.algorithm} nor environment"
+    )
+ 
+    return api_key
+
+def _check_server_health(session: requests.Session, model_id: str) -> None:
+    """Quick check on the OpenWebUI server."""
     algorithm.logger.info("Performing server health check...")
     data = {
-        "model": MODEL_ID,
+        "model": model_id,
         "messages": [{"role": "user", "content": "test"}],
         "max_tokens": 5
     }
-
+    
     try:
-        response = session.post(CHAT_COMPLETIONS_URL, json=data, timeout=50)
-        return response.status_code == 200
+        health_res = session.post(
+            CHAT_COMPLETIONS_URL, 
+            json = data, 
+            timeout=50
+        )
+        if health_res.status_code != 200:
+            raise algorithm.Error("AI server is unreachable or returned an error.")
     except Exception as e:
-        algorithm.logger.error(f"Health check failed: {e}")
-        return False
-    
+        raise algorithm.Error(f"Health check failed: {str(e)}")
+
+
+def call_llm_api(session: requests.Session, prompt: str, model_id: str) -> str:
+    """HTTP requests, retries, and error handling."""
+
+    data = {
+        "model": model_id,
+        "stream": False,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.7
+    }
+
+    # Main call with retries
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            response = session.post(CHAT_COMPLETIONS_URL, json=data, timeout=300)
+            response.raise_for_status()
+                
+            result_json = response.json()
+            if not result_json or "choices" not in result_json:
+                raise algorithm.Error("API response missing 'choices'.")
+                
+            content = result_json['choices'][0]['message']['content']
+            if not content or content.lower() == "none":
+                raise algorithm.Error("API returned empty content.")
+                
+            return content
+            
+        except requests.exceptions.HTTPError as e:
+            status_code = e.response.status_code
+            if status_code in [429, 502, 503, 504]:
+                error_msg = f"Server temporarily busy (HTTP {status_code})"
+            else:
+                algorithm.logger.error(f" [!] Fatal HTTP Error {status_code}: {e.response.reason}")
+                raise algorithm.Error(f"LLM API failed with HTTP error {status_code}: {e.response.reason}")
+        except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
+            error_msg = f"Connection Error: {str(e)}"
+        except requests.exceptions.ReadTimeout:
+            error_msg = "Timeout: Server took too long to respond"
+        except Exception as e:
+            error_msg = f"Unexpected {type(e).__name__}: {str(e)}"
+
+        if attempt == MAX_RETRIES:
+            raise algorithm.Error(f"Critical failure after {MAX_RETRIES} attempts. Reason: {error_msg}")
+
+        wait_time = PAUSE_BETWEEN_RETRIES * attempt
+        algorithm.logger.warning(f"Attempt {attempt} failed: {error_msg}. Retrying in {wait_time}s...")
+        time.sleep(wait_time)
+
+
+# Preconditions validation
+@algorithm.validate
+def validate(_) -> None:
+    """Validation of preconditions."""
+    algorithm.logger.info("Validating preconditions...")
+    jd = algorithm.job_details
+    assert jd.files, "The dataset does not contain any files to process."
+    get_api_key() # Check credentials exist
+
+
+# Main function
 @algorithm.run
-def run() -> Results:
-      
-      if not OPENWEBUI_API_KEY:
-        algorithm.logger.error("Missing API Key")
-        raise ValueError("Execution aborted: OPENWEBUI_API_KEY environment variable is missing.")
-      
-      headers = {
-              "Authorization": f"Bearer {OPENWEBUI_API_KEY}",
-              "Content-Type": "application/json"
-                }
-      # Server health check
-      with requests.Session() as session:
-        session.headers.update(headers)
-        if not check_server_health(session):
-            algorithm.logger.error("Aborting: Server health check failed.")
-            raise RuntimeError("AI Server (OpenWebUI) is downstream or unreachable. Cannot proceed.")
-        
-      all_documents = []
-      doc_context = []
-
-      # 1. Read all files and prepare the unified document context for the LLM
-      for _, filename in algorithm.job_details.next_path():
-          algorithm.logger.info(f"Processing file: {filename.name}")
-          
-          doc_data = TextPrep.read_file(filename, algorithm)
-        
-          if doc_data:
-               all_documents.extend(doc_data)
-
-      if not all_documents:
-          algorithm.logger.error("No documents were processed. Check input files")   
-          raise ValueError("No documents were processed. Check input files")
+def run(_) -> ResultsT:
+    """Main execution pipeline."""
+    params = algorithm.job_details.input_parameters
     
-      for doc in all_documents:
-          doc_context.append({
-                "source_zip": doc['metadata'].get('source_zip', 'PDF Archive'),
-                "filename": doc['metadata'].get('filename', 'N/A'),
-                "content_fragment": doc['content']
-          })
+    # Credentials
+    api_key = get_api_key()
 
-      doc_context_json = json.dumps(doc_context, indent=2, ensure_ascii=False)
+    # Documents Processing
+    all_documents = []
+    doc_context = []
+    
+    for _, filename in algorithm.job_details.inputs():
+        algorithm.logger.info(f"Processing file: {filename.name}")
+        doc_data = TextPrep.read_file(filename, algorithm)
+        if doc_data:
+            all_documents.extend(doc_data)
+            
+    if not all_documents:
+        raise algorithm.Error("No documents were processed. Check input files.")
+        
+    for doc in all_documents:
+        doc_context.append({
+            "source_zip": doc['metadata'].get('source_zip', 'PDF Archive'),
+            "filename": doc['metadata'].get('filename', 'N/A'),
+            "content_fragment": doc['content']
+        })
+    doc_context_json = json.dumps(doc_context, indent=2, ensure_ascii=False)
 
-      # 2. LLM prompt and API call - Extract entities, attributes and relationships in JSON
-      prompt = f"""
+    # Prompt definition
+    prompt = f"""
 ### ROLE: Act as an expert in Records in Context Ontology (RiC-O). 
 ### TASK: Use all given records to make a complete RECORDS IN CONTEXT ONTOLOGY model json through mapping Records in Context Ontology entities, attributes, and relationships.
 
@@ -154,112 +235,88 @@ OUTPUT:
   ]
 }}
 
-### CONTENT 
+### CONTENT 
 {doc_context_json}
 """
-      
-      data = {
-             "model": MODEL_ID,
-             "stream": False,
-             "messages": [
-               {
-                 "role": "user",
-                 "content": prompt
-               }
-             ],
-             "temperature": 0.7
-           }
-      
-
-      with requests.Session() as session:
-          session.headers.update(headers)
     
-          for attempt in range(1, MAX_RETRIES + 1):
-               try: 
-                    response = session.post(CHAT_COMPLETIONS_URL, json=data, timeout=300)
-                    response.raise_for_status()
+    # Initializing converter
+    converter = RDFLibConverter(Path(".")/"src"/"RiC_Ontology"/"RiC-O_1-1_schema.json")
 
-                    result_json = response.json()
-                    if not result_json or "choices" not in result_json or not result_json["choices"]:
-                      raise ValueError("API response missing 'choices'")
-                    
-                    content = result_json['choices'][0]['message']['content']
-                    if not content or content.lower() == "none":
-                            algorithm.logger.warning("API returned empty content or 'None'. Check the input data and prompt.")
-                            raise ValueError("API returned empty content")
-                    
-                    break  # Exit loop if successful
-               except requests.exceptions.HTTPError as e:
-                    status_code = e.response.status_code
-                    if status_code in [429, 502, 503, 504]:
-                        error_msg = f"Server temporarily busy (HTTP {status_code})"
-                    else:
-                        algorithm.logger.error(f" [!] Fatal HTTP Error {status_code}: {e.response.reason}")
-                        raise RuntimeError(f"LLM API failed with HTTP error {status_code}: {e.response.reason}")
-               except (requests.exceptions.ConnectionError, requests.exceptions.ConnectTimeout) as e:
-                    error_msg = f"Connection Error: {str(e)}"
-               except requests.exceptions.ReadTimeout:
-                    error_msg = "Timeout: Server took too long to respond"
-               except Exception as e:
-                    error_msg = f"Unexpected {type(e).__name__}: {str(e)}"
+    # Call Model API with JSON Validation Retry
+    ttl_output = None
+    validation_report = None
+    graph = None
 
-
-               # Exponential backoff
-               if attempt == MAX_RETRIES:
-                  algorithm.logger.error(f"CRITICAL: Final failure calling LLM API after {MAX_RETRIES} attempts. Reason: {error_msg}")
-                  raise RuntimeError(f"LLM API completely failed: {error_msg}")
-               else:
-                  wait_time = PAUSE_BETWEEN_RETRIES * attempt
-                  algorithm.logger.warning(f" [!] Attempt {attempt} failed: {error_msg}. Retrying in {wait_time}s...")
-                  time.sleep(wait_time) 
-      
-      # 3. RDFLib conversion and SHACL validation
-      converter = RDFLibConverter()
-
-      try: 
-          graph = converter.json_to_rdflib_graph(content)
-          validation_report= converter.validate_and_report(graph)
-          ttl_output = graph.serialize(format="turtle")
-      except Exception as e:
-          algorithm.logger.error(f"Error during RDFLib conversion or SHACL validation: {e}")
-          raise
-
-      return {
-          "ttl_output": ttl_output,
-          "validation_report": validation_report,
-          "graph_obj": graph,  
-          "converter_obj": converter
-      } 
-
-
-@algorithm.save_results
-def save(
-    results: Results,
-    base_path: Path,
-):
-
-    # TTL
-    result_path = base_path / "rdf_docs_context.ttl"
-    with result_path.open("w", encoding="utf-8") as result_file:
-        result_file.write(f"{results["ttl_output"]}")
-
-    # VALIDATION REPORT
-    validation_path = base_path / "validation_report.txt"
-    with validation_path.open("w", encoding="utf-8") as val_file:
-        val_file.write(f"{results["validation_report"]}")
-
-    # IMAGE
-    try:
-        image_dest = base_path / "graph_image"
+    with requests.Session() as session:
+        session.headers.update({
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        })
         
-        results["converter_obj"].visualize_graph(
-            results["graph_obj"], 
+        _check_server_health(session, params.model_id)
+
+        for attempt in range(1, MAX_JSON_RETRIES + 1):
+            try:
+                algorithm.logger.info(f"Calling model {params.model_id}... (Attempt {attempt}/{MAX_JSON_RETRIES})")
+                content = call_llm_api(session,prompt, params.model_id)
+                # print("LLM Output (truncated):", content, "...\n") 
+     
+                # RDF Conversion
+                algorithm.logger.info("Converting result to RDF and running SHACL validation...")
+                graph = converter.json_to_rdflib_graph(content)
+
+                # Validation report
+                validation_report = converter.validate_and_report(graph)
+                ttl_output = graph.serialize(format="turtle")
+            
+                break
+            
+            except (ValueError, TypeError, AttributeError, KeyError) as format_error:
+                # Errors in the model output
+                algorithm.logger.warning(f"JSON format error on attempt {attempt}: {format_error}")
+                if attempt == MAX_JSON_RETRIES:
+                    raise algorithm.Error(f"Failed to generate valid JSON from LLM after {MAX_JSON_RETRIES} attempts. Last error: {format_error}")
+            
+                algorithm.logger.info("Retrying LLM call to get a valid JSON format...")
+                time.sleep(2)
+            
+            except Exception as e:
+                # Captures any other exceptions during RDFLib conversion or SHACL validation and raises an error.
+                raise algorithm.Error(f"Error during RDFLib conversion or SHACL validation: {e}")
+
+    return {
+        "ttl_output": ttl_output,
+        "validation_report": validation_report,
+        "graph_obj": graph,
+        "converter_obj": converter
+    } 
+
+
+# Save results
+@algorithm.save_results
+def save(_, result: ResultsT, base: Path):
+    """Saving output files."""
+
+    # TTL Output
+    result_path = base / "rdf_docs_context.ttl"
+    with result_path.open("w", encoding="utf-8") as f:
+        f.write(result["ttl_output"])
+
+    # Validation Report
+    validation_path = base / "validation_report.txt"
+    with validation_path.open("w", encoding="utf-8") as f:
+        f.write(result["validation_report"])
+
+    # Graph Image
+    try:
+        image_dest = base / "graph_image"
+        result["converter_obj"].visualize_graph(
+            result["graph_obj"], 
             output_path=image_dest
         )
         algorithm.logger.info(f"Graph image saved in: {image_dest}.png")
     except Exception as e:
         algorithm.logger.error(f"Error generating graph image: {e}")
-
 
 if __name__ == "__main__":
     algorithm()
